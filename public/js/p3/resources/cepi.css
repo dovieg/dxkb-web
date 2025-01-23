@@ -1247,6 +1247,24 @@
     border-top-right-radius: 12px;
   }
 
+  .claro .dijitTooltipDialogPopup {
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: var(--white-bg);
+    border: 1px solid var(--border-gray);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .claro .dijitTooltipDialog .dijitDialogPaneActionBar {
+    -webkit-border-bottom-right-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -moz-border-radius-bottomright: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    margin: 10px -10px -8px;
+  }
+
   /* Select Dropdown Styling */
   /* .claro .gs-options-dropdown .dijitSelect .dijitButtonContents {
     border-bottom-left-radius: 0px;

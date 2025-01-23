@@ -1,86 +1,86 @@
 <div data-dojo-type="dijit/layout/ContentPane" class="HeaderBar" data-dojo-props="region:'top'">
-    <% var services = [
-        {name: "Acinetobacter", href: "/view/Taxonomy/469#view_tab=overview"},
-        {name: "Bacillus", href: "/view/Taxonomy/1386#view_tab=overview"},
-        {name: "Bartonella", href: "/view/Taxonomy/773#view_tab=overview"},
-        {name: "Borreliella", href: "/view/Taxonomy/64895#view_tab=overview"},
-        {name: "Brucella", href: "/view/Taxonomy/234#view_tab=overview"},
-        {name: "Burkholderia", href: "/view/Taxonomy/32008#view_tab=overview"},
-        {name: "Campylobacter", href: "/view/Taxonomy/194#view_tab=overview"},
-        {name: "Chlamydia", href: "/view/Taxonomy/810#view_tab=overview"},
-        {name: "Clostridium", href: "/view/Taxonomy/1485#view_tab=overview"},
-        {name: "Coxiella", href: "/view/Taxonomy/776#view_tab=overview"},
-        {name: "Ehrlichia", href: "/view/Taxonomy/943#view_tab=overview"},
-        {name: "Escherichia", href: "/view/Taxonomy/561#view_tab=overview"},
-        {name: "Francisella", href: "/view/Taxonomy/262#view_tab=overview"},
-        {name: "Helicobacter", href: "/view/Taxonomy/209#view_tab=overview"},
-        {name: "Listeria", href: "/view/Taxonomy/1637#view_tab=overview"},
-        {name: "Mycobacterium", href: "/view/Taxonomy/1763#view_tab=overview"},
-        {name: "Pseudomonas", href: "/view/Taxonomy/286#view_tab=overview"},
-        {name: "Rickettsia", href: "/view/Taxonomy/780#view_tab=overview"},
-        {name: "Salmonella", href: "/view/Taxonomy/590#view_tab=overview"},
-        {name: "Shigella", href: "/view/Taxonomy/620#view_tab=overview"},
-        {name: "Staphylococcus", href: "/view/Taxonomy/1279#view_tab=overview"},
-        {name: "Streptococcus", href: "/view/Taxonomy/1301#view_tab=overview"},
-        {name: "Vibrio", href: "/view/Taxonomy/662#view_tab=overview"},
-        {name: "Yersinia", href: "/view/Taxonomy/629#view_tab=overview"}
-    ]
+    <%
+        var services = [
+            {name: "Acinetobacter", href: "/view/Taxonomy/469#view_tab=overview"},
+            {name: "Bacillus", href: "/view/Taxonomy/1386#view_tab=overview"},
+            {name: "Bartonella", href: "/view/Taxonomy/773#view_tab=overview"},
+            {name: "Borreliella", href: "/view/Taxonomy/64895#view_tab=overview"},
+            {name: "Brucella", href: "/view/Taxonomy/234#view_tab=overview"},
+            {name: "Burkholderia", href: "/view/Taxonomy/32008#view_tab=overview"},
+            {name: "Campylobacter", href: "/view/Taxonomy/194#view_tab=overview"},
+            {name: "Chlamydia", href: "/view/Taxonomy/810#view_tab=overview"},
+            {name: "Clostridium", href: "/view/Taxonomy/1485#view_tab=overview"},
+            {name: "Coxiella", href: "/view/Taxonomy/776#view_tab=overview"},
+            {name: "Ehrlichia", href: "/view/Taxonomy/943#view_tab=overview"},
+            {name: "Escherichia", href: "/view/Taxonomy/561#view_tab=overview"},
+            {name: "Francisella", href: "/view/Taxonomy/262#view_tab=overview"},
+            {name: "Helicobacter", href: "/view/Taxonomy/209#view_tab=overview"},
+            {name: "Listeria", href: "/view/Taxonomy/1637#view_tab=overview"},
+            {name: "Mycobacterium", href: "/view/Taxonomy/1763#view_tab=overview"},
+            {name: "Pseudomonas", href: "/view/Taxonomy/286#view_tab=overview"},
+            {name: "Rickettsia", href: "/view/Taxonomy/780#view_tab=overview"},
+            {name: "Salmonella", href: "/view/Taxonomy/590#view_tab=overview"},
+            {name: "Shigella", href: "/view/Taxonomy/620#view_tab=overview"},
+            {name: "Staphylococcus", href: "/view/Taxonomy/1279#view_tab=overview"},
+            {name: "Streptococcus", href: "/view/Taxonomy/1301#view_tab=overview"},
+            {name: "Vibrio", href: "/view/Taxonomy/662#view_tab=overview"},
+            {name: "Yersinia", href: "/view/Taxonomy/629#view_tab=overview"}
+        ]
 
-    var virus = [
-        {name: "Adenoviridae", href: "/view/Taxonomy/10508#view_tab=overview"},
-        {name:"Asfarviridae", href: "/view/Taxonomy/137992#view_tab=overview"},
-        {name: "Bunyavirales", href: "/view/Taxonomy/1980410#view_tab=overview"},
-        {name: "Caliciviridae", href: "/view/Taxonomy/11974#view_tab=overview"},
-        {name: "Coronaviridae", href: "/view/Taxonomy/11118#view_tab=overview"},
-        {name: "Filoviridae", href: "/view/Taxonomy/11266#view_tab=overview"},
-        {name: "Flaviviridae", href: "/view/Taxonomy/11050#view_tab=overview"},
-        {name: "Hepadnaviridae", href: "/view/Taxonomy/10404#view_tab=overview"},
-        {name: "Hepeviridae", href: "/view/Taxonomy/291484#view_tab=overview"},
-        {name: "Herpesvirales", href: "/view/Taxonomy/548681#view_tab=overview"},
-        {name: "Orthomyxoviridae", href: "/view/Taxonomy/11308#view_tab=overview"},
-        {name: "Paramyxoviridae", href: "/view/Taxonomy/11158#view_tab=overview"},
-        {name: "Parvoviridae", href: "/view/Taxonomy/10780#view_tab=overview"},
-        {name: "Picornaviridae", href: "/view/Taxonomy/12058#view_tab=overview"},
-        {name: "Pneumoviridae", href: "/view/Taxonomy/11244#view_tab=overview"},
-        {name: "Polyomaviridae", href: "/view/Taxonomy/151341#view_tab=overview"},
-        {name: "Poxviridae", href: "/view/Taxonomy/10240#view_tab=overview"},
-        {name: "Reovirales", href: "/view/Taxonomy/2732541#view_tab=overview"},
-        {name: "Rhabdoviridae", href: "/view/Taxonomy/11270#view_tab=overview"},
-        {name: "Togaviridae", href: "/view/Taxonomy/11018#view_tab=overview"},
-    ]
+        var virus = [
+            {name: "Adenoviridae", href: "/view/Taxonomy/10508#view_tab=overview"},
+            {name:"Asfarviridae", href: "/view/Taxonomy/137992#view_tab=overview"},
+            {name: "Bunyavirales", href: "/view/Taxonomy/1980410#view_tab=overview"},
+            {name: "Caliciviridae", href: "/view/Taxonomy/11974#view_tab=overview"},
+            {name: "Coronaviridae", href: "/view/Taxonomy/11118#view_tab=overview"},
+            {name: "Filoviridae", href: "/view/Taxonomy/11266#view_tab=overview"},
+            {name: "Flaviviridae", href: "/view/Taxonomy/11050#view_tab=overview"},
+            {name: "Hepadnaviridae", href: "/view/Taxonomy/10404#view_tab=overview"},
+            {name: "Hepeviridae", href: "/view/Taxonomy/291484#view_tab=overview"},
+            {name: "Herpesvirales", href: "/view/Taxonomy/548681#view_tab=overview"},
+            {name: "Orthomyxoviridae", href: "/view/Taxonomy/11308#view_tab=overview"},
+            {name: "Paramyxoviridae", href: "/view/Taxonomy/11158#view_tab=overview"},
+            {name: "Parvoviridae", href: "/view/Taxonomy/10780#view_tab=overview"},
+            {name: "Picornaviridae", href: "/view/Taxonomy/12058#view_tab=overview"},
+            {name: "Pneumoviridae", href: "/view/Taxonomy/11244#view_tab=overview"},
+            {name: "Polyomaviridae", href: "/view/Taxonomy/151341#view_tab=overview"},
+            {name: "Poxviridae", href: "/view/Taxonomy/10240#view_tab=overview"},
+            {name: "Reovirales", href: "/view/Taxonomy/2732541#view_tab=overview"},
+            {name: "Rhabdoviridae", href: "/view/Taxonomy/11270#view_tab=overview"},
+            {name: "Togaviridae", href: "/view/Taxonomy/11018#view_tab=overview"},
+        ]
 
-    var virus_condensed = [
-        {name: "Adenoviridae", href: "/view/Taxonomy/10508#view_tab=overview"},
-        {name: "Bunyavirales", href: "/view/Taxonomy/1980410#view_tab=overview"},
-        {name: "Coronaviridae", href: "/view/Taxonomy/11118#view_tab=overview"},
-        {name: "Ebolavirus", href: "/view/Taxonomy/186536#view_tab=overview"},
-        {name: "Filoviridae", href: "/view/Taxonomy/11266#view_tab=overview"},
-        {name: "Influenza A virus", href: "/view/Taxonomy/11320#view_tab=overview"},
-        {name: "Paramyxoviridae", href: "/view/Taxonomy/11158#view_tab=overview"},
-        {name: "Pneumoviridae", href: "/view/Taxonomy/11244#view_tab=overview"}
-    ]
+        var virus_condensed = [
+            {name: "Adenoviridae", href: "/view/Taxonomy/10508#view_tab=overview"},
+            {name: "Bunyavirales", href: "/view/Taxonomy/1980410#view_tab=overview"},
+            {name: "Coronaviridae", href: "/view/Taxonomy/11118#view_tab=overview"},
+            {name: "Filoviridae", href: "/view/Taxonomy/11266#view_tab=overview"},
+            {name: "Influenza A virus", href: "/view/Taxonomy/11320#view_tab=overview"},
+            {name: "Paramyxoviridae", href: "/view/Taxonomy/11158#view_tab=overview"},
+            {name: "Pneumoviridae", href: "/view/Taxonomy/11244#view_tab=overview"}
+        ]
 
-    var featured_virus = [
-        {name: "Bacteriophages", href: "/view/GenomeList/?eq(genome_name,phage)"},
-        {name: "Dengue virus", href: "/view/Taxonomy/12637#view_tab=overview"},
-        {name: "Ebolavirus", href: "/view/Taxonomy/186536#view_tab=overview"},
-        {name: "Enterovirus", href: "/view/Taxonomy/12059#view_tab=overview"},
-        {name: "Hepacivirus", href: "/view/Taxonomy/11102#view_tab=overview"},
-        {name: "Influenza A virus", href: "/view/Taxonomy/11320#view_tab=overview"},
-        {name: "Mammarenavirus lassaense", href: "/view/Taxonomy/3052310#view_tab=overview"},
-        {name: "Monkeypox virus", href: "/view/Taxonomy/10244#view_tab=overview"},
-        {name: "SARS-CoV-2", href: "/view/Taxonomy/2697049#view_tab=overview"},
-        {name: "Zika virus", href: "/view/Taxonomy/64320#view_tab=overview"},
-    ]
+        var featured_virus = [
+            {name: "Bacteriophages", href: "/view/GenomeList/?eq(genome_name,phage)"},
+            {name: "Dengue virus", href: "/view/Taxonomy/12637#view_tab=overview"},
+            {name: "Ebolavirus", href: "/view/Taxonomy/186536#view_tab=overview"},
+            {name: "Enterovirus", href: "/view/Taxonomy/12059#view_tab=overview"},
+            {name: "Hepacivirus", href: "/view/Taxonomy/11102#view_tab=overview"},
+            {name: "Influenza A virus", href: "/view/Taxonomy/11320#view_tab=overview"},
+            {name: "Mammarenavirus lassaense", href: "/view/Taxonomy/3052310#view_tab=overview"},
+            {name: "Monkeypox virus", href: "/view/Taxonomy/10244#view_tab=overview"},
+            {name: "SARS-CoV-2", href: "/view/Taxonomy/2697049#view_tab=overview"},
+            {name: "Zika virus", href: "/view/Taxonomy/64320#view_tab=overview"},
+        ]
 
 
-    var servicesMiddle = Math.round(services.length / 2);
-    var virusMiddle = Math.round(virus.length / 2);
-    var virusCondensedMiddle = Math.round(virus_condensed.length / 2);
-    var virusCondensedLen = Math.round(virus_condensed.length);
-    var featuredVirusMiddle = Math.round(featured_virus.length / 2);
-    var subMenuColumnCount = Math.round(services.length / 8);
-    var isProd = request.applicationOptions.appLabel == "";
+        var servicesMiddle = Math.round(services.length / 2);
+        var virusMiddle = Math.round(virus.length / 2);
+        var virusCondensedMiddle = Math.round(virus_condensed.length / 2);
+        var virusCondensedLen = Math.round(virus_condensed.length);
+        var featuredVirusMiddle = Math.round(featured_virus.length / 2);
+        var subMenuColumnCount = Math.round(services.length / 8);
+        var isProd = request.applicationOptions.appLabel == "";
     %>
 
     <div id="bv-brc-header" role="heading" aria-level="1">
@@ -154,28 +154,14 @@
                                             <a class="navigationLink" href="/view/Taxonomy/10239" title="Overview page for all Viruses" style="text-decoration: underline;">All Viruses</a>
                                         </span>
                                     </div>
+                                    <div>
+                                        <span class="menuItem">
+                                            <a class="navigationLink" href="/view/Host/?eq(taxon_lineage_ids,2759)#view_tab=genomes"
+                                            title="Overview page for all Eukaryotic host genomes">Eukaryotic Hosts</a>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-
-                            <!-- <div id="featured-viruses-container">
-                                <div class="navbarMenuHeader">Featured Viruses</div>
-
-                                <div class="menuItems">
-                                    <% for (var i = 0; i < featuredVirusMiddle;i++){ %>
-                                        <div>
-                                            <span class="menuItem half">
-                                                <a class="navigationLink" href="<%- featured_virus[i].href %>" title="<%- featured_virus[i].name %> overview"><%- featured_virus[i].name %></a>
-                                            </span>
-                                            <span class="menuItem half">
-                                                <% if (featured_virus[featuredVirusMiddle + i]) { %>
-                                                    <a class="navigationLink" title="<%- featured_virus[featuredVirusMiddle + i].name %> overview"
-                                                        href="<%- featured_virus[featuredVirusMiddle + i].href %>"><%- featured_virus[featuredVirusMiddle + i].name %></a>
-                                                        <% } %>
-                                            </span>
-                                        </div>
-                                    <% } %>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -230,9 +216,9 @@
                                 <div class="menuItems">
                                     <div><a class="navigationLink" href="/app/MSA">MSA and SNP Analysis</a></div>
                                     <div><a class="navigationLink" href="/app/MetaCATS">Meta-CATS</a></div>
-                                    <!-- <div><a class="navigationLink" href="/app/SeqComparison">Proteome Comparison</a></div> -->
-                                    <div><a class="navigationLink" href="/app/ComparativeSystems">Protein Family Sorter</a></div>
-                                    <div><a class="navigationLink" href="/app/ComparativeSystems">Comparative Systems</a></div>
+                                    <div><a class="navigationLink" href="/app/SeqComparison">Proteome Comparison</a></div>
+                                    <!-- <div><a class="navigationLink" href="/app/ComparativeSystems">Protein Family Sorter</a></div> -->
+                                    <!-- <div><a class="navigationLink" href="/app/ComparativeSystems">Comparative Systems</a></div> -->
                                     <!-- <div><a class="navigationLink" href="/app/Docking">Docking</a></div> -->
                                 </div>
                             </div>
@@ -265,7 +251,7 @@
                                 <div><a class="navigationLink" href="/app/SubspeciesClassification">Subspecies Classification</a></div>
                               </div>
                               <p></p>
-                              <div class="navbarMenuHeader">Outbreak Tracker</div>
+                              <div class="navbarMenuHeader">BV-BRC Outbreak Tracker</div>
                               <div class="menuItems">
                                 <div><b><a class="navigationLink" href="/outbreaks/Mpox/#view_tab=overview">Mpox 2024</a></b></div>
                                 <div><b><a class="navigationLink" href="/outbreaks/H5N1/#view_tab=overview">Influenza H5N1 2024</a></b></div>
@@ -290,8 +276,9 @@
                                             style="color:#333;cursor:normal;"></i>&nbsp;<a
                                                 class="navigationLink" id="YourWorkspaceLink">Workspaces</a></div>
                                     <div id="YourWorkspaces"></div>
-                                    <div><a class="navigationLink" href="/workspace/public">Public Workspaces</a></div>
-                                    <div><a class="navigationLink" href="/workspace/public/ARWattam@patricbrc.org/BV-BRC%20Workshop">BV-BRC Workshop</a></div>
+                                    <!-- TODO: Add 'Projects' link eventually -->
+                                    <!-- <div><a class="navigationLink" href="/workspace/public">Public Workspaces</a></div>  -->
+                                    <!-- <div><a class="navigationLink" href="/workspace/public/ARWattam@patricbrc.org/BV-BRC%20Workshop">BV-BRC Workshop</a></div> -->
                                 </div>
                             </div>
                             <div style="vertical-align:top;display:inline-block" class="ShowWithAuth">
