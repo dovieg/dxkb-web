@@ -39,7 +39,8 @@
     text-align: center;
     font-weight: 600;
     background: #34698E;
-    color: #eee;
+    color: var(--cepi-white);
+    border-radius: 15px;
 }
 
 .menuItems {
@@ -71,7 +72,7 @@
 }
 
 .TopMenuLink .fa {
-    color: #76a72d;
+    color: var(--cepi-yellow);
     font-size: 12px;
     vertical-align: middle;
 }
@@ -91,7 +92,7 @@
     border: 0;
     box-shadow: 0 0 0;
     margin: 0;
-    padding: 0;
+    padding: 0 16px 0 0;
 }
 
 #header-menu {

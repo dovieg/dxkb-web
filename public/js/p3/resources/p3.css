@@ -23,7 +23,8 @@
 @import url("./SearchResults.css");
 @import url("./DataItemFormatter.css");
 @import url("./D3StackedBarChart.css");
-@import url("bv-brc.css");
+/* @import url("bv-brc.css"); */
+@import url("cepi.css");
 @import url("./dlp.css");
 @import url("./help.css");
 @import url("webpage.css");
@@ -43,7 +44,7 @@
 }
 
 .icon-sort-alpha-asc:hover {
-  color: #e75200;
+  color: var(--cepi-malibu);
 }
 
 .bp-reset-element, body, h1, h2, h3, h4, h5, h6, article, aside, details, figcaption, figure,
@@ -78,14 +79,9 @@ body.patric {
     min-width: 320px;
 }
 
-A, A:visited {
-    text-decoration: none;
-    color: #09456f;
-    cursor: pointer;
-}
 A:hover {
     text-decoration: underline;
-    color: #34698e;
+    color: var(--cepi-sapphire);
 }
 
 body.patric *:focus {
@@ -368,7 +364,7 @@ table tr.even td {
 }
 
 .ActionBar {
-    background: #76a72d;
+    background: var(--cepi-yellow);
     border-left: 1px solid #777;
     overflow: hidden;
     padding-top: 6px;
@@ -393,7 +389,7 @@ table tr.even td {
 }
 
 .fa:hover {
-    color: #e75200;
+    color: var(--cepi-malibu);
 }
 
 .tutorialButton > a:hover,
@@ -477,11 +473,15 @@ table tr.even td {
     padding: 4px;
 }
 
-.GlobalSearch .dijitSelect,
+.GlobalSearch .dijitSelect{
+    margin: 0;
+    border: 0;
+    border-radius: 15px;
+}
+
 .GlobalSearch .dijitTextBox {
     margin: 0;
     border: 0;
-    border-radius: 4px;
 }
 
 .GlobalSearch > table {
@@ -490,17 +490,17 @@ table tr.even td {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 15px;
 }
 
 .GlobalSearch {
-    border-radius: 4px;
+    border-radius: 15px;
     background: #fff;
     padding: 0;
 }
 
 body.patric .dijitTabContainerTop-tabs .dijitTabChecked {
-    border-top: 5px solid #629821;
+    border-top: 5px solid var(--cepi-yellow);
     background: #fff none;
     padding-top: 2px;
     transition-duration: 0s;
@@ -715,11 +715,11 @@ div.overview {
 }
 
 .queryModel {
-    color: #76a72d;
+    color: var(--cepi-yellow);
 }
 
 .queryField {
-    color: #34698e;
+    color: var(--navy);
 }
 
 .queryValue {
@@ -777,7 +777,7 @@ div.tooltip {
 }
 
 .red {
-    background: #ff0000;
+    background: var(--cepi-yellow);
 }
 
 .kegg-map-legend-label {
@@ -877,6 +877,30 @@ table {
     padding: 0 5px;
 }
 
+.navbarMenuHeader,
+.section-title {
+	/*
+    background-color: #34698e;
+    color: #efefef;
+    padding: 2px;
+    padding-left: 20px;
+    border-radius: 6px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 2px 2px 2px #555;
+    margin-bottom: 8px;
+	*/
+
+    background: var(--blue-tint);
+    border-radius: 0;
+    text-align: left;
+    box-shadow: none;
+    margin-top: 12px;
+    padding-left: 4px;
+    color: var(--cepi-white);
+    font-weight: 600;
+}
+
 .menuHeader,
 .section-title {
 	/*
@@ -891,7 +915,7 @@ table {
     margin-bottom: 8px;
 	*/
 
-    background: #34598e;
+    background: var(--blue-shade);
     border-radius: 0;
     text-align: left;
     box-shadow: none;
@@ -954,10 +978,16 @@ div.pubmed ul li {
 	padding: 0;
 }
 
+.PerspectiveType {
+    color: var(--cepi-sapphire);
+    font-weight: 600;
+    font-size: 20px;
+}
+
 .patric .PerspectiveQuery .current {
     font-size: 1.1em;
     font-weight: bold;
-    color: #76a72d;
+    color: var(--cepi-yellow);
 }
 
 .patric .PerspectiveTotalCount {
@@ -965,9 +995,9 @@ div.pubmed ul li {
 }
 
 .patric .PerspectiveHeader .PerspectiveIcon.fa {
-    font-size:2.4em;
+    font-size:3.6em;
     float:left;
-    color:#76a72d;
+    color:var(--cepi-yellow);
     margin:4px;
     padding-right: 3px;
 }
