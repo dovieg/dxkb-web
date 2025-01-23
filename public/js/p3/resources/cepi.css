@@ -1094,7 +1094,7 @@
       width: 66.666%;
       float: right;
     }
-  
+
     .column-left,
     .column-right {
       width: 33.333%;
@@ -1222,3 +1222,17 @@
     flex: 1;
     padding: 0 10px;
   }
+
+  /* Select Dropdown Styling */
+  .claro .gs-options-dropdown .dijitSelect .dijitArrowButton {
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  /* Select Dropdown Styling */
+  /* .claro .gs-options-dropdown .dijitSelect .dijitButtonContents {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 12px;
+  } */
