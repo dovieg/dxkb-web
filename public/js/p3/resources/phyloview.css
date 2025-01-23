@@ -1,8 +1,8 @@
 
-.Phylogeny a:link, a:visited {
+/* .Phylogeny a:link, a:visited {
     color:black;
     text-decoration: none;
-}
+} */
 .Phylogeny a:hover {
     color:red;
 }
