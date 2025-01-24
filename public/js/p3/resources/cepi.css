@@ -11,9 +11,10 @@
     --cepi-malibu: #64A1FD;
     --cepi-gray: #BFBFBF;
     --cepi-yellow: #FCA618;
-    --cepi-sand: #FCA618;
+    --cepi-sand: #FCDDA9;
     --cepi-light-blue: #C6DCFD;
     --cepi-light-gray: #E5E5E5;
+    --cepi-light-blue-gray: #d4e5ff9b;
     --cepi-bone: #FCF6ED;
     --cepi-white: #FFFFFF;
 
@@ -50,6 +51,7 @@
     padding: 20px;
     background: var(--main-bg);
     font-family: 'Roboto', sans-serif;
+    /* height: 100%; */
   }
 
   #bv-brc-header {
@@ -411,7 +413,7 @@
 
   #bv-brc-home .bv-brc-bottom-left,
   #bv-brc-home .bv-brc-bottom-right {
-    background-color: var(--blue-light-bg);
+    background-color: var(--cepi-light-blue-gray);
     border-bottom: 3px solid var(--border-gray);
     border-radius: 15px;
     max-width: 200px;
