@@ -55,6 +55,28 @@
     width: 49%;
 }
 
+.menuItem a {
+    color: var(--cepi-sapphire);
+    text-decoration: none;
+}
+
+.menuItem a:hover {
+    color: var(--cepi-malibu);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.menuItems a {
+    color: var(--cepi-sapphire);
+    text-decoration: none;
+}
+
+.menuItems a:hover {
+    color: var(--cepi-malibu);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
 .TopMenuBar .TopMenuLink, .TopMenuBar .TopMenuLink A {
     display: inline;
     margin-right: 8px;

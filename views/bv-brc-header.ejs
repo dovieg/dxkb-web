@@ -151,13 +151,13 @@
                                     <% } %>
                                     <div>
                                         <span class="menuItem">
-                                            <a class="navigationLink" href="/view/Taxonomy/10239" title="Overview page for all Viruses" style="text-decoration: underline;">All Viruses</a>
+                                            <a class="navigationLink" href="/view/Host/?eq(taxon_lineage_ids,2759)#view_tab=genomes"
+                                            title="Overview page for all Eukaryotic host genomes">Eukaryotic Hosts</a>
                                         </span>
                                     </div>
                                     <div>
                                         <span class="menuItem">
-                                            <a class="navigationLink" href="/view/Host/?eq(taxon_lineage_ids,2759)#view_tab=genomes"
-                                            title="Overview page for all Eukaryotic host genomes">Eukaryotic Hosts</a>
+                                            <a class="navigationLink" href="/view/Taxonomy/10239" title="Overview page for all Viruses" style="text-decoration: underline;">All Viruses</a>
                                         </span>
                                     </div>
                                 </div>
@@ -267,7 +267,7 @@
 
                     <div data-dojo-type="p3/widget/TooltipDialog">
                         <div>
-                            <div style="vertical-align: top;width:175px;display:inline-block">
+                            <div class="menuItems" style="vertical-align: top;width:175px;display:inline-block">
                                 <div class="HideWithAuth">
                                     Please <a class="loginLink">sign in</a> to view your workspaces.
                                 </div>
@@ -281,7 +281,7 @@
                                     <!-- <div><a class="navigationLink" href="/workspace/public/ARWattam@patricbrc.org/BV-BRC%20Workshop">BV-BRC Workshop</a></div> -->
                                 </div>
                             </div>
-                            <div style="vertical-align:top;display:inline-block" class="ShowWithAuth">
+                            <div style="vertical-align:top;display:inline-block" class="ShowWithAuth menuItems">
                                 <div>
                                     <a class="navigationLink" href="/job/">My Jobs</a>
                                 </div>
@@ -313,11 +313,11 @@
                         <div data-dojo-type="p3/widget/TooltipDialog">
                             <div>
                                 <div style="vertical-align:top;display:inline-block" class="ShowWithAuth">
-                                    <div>
+                                    <div class="menuItem">
                                         <!-- <a class="navigationLink" href="/job/">My Jobs</a> -->
-                                        <a class="navigationLink" href="/login">Sign In</a>
+                                        <a href="/login">Sign In</a>
                                     </div>
-                                    <div>
+                                    <div  class="menuItem">
                                         <!-- <a class="navigationLink" href="/view/GenomeList/?eq(public,false)">My Genomes</a> -->
                                         <a class="navigationLink" href="/register">Register</a>
                                     </div>
@@ -374,9 +374,9 @@
                                title="Overview page for all Bacteria genomes">All Bacteria</a>
                             <a href="/view/Taxonomy/2157"
                                title="Overview page for all Archea genomes">All Archaea</a> -->
-                            <a href="/view/Taxonomy/10239" title="Overview page for all Viruses">All Viruses</a>
                             <a href="/view/Host/?eq(taxon_lineage_ids,2759)#view_tab=genomes"
                                title="Overview page for all Eukaryotic host genomes">Eukaryotic Hosts</a>
+                            <a href="/view/Taxonomy/10239" title="Overview page for all Viruses">All Viruses</a>
                         </div>
 
                         <!-- <div>
@@ -396,7 +396,7 @@
                                 <div class="sub-menu" style="column-count: <%- subMenuColumnCount %>">
                                     <% for (var i = 0; i < virusCondensedLen;i++){ %>
                                         <span class="sub-menu-items">
-                                            <a class="navigationLink" href="<%- virus_condensed[i].href %>" title="<%- virus_condensed[i].name %> overview"><%- virus_condensed[i].name %></a>
+                                            <a href="<%- virus_condensed[i].href %>" title="<%- virus_condensed[i].name %> overview"><%- virus_condensed[i].name %></a>
                                         </span>
                                     <% } %>
                                 </div>
