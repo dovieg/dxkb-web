@@ -1270,9 +1270,74 @@
   }
 
   /* Select Dropdown Styling */
-  /* .claro .gs-options-dropdown .dijitSelect .dijitButtonContents {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 12px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 12px;
-  } */
+  .claro .topMenuButtonIcon.dijitDropDownButton .dijitButtonNode,
+  .topMenuButtonIcon {
+    background: none;
+    color: #FCA618;
+    font-weight: 500;
+    cursor: pointer;
+    border: 0;
+    box-shadow: 0 0 0;
+    margin: 0;
+    padding: 0 0 0 4px;
+  }
+
+  /* For tiny screens */
+  @media (min-width: 1px) and (max-width: 767px) {
+    #mobile-search-icon {
+      display: block;
+    }
+
+    #p3header-search {
+      display: none;
+    }
+
+    #header-menu {
+      display: none !important;
+    }
+  }
+
+  /* Special case for search bar on the header */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #mobile-search-icon {
+      display: block;
+    }
+
+    #p3header-search {
+      display: none;
+    }
+
+    #header-menu {
+      display: block;
+    }
+  }
+
+  /* Show mobile search icon for medium screens */
+  @media (min-width: 1024px) and (max-width: 1614px) {
+    #mobile-search-icon {
+      display: none;
+    }
+
+    #p3header-search {
+      display: block;
+    }
+
+    #header-menu {
+      display: block;
+    }
+  }
+
+  /* Show regular search for large screens */
+  @media (min-width: 1615px) {
+    #mobile-search-icon {
+      display: none;
+    }
+
+    #p3header-search {
+      display: block;
+    }
+
+    #header-menu {
+      display: block;
+    }
+  }
