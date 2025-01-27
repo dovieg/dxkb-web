@@ -1259,22 +1259,40 @@
     border-top-right-radius: 12px;
   }
 
-  .claro .dijitTooltipDialogPopup {
-    border-bottom-right-radius: 12px;
-    border-top-right-radius: 12px;
-    background-color: var(--white-bg);
-    border: 1px solid var(--border-gray);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .claro .dijitTooltipDialog {
+    margin-top: 15px;
   }
 
-  .claro .dijitTooltipDialog .dijitDialogPaneActionBar {
+  .claro .dijitTooltipDialog .dijitTooltipConnector {
+    /* the arrow piece */
+    /* left: 14px; */
+    margin-top: 15px;
+  }
+
+  .claro .dijitTooltipDialog .dijitTooltipContainer {
     -webkit-border-bottom-right-radius: 20px;
     -webkit-border-bottom-left-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    -moz-border-radius-bottomright: 20px;
-    -moz-border-radius-bottomleft: 20px;
-    margin: 10px -10px -8px;
+    border-top-right-radius: 20px;
+    /* -moz-border-radius-bottomright: 20px;
+    -moz-border-radius-bottomleft: 20px; */
+    /* margin: 10px -10px -8px; */
+    /* background-color: var(--cepi-yellow); */
+  }
+
+  .claro .dijitTooltipDialog .dijitTooltipBelow .dijitTooltipABRight .dijitTooltipContainer {
+    -webkit-border-bottom-right-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -webkit-border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+
+  .claro .dijitTooltipDialog .dijitTooltipContents .dijitTooltipFocusNode {
+    background-color: var(--cepi-malibu);
   }
 
   /* Select Dropdown Styling */
