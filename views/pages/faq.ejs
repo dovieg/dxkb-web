@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>FAQ</title>
+		<%- include('../header') %>
+	</head>
+	<body class="claro patric <% if (request.isAuthenticated && request.isAuthenticated()) { %>Authenticated<% } %>">
+		<div id="ApplicationContainer" data-dojo-type="dijit/layout/BorderContainer" class="layoutContainer" data-dojo-props="id:'ApplicationContainer',gutters:false,liveSplitters:false">
+			<%- include('../bv-brc-header') %>
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="padding:0px;border:0px solid #ddd;background:inherit;">
+                <div id="bv-brc-page">
+                    <div id="bv-brc-page-container">
+                        <div class="page-content faq-content">
+                            <div id="resource-center" style="margin-bottom: 40px;">
+                                <h1 id="faq-header" style="font-weight: 600; color: var(--cepi-sapphire); font-size: x-large;">FAQ</h1>
+                                <h2 id="bioinformatics-faqs" style="font-weight: 600; color: var(--cepi-malibu); font-size: large; margin-bottom: 0;">
+                                    Bioinformatics
+                                </h2>
+                                <hr style="border: 1px solid var(--cepi-malibu); margin: 0 0 10px 0;">
+                                <ul>
+                                    <li><p>
+                                        <strong style="color: var(--cepi-yellow); font-weight: bold;">What is bioinformatics?</strong>
+                                        An interdisciplinary field that combines computer science and biology to analyze and interpret large biological datasets.
+                                    </p></li>
+                                    <li><p>
+                                        <strong style="color: var(--cepi-yellow); font-weight: bold;">Who is funcing this project?</strong>
+                                        DXKB is funded by <a href="https://cepi.net/" target="_blank">CEPI</a>.
+                                    </p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('../bv-brc-footer') %>
+            </div>
+        </div>
+
+		<%- include('../javascript') %>
+	</body>
+</html>

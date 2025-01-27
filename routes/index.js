@@ -91,4 +91,10 @@ router.get('/verify_failure', function (req, res) {
   res.render('pages/verify_failure', { title: 'PATRIC', request: req, response: res });
 });
 
+/* GET FAQ page. */
+router.get('/faq', function (req, res) {
+  req.applicationModule = 'p3/app/p3app';
+  res.render('pages/faq', { title: 'PATRIC', request: req, response: res });
+});
+
 module.exports = router;

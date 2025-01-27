@@ -1011,7 +1011,8 @@
   #bv-brc-page .announcements-content a,
   #bv-brc-page .publications-content a,
   #bv-brc-page .citation-content a,
-  #bv-brc-page .related-resources-content a {
+  #bv-brc-page .related-resources-content a,
+  #bv-brc-page .faq-content a {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
   }
 
