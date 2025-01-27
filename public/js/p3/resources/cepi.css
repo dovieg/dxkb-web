@@ -902,6 +902,8 @@
     padding: 20px 40px;
     background: var(--white-bg);
     flex-basis: 100%;
+    border: 2px solid var(--cepi-yellow);
+    border-radius: 20px;
   }
 
   #bv-brc-page .page-content h1 {
