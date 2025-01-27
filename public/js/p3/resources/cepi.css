@@ -60,16 +60,18 @@
 
   #bv-brc-header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
     padding: 0.5rem 1rem;
+    gap: 1rem; /* Add gap between elements */
   }
 
   #bv-brc-right-header {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    margin-left: auto;
   }
 
   .nav-logo-link {
@@ -79,9 +81,10 @@
   }
 
   .nav-logo {
-    display: flex;
+    flex: 0 0 auto;
+    /* display: flex;
     flex-direction: column;
-    padding-right: 10px;
+    padding-right: 10px; */
     /* justify-content: center; */
   }
 
@@ -736,7 +739,9 @@
   }
 
   #header-menu {
-    display: none;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
   }
 
   #mobile-nav-icon {
@@ -744,7 +749,9 @@
   }
 
   #p3header-search {
-    display: none;
+    /* display: none; */
+    flex: 1;
+    margin-right: 10px;
   }
 
   .authLinks {
@@ -1308,7 +1315,7 @@
     }
 
     #header-menu {
-      display: block;
+      display: none !important;
     }
   }
 
