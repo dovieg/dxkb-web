@@ -858,15 +858,15 @@ table {
 }
 @media screen and (min-width: 1200px){
     .column-prime {
-        width: 47.99%;
+        width: 40%;
         float: left;
     }
     .column-sub {
-        width: 29.99%;
+        width: 30%;
         float: left;
     }
     .column-opt {
-        width: 21.99%;
+        width: 30%;
         float: right;
     }
 }
