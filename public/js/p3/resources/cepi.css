@@ -1270,6 +1270,12 @@ pre.bv-brc-code-block button:active {
   padding: 0 10px;
 }
 
+.bordered-yellow {
+  border: 2px solid var(--cepi-yellow);
+  border-radius: 15px;
+  border-collapse: separate;
+}
+
 /* Select Dropdown Styling */
 .claro .gs-options-dropdown .dijitSelect .dijitArrowButton {
   border-bottom-right-radius: 12px;
