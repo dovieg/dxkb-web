@@ -50,7 +50,7 @@
   margin: 0;
   padding: 20px;
   background: var(--main-bg);
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   /* height: 100%; */
 }
 
@@ -162,18 +162,19 @@
 
 #bv-brc-home p,
 #bv-brc-page p {
-  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
-  font-weight: 300;
+  /* font-family: "Roboto Slab", Arial, Helvetica, sans-serif; */
+  font-weight: 500;
   color: var(--main-text);
+  font-size: 15px;
 }
-
+/*
 @media only screen and (min-width: 768px) {
 
   #bv-brc-home p,
   #bv-brc-page p {
     font-size: 14px;
   }
-}
+} */
 
 #bv-brc-home .home-banner {
   background-color: var(--green-light-bg);
@@ -951,7 +952,8 @@
 }
 
 #bv-brc-page .page-content li {
-  font-size: 14px;
+  font-size: 15px;
+  color: var(--main-text);
 }
 
 #bv-brc-page .searches h3 {
@@ -1268,6 +1270,44 @@ pre.bv-brc-code-block button:active {
 .mid-section {
   flex: 1;
   padding: 0 10px;
+}
+
+#bv-brc-page .page-content .cepi-content-blurb {
+  padding: 10px;
+  margin: 10px auto 10px auto;
+  background-color: var(--cepi-light-blue);
+}
+
+#bv-brc-page .page-content-header {
+  font-weight: 600;
+  color: var(--cepi-sapphire);
+  font-size: xx-large;
+}
+
+#bv-brc-page .page-content-subheader {
+  font-size: x-large;
+  font-weight: 600;
+  color: var(--cepi-malibu);
+  margin-bottom: 0;
+}
+
+#bv-brc-page .page-content-divider {
+  border: 1px solid var(--cepi-malibu);
+  margin: 0 0 10px 0;
+}
+
+#bv-brc-page .page-content-sub-subheader {
+  font-size: 16px;
+  color: var(--cepi-yellow);
+  font-weight: bold;
+}
+
+#bv-brc-page .page-content-sub-subheader p {
+  font-size: 16px;
+}
+
+#bv-brc-page .about-content-list {
+  font-size: 16px;
 }
 
 .bordered-yellow {
