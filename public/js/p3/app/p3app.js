@@ -186,7 +186,7 @@ define([
         newState.value = path;
         newState.set = 'path';
         newState.requireAuth = false;
-        newState.pageTitle = 'Login | BV-BRC';
+        newState.pageTitle = 'Login | DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -201,7 +201,7 @@ define([
         newState.value = '/register'
         newState.set = 'path';
         newState.requireAuth = false;
-        newState.pageTitle = 'Registration | BV-BRC';
+        newState.pageTitle = 'Registration | DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
