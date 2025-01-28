@@ -137,7 +137,8 @@ define([
           var activeQueryState;
 
           // special case for host genomes
-          if ((active == 'features' || active == 'proteins') && this.state && this.state.genome_ids && !this.state.hashParams.filter) {
+          // if ((active == 'features' || active == 'proteins') && this.state && this.state.genome_ids && !this.state.hashParams.filter)
+          if ((active == 'features') && this.state && this.state.genome_ids && !this.state.hashParams.filter) {
             var q = 'in(genome_id,(' + this.state.genome_ids.join(',') + '))&select(taxon_lineage_ids)&limit(' + this.state.genome_ids.length + ')';
             xhr.post(PathJoin(this.apiServiceUrl, 'genome'), {
               headers: {
@@ -242,11 +243,11 @@ define([
         id: this.viewer.id + '_features',
         disabled: false
       });
-      this.proteins = new ProteinGridContainer({
-        title: 'Proteins',
-        id: this.viewer.id + '_proteins',
-        disabled: false
-      });
+      // this.proteins = new ProteinGridContainer({
+      //   title: 'Proteins',
+      //   id: this.viewer.id + '_proteins',
+      //   disabled: true
+      // });
       this.structures = new ProteinStructureGridContainer({
         title: 'Protein Structures',
         id: this.viewer.id + '_structures',
@@ -311,7 +312,7 @@ define([
       this.viewer.addChild(this.amr);
       this.viewer.addChild(this.sequences);
       this.viewer.addChild(this.features);
-      this.viewer.addChild(this.proteins);
+      // this.viewer.addChild(this.proteins);
       this.viewer.addChild(this.structures);
       this.viewer.addChild(this.specialtyGenes);
       this.viewer.addChild(this.proteinFeatures);
