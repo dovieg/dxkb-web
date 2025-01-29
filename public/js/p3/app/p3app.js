@@ -722,20 +722,20 @@ define([
         console.log('loginWithVipr: not logged in yet (?)');
       }
     },
-    uploadJobsWidget: function (action) {
-      if (action === 'show') {
-        // console.log('I want to see the upload and jobs widget');
-        var wsc = new WorkspaceController({ region: 'bottom' });
-        var ac = this.getApplicationContainer();
-        // console.log(ac);
-        var uploadBar = ac.domNode.getElementsByClassName('WorkspaceController');
-        if (uploadBar.length === 0) {
-          ac.addChild(wsc);
-        }
-      } else {
-        console.log('I should not see the upload and jobs widget');
-      }
-    },
+    // uploadJobsWidget: function (action) {
+    //   if (action === 'show') {
+    //     // console.log('I want to see the upload and jobs widget');
+    //     // var wsc = new WorkspaceController({ region: 'bottom' });
+    //     var ac = this.getApplicationContainer();
+    //     // console.log(ac);
+    //     // var uploadBar = ac.domNode.getElementsByClassName('WorkspaceController');
+    //     if (uploadBar.length === 0) {
+    //       ac.addChild(wsc);
+    //     }
+    //   } else {
+    //     console.log('I should not see the upload and jobs widget');
+    //   }
+    // },
     refreshUser: function () {
       return xhr.get(this.userServiceURL + '/user/' + window.localStorage.userid, {
         headers: {
@@ -774,7 +774,7 @@ define([
         localStorage.removeItem('Auserid');
         window.location.assign('/');
         // remove the upload and jobs widget
-        window.App.uploadJobsWidget('hide');
+        // window.App.uploadJobsWidget('hide');
       } else {
         alert('upload is in progress, try Logout again later');
       }
