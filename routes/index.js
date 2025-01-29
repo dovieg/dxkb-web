@@ -67,6 +67,18 @@ router.get('/brc-calendar', function (req, res) {
   res.render('pages/brc-calendar', { title: 'PATRIC', request: req, response: res });
 });
 
+/* GET outreach page. */
+router.get('/contact', function (req, res) {
+  req.applicationModule = 'p3/app/p3app';
+  res.render('pages/contact', { title: 'PATRIC', request: req, response: res });
+});
+
+/* GET outreach page. */
+router.get('/funding', function (req, res) {
+  req.applicationModule = 'p3/app/p3app';
+  res.render('pages/funding', { title: 'PATRIC', request: req, response: res });
+});
+
 /* GET all searches page. */
 router.get('/searches', function (req, res) {
   req.applicationModule = 'p3/app/p3app';
