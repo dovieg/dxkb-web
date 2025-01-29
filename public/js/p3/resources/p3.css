@@ -858,15 +858,15 @@ table {
 }
 @media screen and (min-width: 1200px){
     .column-prime {
-        width: 47.99%;
+        width: 50%;
         float: left;
     }
     .column-sub {
-        width: 29.99%;
+        width: 20%;
         float: left;
     }
     .column-opt {
-        width: 21.99%;
+        width: 30%;
         float: right;
     }
 }
@@ -925,13 +925,13 @@ table {
 
 .section-title span.wrap {
     background: #fff;
-text-transform: capitalize;
-color: #666666;
-font-weight: normal;
-font-family: "Didact Gothic", Arial, Helvetica, sans-serif;
-font-size: 16px;
-line-height: 20px;
-padding: 5px 5px 5px 0;
+    text-transform: capitalize;
+    color: var(--cepi-sapphire);
+    font-weight: bold;
+    font-family: "Didact Gothic", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 5px 5px 5px 0;
 }
 
 .section-title-plain {
@@ -939,16 +939,6 @@ padding: 5px 5px 5px 0;
     font-family: "Didact Gothic", Arial, Helvetica, sans-serif;
     font-size: 1.5em;
     margin-right: 10px;
-}
-.section-title span.wrap {
-    background: #fff;
-    text-transform: capitalize;
-    color: #666666;
-    font-weight: normal;
-    font-family: "Didact Gothic", Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 20px;
-    padding: 5px 5px 5px 0;
 }
 
 .menuHeader {
@@ -984,11 +974,33 @@ div.pubmed ul li {
     font-size: 20px;
 }
 
+.patric .PerspectiveQuery .navigationLink {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--cepi-sapphire);
+}
+
+.patric .PerspectiveQuery .navigationLink:hover {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--cepi-malibu);
+}
+
 .patric .PerspectiveQuery .current {
+    font-family: 'Roboto', Arial, sans-serif;
     font-size: 1.1em;
     font-weight: bold;
     color: var(--cepi-yellow);
 }
+
+.patric .PerspectiveQuery .current:hover {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: -0.00em;
+    color: var(--cepi-malibu);}
 
 .patric .PerspectiveTotalCount {
 	color: #666666;

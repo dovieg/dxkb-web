@@ -89,7 +89,7 @@
 /* reference/representative genome */
 .patric .rgSummaryWidget.SummaryWidget .chartNode,
 .patric .rgSummaryWidget.SummaryWidget .tableNode {
-    min-height: 250px;
+    min-height: 409px;
 }
 
 .patric .rgSummaryWidget.SummaryWidget .field-reference_genome {

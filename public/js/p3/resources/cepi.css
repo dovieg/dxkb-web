@@ -1139,30 +1139,34 @@ pre.bv-brc-code-block button:active {
 
 @media screen and (min-width: 1024px) {
   .column-mid {
-    width: 66.666%;
+    width: 70%;
     float: right;
   }
 
-  .column-left,
   .column-right {
-    width: 33.333%;
+    width: 30%;
+    float: left;
+  }
+
+  .column-left {
+    width: 30%;
     float: left;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .column-mid {
-    width: 52.99%;
+    width: 45%;
     float: left;
   }
 
   .column-left {
-    width: 24.99%;
+    width: 18%;
     float: left;
   }
 
   .column-right {
-    width: 21.99%;
+    width: 37%;
     float: right;
   }
 }
@@ -1316,6 +1320,26 @@ pre.bv-brc-code-block button:active {
   border-collapse: separate;
 }
 
+.section.hidden.overview-section {
+  display: none !important;
+}
+
+.overview-section {
+  display: flex;
+  flex-direction: column;
+  height: auto;        /* Allow height to grow */
+  margin: 10px 5px 20px 5px;
+  border: 1px solid var(--cepi-malibu);
+  border-radius: 15px;
+  overflow: visible;   /* Show all content */
+  padding: 5px 10px 5px 10px !important;
+}
+
+.chartNode {
+  min-height: auto !important;
+  height: auto !important;
+}
+
 /* Select Dropdown Styling */
 .claro .gs-options-dropdown .dijitSelect .dijitArrowButton {
   border-bottom-right-radius: 12px;
@@ -1429,4 +1453,10 @@ pre.bv-brc-code-block button:active {
   #header-menu {
     display: block;
   }
+}
+
+.dijitContentPane,
+.dijitGutterH,
+.dijitTabController {
+  background-color: var(--cepi-bone) !important;
 }
