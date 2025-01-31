@@ -1,8 +1,8 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}" dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-  <div class="appTemplate">
+  <div class="appTemplate page-content" style="margin-top: 40px;">
     <div class="appTitle">
-      <span class="breadcrumb">Services</span>
-      <h3>${applicationLabel}
+      <h1 class="page-content-header">Services</h1>
+      <h2 class="page-content-subheader">${applicationLabel}
         <div name="overview" class="infobox iconbox infobutton dialoginfo">
           <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
         </div>
@@ -12,12 +12,13 @@
         <div class="infobox iconbox videoButton videoInfo">
           <a href="${videoLink}" target="_blank" ><i class="fa icon-play-circle fa-1x" title="click to open the video tutorial"></i></a>
         </div>
-      </h3>
-      <p>
+      </h2>
+      <hr class="page-content-divider" />
+      <p style="font-size: 14px; font-weight: 500;">
         ${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a>, <a href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a> and <a href="${videoLink}" target="_blank">Instructional Video</a>.
       </p>
     </div>
-    <div class="formFieldsContainer">
+    <div class="formFieldsContainer" style="margin-top: 20px;">
       <div style="display: none;">
         <input data-dojo-type="dijit/form/NumberTextBox" value="0" required="false" data-dojo-attach-point="numgenomes" data-dojo-props="constraints:{min:1,max:10}," />
         <input data-dojo-type="dijit/form/NumberTextBox" value="0" required="false" data-dojo-attach-point="numref" data-dojo-props="constraints:{min:0}," />

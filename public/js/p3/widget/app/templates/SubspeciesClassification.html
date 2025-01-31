@@ -1,9 +1,9 @@
 <form dojoAttachPoint="containerNode" class="PanelForm"
     dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-    <div class="appTemplate">
+    <div class="appTemplate page-content" style="margin-top: 40px;">
         <div class="appTitle">
-            <span class="breadcrumb">Services</span>
-            <h3>Subspecies Classification
+            <h1 class="page-content-header">Services</h1>
+            <h2 class="page-content-subheader">Subspecies Classification
                 <div name="overview" class="infobox iconbox infobutton dialoginfo">
                     <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
                 </div>
@@ -12,8 +12,9 @@
                         <i class="fa icon-books fa-1x" title="click to open tutorial"></i>
                     </a>
                 </div>
-            </h3>
-            <p>
+            </h2>
+            <hr class="page-content-divider" />
+            <p style="font-size: 14px; font-weight: 500;">
                 ${applicationDescription} Link to <a href="https://matsen.fhcrc.org/pplacer" target="_blank">pplacer</a>
                 and <a
                     href="https://github.com/cmzmasek/forester/blob/master/forester/java/src/org/forester/application/cladinator.java"
@@ -24,7 +25,7 @@
                     href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a> and <a
                     href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a>.</p>
         </div>
-        <div class="appBox appShadow" style="margin-top:10px">
+        <div class="appBox appShadow" style="margin-top:20px">
             <div class="headerrow">
                 <div style="width:85%;display:inline-block;">
                     <label class="appBoxLabel">Query source</label>
@@ -107,7 +108,7 @@
                         <label class="appBoxLabel">Species</label>
                             <div name="species" class="infobox iconbox infobutton dialoginfo">
                                 <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
-                            </div>                        
+                            </div>
                     </div>
                     <div data-dojo-type="dijit/form/Select" name="virus_type" data-dojo-props="disabled:false"
                         maxHeight="200" style="width:100%" required="true" data-dojo-attach-point="virus_type">
@@ -122,7 +123,7 @@
                             <label class="appBoxLabel">Output Folder</label>
                                 <div name="output-folder" class="infobox iconbox infobutton dialoginfo">
                                     <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
-                                </div>                        
+                                </div>
                         </div>
                         <div data-dojo-type="p3/widget/WorkspaceObjectSelector" name="output_path"
                             data-dojo-attach-point="output_path" style="width:300px" required="true"
@@ -134,7 +135,7 @@
                             <label class="appBoxLabel">Output Name</label>
                                 <div name="output-name" class="infobox iconbox infobutton dialoginfo">
                                     <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
-                                </div>                        
+                                </div>
                             <span class="charError" style="color:red; font-size:8pt; padding-left:10px; font-weight:bold">&nbsp;</span><br>
                         </div>
                         <div data-dojo-type="p3/widget/WorkspaceFilenameValidationTextBox" name="output_file"
@@ -147,29 +148,29 @@
             </table>
             <div class="warning" data-dojo-attach-point="database_message"></div>
         </div>
-    </div>
-    <div class="appSubmissionArea">
-        <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage"
-            style="margin-top:10px; text-align:center;">
-            Submitting Subspecies Classification job
-        </div>
-        <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage"
-            style="margin-top:10px; text-align:center;">
-            Error submitting job
-        </div>
-        <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage"
-            style="margin-top:10px; text-align:center;">
-            Your job has been submitted successfully. Please visit your <a
-                data-dojo-attach-event="onclick:openJobsList"><u>Jobs List</u> </a>to check the status of your job and
-            access the results.
-        </div>
-        <div style="margin-top: 10px; text-align:center;">
-            <div data-dojo-attach-point="cancelButton" data-dojo-attach-event="onClick:onCancel"
-                data-dojo-type="dijit/form/Button">Cancel
+        <div class="appSubmissionArea">
+            <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage"
+                style="margin-top:10px; text-align:center;">
+                Submitting Subspecies Classification job
             </div>
-            <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset
+            <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage"
+                style="margin-top:10px; text-align:center;">
+                Error submitting job
             </div>
-            <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit
+            <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage"
+                style="margin-top:10px; text-align:center;">
+                Your job has been submitted successfully. Please visit your <a
+                    data-dojo-attach-event="onclick:openJobsList"><u>Jobs List</u> </a>to check the status of your job and
+                access the results.
+            </div>
+            <div style="margin-top: 10px; text-align:center;">
+                <div data-dojo-attach-point="cancelButton" data-dojo-attach-event="onClick:onCancel"
+                    data-dojo-type="dijit/form/Button">Cancel
+                </div>
+                <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset
+                </div>
+                <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit
+                </div>
             </div>
         </div>
     </div>

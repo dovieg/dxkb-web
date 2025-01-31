@@ -1,9 +1,9 @@
 <form dojoAttachPoint="containerNode" class="PanelForm"
     dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-    <div class="appTemplate">
+    <div class="appTemplate page-content" style="margin-top: 40px;">
         <div class="appTitle">
-            <span class="breadcrumb">Services</span>
-            <h3>${applicationLabel}
+            <h1 class="page-content-header">Services</h1>
+            <h2 class="page-content-subheader">${applicationLabel}
                 <div name="overview" class="infobox iconbox infobutton dialoginfo">
                     <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
                 </div>
@@ -15,15 +15,16 @@
                     <a href="${videoLink}" target="_blank"><i class="fa icon-play-circle fa-1x"
                             title="click to open the video tutorial"></i></a>
                 </div>
-            </h3>
-            <p>
+            </h2>
+            <hr class="page-content-divider" />
+            <p style="font-size: 14px; font-weight: 500;">
                 ${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a
                     href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a>, <a
                     href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a> and <a href="${videoLink}"
                     target="_blank">Instructional Video</a>.
             </p>
         </div>
-        <div id="Program_box" style="width:97%;" class="appBox appShadow">
+        <div id="Program_box" style="width:97%; margin-top: 20px;" class="appBox appShadow">
             <div class="headerrow">
                 <label class="appBoxLabel">Search program</label>
                 <div name="search-program" class="infobox iconbox infobutton dialoginfo">

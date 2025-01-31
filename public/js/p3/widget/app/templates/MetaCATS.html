@@ -1,9 +1,9 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}"
   dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-  <div class="appTemplate">
+  <div class="appTemplate page-content" style="margin-top: 40px;">
     <div class="appTitle">
-      <span class="breadcrumb">Services</span>
-      <h3>${applicationLabel}
+      <h1 class="page-content-header">Services</h1>
+      <h2 class="page-content-subheader">${applicationLabel}
         <div name="overview" class="infobox iconbox infobutton dialoginfo">
           <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
         </div>
@@ -15,12 +15,13 @@
           <a href="${docsServiceURL}${videoLink}" target="_blank"><i class="fa icon-play-circle fa-1x"
               title="click to open the video tutorial"></i></a>
         </div> -->
-      </h3>
-      <p>${applicationDescription} For further explanation, please see ${applicationLabel} Service <a
+      </h2>
+      <hr class="page-content-divider" />
+      <p style="font-size: 14px; font-weight: 500;">${applicationDescription} For further explanation, please see ${applicationLabel} Service <a
           href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a> and <a
           href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a>.</p>
     </div>
-    <div class="formFieldsContainer">
+    <div class="formFieldsContainer" style="margin-top: 20px;">
       <div style="display: none;">
         <input data-dojo-type="dijit/form/NumberTextBox" value="0" required="false" data-dojo-attach-point="numgenomes"
           data-dojo-props="constraints:{min:0,max:5000}," />
@@ -77,7 +78,7 @@
                       <label class="appBoxLabel">Input</label>
                         <div name="input-options" class="infobox iconbox infobutton dialoginfo">
                         <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
-                        </div>                 
+                        </div>
                     </div>
                     <div class="appRow">
                       <input type="radio" id="${id}_radio3" data-dojo-type="dijit/form/RadioButton"

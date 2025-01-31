@@ -1,8 +1,8 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}" dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit">
-  <div class="appTemplate">
+  <div class="appTemplate page-content" style="margin-top: 40px;">
     <div class="appTitle">
-      <span class="breadcrumb">Services</span>
-      <h3>${applicationLabel}
+      <h1 class="page-content-header">Services</h1>
+      <h2 class="page-content-subheader">${applicationLabel}
         <div name="overview" class="infobox iconbox infobutton dialoginfo">
           <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
         </div>
@@ -12,13 +12,12 @@
         <div class="infobox iconbox videoButton videoInfo">
           <a href="${videoLink}" target="_blank" ><i class="fa icon-play-circle fa-1x" title="click to open the video tutorial"></i></a>
         </div>
-      </h3>
-      <p>
-        ${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a>, <a href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a> and <a href="${videoLink}" target="_blank">Instructional Video</a>.
-      </p>
+      </h2>
+      <hr class="page-content-divider" />
+      <p style="font-size: 14px; font-weight: 500;">${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a>, <a href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a> and <a href="${videoLink}" target="_blank">Instructional Video</a>.</p>
     </div>
-    <div class="formFieldsContainer">
-      <div id="startWithBox" style="width:400px;" class="appBox appShadow">
+    <div class="formFieldsContainer" style="margin-top: 20px;">
+      <div id="startWithBox" style="width:705px;" class="appBox appShadow">
         <div class="headerrow">
           <label class="appBoxLabel">Start With:</label>
           <div name="start-with" class="infobox iconbox infobutton dialoginfo">
@@ -81,7 +80,7 @@
             </div>
           </td>
           <td>
-            <div class="appBox appShadow" style="height:230px; width:330px">
+            <div class="appBox appShadow" style="height:230px; width:310px">
               <div class="headerrow">
                 <label class="appBoxLabel">Selected libraries</label>
                 <div name="selected-libraries" class="infobox iconbox infobutton tooltipinfo">
@@ -115,7 +114,7 @@
             </div>
         </div>
       </div>
-      <div id="parameterBox" style="width:400px; " class="appBox appShadow">
+      <div id="parameterBox" style="width:400px;" class="appBox appShadow">
         <div class="headerrow">
           <div style="width:85%;display:inline-block;">
             <label class="appBoxLabel">Parameters</label>
