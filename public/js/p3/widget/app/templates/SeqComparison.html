@@ -1,5 +1,5 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}" dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-  <div class="appTemplate page-content" style="margin-top: 40px;">
+  <div class="appTemplate page-content" style="margin-top: 40px; margin-bottom: 40px;">
     <div class="appTitle">
       <h1 class="page-content-header">Services</h1>
       <h2 class="page-content-subheader">${applicationLabel}
@@ -147,20 +147,21 @@
         </tr>
       </table>
     </div>
-  </div>
-  <div class="appSubmissionArea">
-    <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage" style="margin-top:10px; text-align:center;">
-      Comparing Genomes
-    </div>
-    <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage" style="margin-top:10px; text-align:center;">
-      Error Submitting Job. Please check the submission form and make sure that ONE reference genome is selected.
-    </div>
-    <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage" style="margin-top:10px; text-align:center;">
-      Proteome Comparison should be finished shortly. Check workspace for results.
-    </div>
-    <div style="margin-top: 10px; text-align:center;">
-      <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset</div>
-      <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit</div>
+
+    <div class="appSubmissionArea">
+      <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage" style="margin-top:10px; text-align:center;">
+        Comparing Genomes
+      </div>
+      <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage" style="margin-top:10px; text-align:center;">
+        Error Submitting Job. Please check the submission form and make sure that ONE reference genome is selected.
+      </div>
+      <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage" style="margin-top:10px; text-align:center;">
+        Proteome Comparison should be finished shortly. Check workspace for results.
+      </div>
+      <div style="margin-top: 10px; text-align:center;">
+        <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset</div>
+        <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit</div>
+      </div>
     </div>
   </div>
 </form>

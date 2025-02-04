@@ -1,5 +1,5 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}" dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit">
-  <div class="appTemplate page-content" style="margin-top: 40px;">
+  <div class="appTemplate page-content" style="margin-top: 40px; margin-bottom: 40px;">
     <div class="appTitle">
       <h1 class="page-content-header">Services</h1>
       <h2 class="page-content-subheader">${applicationLabel}
@@ -153,10 +153,6 @@
             <label class="paramlabel">Output Name</label><span class="charError" style="color:red; font-size:8pt; padding-left:10px; font-weight:bold">&nbsp;</span><br>
             <div data-dojo-type="p3/widget/WorkspaceFilenameValidationTextBox" data-dojo-attach-event="onChange:checkOutputName" name="output_file" data-dojo-attach-point="output_file" style="width:300px" required="true" data-dojo-props="intermediateChanges:true,missingMessage:'Name must be provided for the job result',trim:true,placeHolder:'Output Name'"></div>
           </div>
-<!--           <div class="appFieldLong" style="width:380px">
-            <label class="paramlabel">Output Name</label><br>
-            <div data-dojo-attach-point="output_nameWidget" style="width:380px; background-color:#F0F1F3" data-dojo-type="p3/widget/WorkspaceFilenameValidationTextBox" name="output_file" required="true" data-dojo-props="readOnly: true, promptMessage:'The output name for your Annotation Results',missingMessage:'Output Name must be provided.',trim:true,placeHolder:'Output Name'"></div>
-          </div> -->
         </div>
         <div class="appRow">
           <label class="paramlabel">Genome Group Name</label><br>

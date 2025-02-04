@@ -1,6 +1,6 @@
 <form dojoAttachPoint="containerNode" class="PanelForm"
     dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-    <div class="appTemplate page-content" style="margin-top: 40px;">
+    <div class="appTemplate page-content" style="margin-top: 40px; margin-bottom: 40px;">
         <div class="appTitle">
             <h1 class="page-content-header">Services</h1>
             <h2 class="page-content-subheader">${applicationLabel}
@@ -288,33 +288,34 @@
                 <div class="clear"></div>
             </div>
         </div>
-    </div>
-    <div class="appSubmissionArea">
-        <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage"
-            style="margin-top:10px; text-align:center;">
-            Submitting Homology job
-        </div>
-        <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage"
-            style="margin-top:10px; text-align:center;">
-            Error submitting job
-        </div>
-        <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage"
-            style="margin-top:10px; text-align:center;">
-            Your job has been submitted successfully. Please visit your <a
-                data-dojo-attach-event="onclick:openJobsList"><u>Jobs List</u> </a>to check the status of your job and
-            access the results.
-        </div>
-        <div style="margin-top: 10px; text-align:center;">
-            <div data-dojo-attach-point="cancelButton" data-dojo-attach-event="onClick:onCancel"
-                data-dojo-type="dijit/form/Button">Cancel
+
+        <div class="appSubmissionArea">
+            <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage"
+                style="margin-top:10px; text-align:center;">
+                Submitting Homology job
             </div>
-            <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset
+            <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage"
+                style="margin-top:10px; text-align:center;">
+                Error submitting job
             </div>
-            <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit
+            <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage"
+                style="margin-top:10px; text-align:center;">
+                Your job has been submitted successfully. Please visit your <a
+                    data-dojo-attach-event="onclick:openJobsList"><u>Jobs List</u> </a>to check the status of your job and
+                access the results.
             </div>
-            <div id="${id}_live_job_check123" value=true data-dojo-type="dijit/form/CheckBox" checked
-                data-dojo-attach-point="live_job" data-dojo-attach-event="onChange:setLiveJob"></div>
-            <label for="${id}_live_job_check123">View results</label>
+            <div style="margin-top: 10px; text-align:center;">
+                <div data-dojo-attach-point="cancelButton" data-dojo-attach-event="onClick:onCancel"
+                    data-dojo-type="dijit/form/Button">Cancel
+                </div>
+                <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset
+                </div>
+                <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit
+                </div>
+                <div id="${id}_live_job_check123" value=true data-dojo-type="dijit/form/CheckBox" checked
+                    data-dojo-attach-point="live_job" data-dojo-attach-event="onChange:setLiveJob"></div>
+                <label for="${id}_live_job_check123">View results</label>
+            </div>
         </div>
     </div>
 </form>
