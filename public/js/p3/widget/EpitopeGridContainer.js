@@ -52,10 +52,12 @@ define([
           const primaryKey = _self.primaryKey
           const currentQuery = _self.grid.get('query')
           const authToken = (window.App.authorizationToken) ? `&http_authorization=${encodeURIComponent(window.App.authorizationToken)}` : ''
-          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})`
+          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})&select(epitope_id,epitope_type,epitope_sequence,organism,taxon_id,protein_name,protein_id,protein_accession,start,end,total_assays,bcell_assays,tcell_assays,mhc_assays,comments,date_inserted)`
 
           on(downloadTT.domNode, 'div:click', function (evt) {
             const typeAccept = evt.target.attributes.rel.value
+
+            console.log('QRY:', query);
 
             const baseUrl = `${PathJoin(window.App.dataServiceURL, dataType)}/?${authToken}&http_accept=${typeAccept}&http_download=true`
 

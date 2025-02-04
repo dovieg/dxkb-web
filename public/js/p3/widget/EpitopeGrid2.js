@@ -43,8 +43,21 @@ define([
       mhc_assays: { label: 'MHC Assays', field: 'mhc_assays', hidden: false },
 
       comments: { label: 'Comments', field: 'comments', hidden: true },
+      date_added: { label: 'Date Added', field: 'date_inserted', hidden: false, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
     },
     startup: function () {
+
       var _self = this;
       this.on('.dgrid-content .dgrid-row:dblclick', function (evt) {
         var row = _self.row(evt);
