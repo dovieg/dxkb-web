@@ -243,37 +243,14 @@ define([
         id: this.viewer.id + '_features',
         disabled: false
       });
-      /*
-       this.proteins = new ProteinGridContainer({
-         title: 'Proteins',
-         id: this.viewer.id + '_proteins',
-         disabled: true
-       });
-       */
       this.structures = new ProteinStructureGridContainer({
         title: 'Protein Structures',
         id: this.viewer.id + '_structures',
         disabled: false
       });
-      this.specialtyGenes = new SpecialtyGeneGridContainer({
-        title: 'Specialty Genes',
-        id: this.viewer.id + '_specialtyGenes',
-        disabled: false,
-        state: this.state
-      });
       this.proteinFeatures = new ProteinFeaturesGridContainer({
         title: 'Domains and Motifs',
         id: this.viewer.id + '_proteinFeatures',
-        disabled: false
-      });
-      this.pathways = new PathwayGridContainer({
-        title: 'Pathways',
-        id: this.viewer.id + '_pathways',
-        disabled: false
-      });
-      this.subsystems = new SubsystemGridContainer({
-        title: 'Subsystems',
-        id: this.viewer.id + '_subsystems',
         disabled: false
       });
       this.experiments = new ExperimentsContainer({
@@ -314,13 +291,9 @@ define([
       this.viewer.addChild(this.amr);
       this.viewer.addChild(this.sequences);
       this.viewer.addChild(this.features);
-      // this.viewer.addChild(this.proteins);
       this.viewer.addChild(this.structures);
-      this.viewer.addChild(this.specialtyGenes);
       this.viewer.addChild(this.proteinFeatures);
       this.viewer.addChild(this.epitope);
-      this.viewer.addChild(this.pathways);
-      this.viewer.addChild(this.subsystems);
       this.viewer.addChild(this.experiments);
       this.viewer.addChild(this.interactions);
       this.viewer.addChild(this.surveillance);

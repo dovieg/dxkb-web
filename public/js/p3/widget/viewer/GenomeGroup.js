@@ -146,23 +146,9 @@ define([
         disabled: false,
         state: this.state
       });
-/*
-      this.proteins = new ProteinGridContainer({
-        title: 'Proteins',
-        id: this.viewer.id + '_proteins',
-        disabled: false,
-        state: this.state
-      });
-*/
       this.proteinStructures = new ProteinStructureGridContainer({
         title: 'Protein Structures',
         id: this.viewer.id + '_proteinStructures',
-        disabled: false,
-        state: this.state
-      });
-      this.specialtyGenes = new SpecialtyGeneGridContainer({
-        title: 'Specialty Genes',
-        id: this.viewer.id + '_specialtyGenes',
         disabled: false,
         state: this.state
       });
@@ -170,21 +156,6 @@ define([
         title: 'Domains and Motifs',
         id: this.viewer.id + '_proteinFeatures',
         disabled: false,
-        state: this.state
-      });
-      // this.proteinFamilies = new ProteinFamiliesContainer({
-      //   title: 'Protein Families',
-      //   id: this.viewer.id + '_proteinFamilies',
-      //   state: this.state
-      // });
-      this.pathways = new PathwayGridContainer({
-        title: 'Pathways',
-        id: this.viewer.id + '_pathways',
-        state: this.state
-      });
-      this.subsystems = new SubsystemGridContainer({
-        title: 'Subsystems',
-        id: this.viewer.id + '_subsystems',
         state: this.state
       });
       this.experiments = new ExperimentsContainer({
@@ -218,13 +189,8 @@ define([
       this.viewer.addChild(this.amr);
       this.viewer.addChild(this.sequences);
       this.viewer.addChild(this.features);
-//      this.viewer.addChild(this.proteins);
       this.viewer.addChild(this.proteinStructures);
-      this.viewer.addChild(this.specialtyGenes);
       this.viewer.addChild(this.proteinFeatures);
-      // this.viewer.addChild(this.proteinFamilies);
-      this.viewer.addChild(this.pathways);
-      this.viewer.addChild(this.subsystems);
       this.viewer.addChild(this.experiments);
       this.viewer.addChild(this.interactions);
       this.viewer.addChild(this.epitope);
@@ -241,10 +207,7 @@ define([
     changeToViruses: function () {
       this.viewer.removeChild(this.amr)
       this.viewer.removeChild(this.sequences)
-      this.viewer.removeChild(this.specialtyGenes);
       this.viewer.removeChild(this.proteinFamilies);
-      this.viewer.removeChild(this.pathways);
-      this.viewer.removeChild(this.subsystems);
       this.viewer.removeChild(this.experiments);
       this.viewer.removeChild(this.interactions);
     },
