@@ -150,12 +150,13 @@ define([
         id: this.viewer.id + '_features',
         disabled: false
       });
-
+/*
       this.proteins = new ProteinGridContainer({
         title: 'Proteins',
         id: this.viewer.id + '_proteins',
         disabled: false
       });
+*/
       this.specialtyGenes = new SpecialtyGeneGridContainer({
         title: 'Specialty Genes',
         id: this.viewer.id + '_specialtyGenes',
@@ -191,7 +192,7 @@ define([
       this.viewer.addChild(this.sequences);
       this.viewer.addChild(this.amr);
       this.viewer.addChild(this.features);
-      this.viewer.addChild(this.proteins);
+//      this.viewer.addChild(this.proteins);
       this.viewer.addChild(this.specialtyGenes);
       // this.viewer.addChild(this.proteinFamilies);
       this.viewer.addChild(this.pathways);

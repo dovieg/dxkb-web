@@ -330,13 +330,13 @@ define([
         title: 'Features',
         id: this.viewer.id + '_features'
       });
-
+/*
       this.proteins = new ProteinGridContainer({
         title: 'Proteins',
         id: this.viewer.id + '_proteins',
         disabled: false
       });
-
+*/
       this.structures = new ProteinStructureGridContainer({
         title: 'Protein Structures',
         id: this.viewer.id + '_structures'
@@ -402,7 +402,7 @@ define([
       this.viewer.addChild(this.circular);
       this.viewer.addChild(this.sequences);
       this.viewer.addChild(this.features);
-      this.viewer.addChild(this.proteins);
+//      this.viewer.addChild(this.proteins);
       this.viewer.addChild(this.structures);
       this.viewer.addChild(this.specialtyGenes);
       this.viewer.addChild(this.proteinFeatures);

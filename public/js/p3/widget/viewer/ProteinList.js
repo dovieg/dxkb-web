@@ -137,12 +137,14 @@ define([
         id: this.viewer.id + '_overview'
       });
 
+/*
       this.proteins = new ProteinGridContainer({
         title: 'Proteins',
         id: this.viewer.id + '_features',
         tooltip: 'Proteins tab contains a list of all proteins (e.g., CDS, rRNA, tRNA, etc.) associated with a given Phylum, Class, Order, Family, Genus, Species or Genome.',
         disabled: false
       });
+*/
 
       this.compareRegionViewer = new CompareRegionContainer({
         title: 'Compare Region Viewer',
@@ -152,7 +154,7 @@ define([
 
 
       this.viewer.addChild(this.overview);
-      this.viewer.addChild(this.proteins);
+//      this.viewer.addChild(this.proteins);
       this.viewer.addChild(this.compareRegionViewer);
     },
 
