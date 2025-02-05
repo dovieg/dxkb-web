@@ -243,11 +243,13 @@ define([
         id: this.viewer.id + '_features',
         disabled: false
       });
-      // this.proteins = new ProteinGridContainer({
-      //   title: 'Proteins',
-      //   id: this.viewer.id + '_proteins',
-      //   disabled: true
-      // });
+      /*
+       this.proteins = new ProteinGridContainer({
+         title: 'Proteins',
+         id: this.viewer.id + '_proteins',
+         disabled: true
+       });
+       */
       this.structures = new ProteinStructureGridContainer({
         title: 'Protein Structures',
         id: this.viewer.id + '_structures',
