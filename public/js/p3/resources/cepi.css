@@ -1524,3 +1524,30 @@ pre.bv-brc-code-block button:active {
   page-break-inside: avoid;
   line-height: 1.5;
 }
+
+.page-content-subheader a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  font-family: inherit;
+  line-height: inherit;
+  margin: inherit;
+  padding: inherit;
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-content-subheader a .icon-external-link {
+  color: inherit;
+  font-size: inherit;
+  opacity: 1;
+  scale: 0.65;
+}
+
+.page-content-subheader a:hover,
+.page-content-subheader a:hover .icon-external-link {
+  color: var(--cepi-sapphire);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
