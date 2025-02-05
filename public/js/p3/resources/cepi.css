@@ -1457,6 +1457,26 @@ pre.bv-brc-code-block button:active {
   background-color: var(--cepi-bone) !important;
 }
 
+.dijitTabPane, .dijitStackContainer-child, .dijitAccordionContainer-child {
+  background-color: var(--cepi-white) !important;
+}
+
 .dgrid-scroller {
   background-color: var(--cepi-white);
+}
+
+#dijit_layout_TabContainer_0_compareRegionViewer .dijitContentPane {
+  background-color: var(--cepi-white) !important;
+}
+
+/* #dijit_layout_BorderContainer_0 .dijitContentPane  {
+  background-color: var(--cepi-white) !important;
+} */
+
+/* div[id^='dijit_layout_ContentPane'] {
+  background-color: var(--cepi-white) !important;
+} */
+
+.dijitContentPane {
+  background-color: var(--cepi-bone) !important;
 }

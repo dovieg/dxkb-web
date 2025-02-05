@@ -188,7 +188,16 @@ table.librarytable td > i {
 }
 
 .claro .dijitDialogTitleBar {
-    background-color: var(--cepi-light-blue-gray);
+    background-color: var(--cepi-light-blue);
+    background-image: none;
+    border: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.claro .dijitDialogPaneContent {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .appBox {
