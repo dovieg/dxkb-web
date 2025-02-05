@@ -288,6 +288,7 @@ table tr.even td {
 .claro .dijitDialog {
     perspective: 2000px;
     -webkit-perspective: 2000px;
+    border-radius: 15px;
 }
 
 .claro .flippableDialog.dijitDialog {
@@ -314,7 +315,9 @@ table tr.even td {
     -webkit-transform-style: preserve-3d;
     -webkit-transition: transform 1s;
     position: relative;
+    border-radius: 15px;
 }
+
 
 .claro .dijitDialog .backpaneTitleBar,
 .claro .dijitDialog .dijitDialogTitleBar,

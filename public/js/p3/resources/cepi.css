@@ -14,7 +14,7 @@
   --cepi-sand: #FCDDA9;
   --cepi-light-blue: #C6DCFD;
   --cepi-light-gray: #E5E5E5;
-  --cepi-light-blue-gray: #d4e5ff9b;
+  --cepi-light-blue-gray: #b5d2fd3c;
   --cepi-bone: #FCF6ED;
   --cepi-white: #FFFFFF;
 
@@ -899,7 +899,7 @@
 }
 
 /* Static Pages */
-#bv-brc-page .page-content {
+.page-content {
   padding: 20px 40px;
   background: var(--white-bg);
   flex-basis: 100%;
@@ -907,29 +907,29 @@
   border-radius: 20px;
 }
 
-#bv-brc-page .page-content h1 {
+.page-content h1 {
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
-#bv-brc-page .page-content h3 {
+.page-content h3 {
   color: var(--main-text-light) !important;
   background-color: var(--cepi-malibu);
   padding: 5px;
 }
 
-#bv-brc-page .page-content a {
+.page-content a {
   font-weight: 300;
   color: var(--main-link)
 }
 
-#bv-brc-page .page-content ul,
-#bv-brc-page .page-content ol {
+.page-content ul,
+.page-content ol {
   padding: 0px 10px 10px 10px;
   list-style-type: none;
 }
 
-#bv-brc-page .page-content li {
+.page-content li {
   font-size: 15px;
   color: var(--main-text);
 }
@@ -1454,5 +1454,29 @@ pre.bv-brc-code-block button:active {
 .dijitContentPane,
 .dijitGutterH,
 .dijitTabController {
+  background-color: var(--cepi-bone) !important;
+}
+
+.dijitTabPane, .dijitStackContainer-child, .dijitAccordionContainer-child {
+  background-color: var(--cepi-white) !important;
+}
+
+.dgrid-scroller {
+  background-color: var(--cepi-white);
+}
+
+#dijit_layout_TabContainer_0_compareRegionViewer .dijitContentPane {
+  background-color: var(--cepi-white) !important;
+}
+
+/* #dijit_layout_BorderContainer_0 .dijitContentPane  {
+  background-color: var(--cepi-white) !important;
+} */
+
+/* div[id^='dijit_layout_ContentPane'] {
+  background-color: var(--cepi-white) !important;
+} */
+
+.dijitContentPane {
   background-color: var(--cepi-bone) !important;
 }

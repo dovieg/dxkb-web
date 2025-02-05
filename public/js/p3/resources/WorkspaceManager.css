@@ -19,6 +19,7 @@
 .WSBrowserHeader {
 	display: flex;
 	justify-content: space-between;
+	background-color: var(--cepi-bone);
 }
 
 a.HelpLink {
@@ -35,7 +36,7 @@ a.HelpLink:hover {
   text-decoration: underline;
 }
 a.HelpLink:active {
-  color: #09456f;
+	color: #09456f;
 }
 
 .wsBreadCrumbContainer {
@@ -62,8 +63,9 @@ a.HelpLink:active {
 	top: 2px;
 }
 .wsBreadCrumb .perspective {
-	color: #333;
+	color: var(--cepi-yellow);
 }
+
 
 .wsActionTooltip {
 	padding: 2px;
@@ -455,10 +457,11 @@ th.dgrid-cell.wsItemMembers {
 }
 
 .selectedDest{
-	background: #366998;
+	background: var(--cepi-sapphire);
     color: #fff;
 	padding: 3px 5px;
 }
+
 
 .dataItemSelection,
 .workspaceItemSelection,

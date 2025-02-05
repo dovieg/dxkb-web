@@ -1,23 +1,24 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}" dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-  <div class="appTemplate">
+  <div class="appTemplate page-content" style="margin-top: 40px; margin-bottom: 40px;">
     <div class="appTitle">
-      <span class="breadcrumb">Services</span>
-      <h3>${applicationLabel}
+      <h1 class="page-content-header">Services</h1>
+      <h2 class="page-content-subheader">${applicationLabel}
         <div name="overview" class="infobox iconbox infobutton dialoginfo">
           <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
         </div>
         <div class="infobox iconbox tutorialButton tutorialInfo">
-          <a href="${docsServiceURL}${tutorialLink}" target="_blank" ><i class="fa icon-books fa-1x" title="click to open tutorial"></i></a>
+          <a href="${docsServiceURL}${tutorialLink}" target="_blank"><i class="fa icon-books fa-1x" title="click to open tutorial"></i></a>
         </div>
         <div class="infobox iconbox videoButton videoInfo">
-          <a href="${videoLink}" target="_blank" ><i class="fa icon-play-circle fa-1x" title="click to open the video tutorial"></i></a>
+          <a href="${videoLink}" target="_blank"><i class="fa icon-play-circle fa-1x" title="click to open the video tutorial"></i></a>
         </div>
-      </h3>
-      <p>
+      </h2>
+      <hr class="page-content-divider" />
+      <p style="font-size: 14px; font-weight: 500;">
         ${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a>, <a href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a> and <a href="${videoLink}" target="_blank">Instructional Video</a>.
       </p>
     </div>
-    <div class="formFieldsContainer">
+    <div class="formFieldsContainer" style="margin-top: 20px;">
       <div style="display: none;">
         <input data-dojo-type="dijit/form/NumberTextBox" value="0" required="false" data-dojo-attach-point="numgenomes" data-dojo-props="constraints:{min:1,max:5000}," />
         <input data-dojo-type="dijit/form/NumberTextBox" value="0" required="false" data-dojo-attach-point="numref" data-dojo-props="constraints:{min:0}," />
@@ -40,9 +41,9 @@
                       <div class="appsublabel">Choose fasta file or features for tree.</div>
                     </div>
                     <div class="appRow">
-                      <input type="radio" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="dna" name="alphabet" value="DNA" checked data-dojo-attach-event="onChange:onAlphabetChanged"/>
+                      <input type="radio" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="dna" name="alphabet" value="DNA" checked data-dojo-attach-event="onChange:onAlphabetChanged" />
                       <label for="radio1" style="font-size:8pt">DNA</label>
-                      <input type="radio" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="protein" name="alphabet" value="Protein"/>
+                      <input type="radio" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="protein" name="alphabet" value="Protein" />
                       <label for="radio2" style="font-size:8pt">Protein</label>
                     </div>
                     <div class="dijitHidden">
@@ -181,82 +182,82 @@
         </tr>
         <tr>
           <td>
-              <div class="appRow" style="text-align:center">
-                  <div class="appRowSegment" data-dojo-attach-point="advanced">
-                      <label class="largelabel">Metadata options</label>
-                      <div class="iconbox" style="margin-left:0">
-                          <i data-dojo-attach-point="advancedOptionIcon" class="fa icon-caret-down fa-1"></i>
-                      </div>
-                  </div>
+            <div class="appRow" style="text-align:center">
+              <div class="appRowSegment" data-dojo-attach-point="advanced">
+                <label class="largelabel">Metadata options</label>
+                <div class="iconbox" style="margin-left:0">
+                  <i data-dojo-attach-point="advancedOptionIcon" class="fa icon-caret-down fa-1"></i>
+                </div>
               </div>
+            </div>
           </td>
         </tr>
         <!-- Settings row -->
-  <tr>
-    <td>
-      <div id="settingsBox" class="appBox appShadow" style="display:none;" data-dojo-attach-point="advancedOptions">
-        <table>
-          <tr>
-            <td>
-              <div class="headerrow">
-                <div style="width:85%;display:inline-block;">
-                  <label class="appBoxLabel">Metadata Table</label>
-                </div>
-                <br>
-                <div class="appsublabel">These fields will appear as options in the phyloxml visualization</div>
-              </div>
-            </td>
-            <td>
+        <tr>
+          <td>
+            <div id="settingsBox" class="appBox appShadow" style="display:none;" data-dojo-attach-point="advancedOptions">
+              <table>
+                <tr>
+                  <td>
+                    <div class="headerrow">
+                      <div style="width:85%;display:inline-block;">
+                        <label class="appBoxLabel">Metadata Table</label>
+                      </div>
+                      <br>
+                      <div class="appsublabel">These fields will appear as options in the phyloxml visualization</div>
+                    </div>
+                  </td>
+                  <td>
 
-            </td>
-            <td rowspan="2">
-              <div>
-                <label class="paramlabel">Metadata Table:</label>
-              </div>
-              <div class="left half">
-                <table class="librarytable" frame="box" data-dojo-attach-point="metadataTableBody" style='width:330px;'>
-                    <tbody data-dojo-attach-point="metadataTableBody"></tbody>
-                </table>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label class="paramlabel">Metadata Fields:</label>
-              <div name="metadata_selector" class="medInput">
-                <select data-dojo-attach-point="metadata_selector"
-                  data-dojo-type="dijit/form/Select" name="metadata_selector" required="false" data-dojo-attach-event="onChange:checkMoreOptions">
-                </select>
-              </div>
-            </td>
-            <td>
-              <div style="width:17px; display:inline-block;">
-                <i data-dojo-attach-event="click:onAddMetadata" class="fa icon-arrow-circle-o-right fa-lg"></i>
-              </div>
-            </td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-    </td>
-  </tr>
+                  </td>
+                  <td rowspan="2">
+                    <div>
+                      <label class="paramlabel">Metadata Table:</label>
+                    </div>
+                    <div class="left half">
+                      <table class="librarytable" frame="box" data-dojo-attach-point="metadataTableBody" style='width:330px;'>
+                        <tbody data-dojo-attach-point="metadataTableBody"></tbody>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="paramlabel">Metadata Fields:</label>
+                    <div name="metadata_selector" class="medInput">
+                      <select data-dojo-attach-point="metadata_selector" data-dojo-type="dijit/form/Select" name="metadata_selector" required="false" data-dojo-attach-event="onChange:checkMoreOptions">
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div style="width:17px; display:inline-block;">
+                      <i data-dojo-attach-event="click:onAddMetadata" class="fa icon-arrow-circle-o-right fa-lg"></i>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
       </table>
     </div>
-  </div>
-  <div class="appSubmissionArea">
-    <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage" style="margin-top:10px; text-align:center;">
-      Creating Tree
-    </div>
-    <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage" style="margin-top:10px; text-align:center;">
-      Error Submitting Job. Please check the submission form and make sure that ONE reference genome is selected.
-    </div>
-    <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage"
-      style="margin-top:10px; text-align:center;" >
-      Your job has been submitted successfully. Please visit your <a data-dojo-attach-event="onclick:openJobsList"><u>Jobs List</u> </a>to check the status of your job and access the results.
-    </div>
-    <div style="margin-top: 10px; text-align:center;">
-      <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset</div>
-      <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit</div>
+
+    <div class="appSubmissionArea">
+      <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage" style="margin-top:10px; text-align:center;">
+        Creating Tree
+      </div>
+      <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage" style="margin-top:10px; text-align:center;">
+        Error Submitting Job. Please check the submission form and make sure that ONE reference genome is selected.
+      </div>
+      <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage"
+        style="margin-top:10px; text-align:center;" >
+        Your job has been submitted successfully. Please visit your <a data-dojo-attach-event="onclick:openJobsList"><u>Jobs List</u> </a>to check the status of your job and access the results.
+      </div>
+      <div style="margin-top: 10px; text-align:center;">
+        <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset</div>
+        <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit</div>
+      </div>
     </div>
   </div>
 </form>
