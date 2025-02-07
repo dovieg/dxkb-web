@@ -35,6 +35,18 @@ define([
       treatment_amount: { label: 'Treatment Amount', field: 'treatment_amount', hidden: false },
       treatment_duration: { label: 'Treatment Duration', field: 'treatment_duration', hidden: false },
       result_count: { label: 'Result Count', field: 'entity_count', hidden: false },
+      date_added: { label: 'Date Added', field: 'date_inserted', hidden: false, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
     },
     startup: function () {
       const _self = this;

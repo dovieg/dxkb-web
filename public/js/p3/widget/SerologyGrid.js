@@ -48,7 +48,18 @@ define([
       serotype: { label: 'Serotype', field: 'serotype', hidden: false },
 
       comments: { label: 'Comments', field: 'comments', hidden: true },
-      date_inserted: { label: 'Date Inserted', field: 'date_inserted', hidden: true },
+      date_added: { label: 'Date Inserted', field: 'date_inserted', hidden: false, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
       date_updated: { label: 'Date Updated', field: 'date_updated', hidden: true },
     },
     startup: function () {

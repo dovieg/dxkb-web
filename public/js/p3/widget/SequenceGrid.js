@@ -40,8 +40,30 @@ define([
       sequence_md5: { label: 'Sequence MD5', field: 'sequence_md5', hidden: true },
       release_date: { label: 'Release Date', field: 'release_date', hidden: true },
       version: { label: 'Version', field: 'version', hidden: true },
-      date_inserted: { label: 'Date Inserted', field: 'date_inserted', hidden: true },
-      date_modified: { label: 'Date Modified', field: 'date_modified', hidden: true }
+      date_inserted: { label: 'Date Inserted', field: 'date_inserted', hidden: false, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
+      date_modified: { label: 'Date Modified', field: 'date_modified', hidden: true, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
     },
     startup: function () {
       var _self = this;

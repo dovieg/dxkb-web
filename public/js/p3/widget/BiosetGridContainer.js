@@ -13,7 +13,7 @@ define([
     dataModel: 'bioset',
     getFilterPanel: function (opts) {
     },
-    query: '&keyword(*)',
+    query: '&keyword(*)&select(exp_id,date_inserted)',
     containerActions: GridContainer.prototype.containerActions.concat([
     ])
   });

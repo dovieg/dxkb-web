@@ -58,11 +58,7 @@ define([
       this.viewer.addChild(this.phylogeny, 1);
       this.viewer.addChild(this.amr, 4);
       this.viewer.addChild(this.sequences, 5)
-      this.viewer.addChild(this.specialtyGenes, 8);
       // this.viewer.addChild(this.proteinFamilies, 10);
-      this.viewer.addChild(this.pathways, 11);
-      this.viewer.addChild(this.subsystems, 12);
-      // this.viewer.addChild(this.transcriptomics, 13);
       this.viewer.addChild(this.interactions, 14);
     },
 
@@ -70,11 +66,6 @@ define([
       this.viewer.removeChild(this.phylogeny);
       this.viewer.removeChild(this.amr);
       this.viewer.removeChild(this.sequences);
-      this.viewer.removeChild(this.specialtyGenes);
-      // this.viewer.removeChild(this.proteinFamilies);
-      this.viewer.removeChild(this.pathways);
-      this.viewer.removeChild(this.subsystems);
-      // this.viewer.removeChild(this.transcriptomics);
       this.viewer.removeChild(this.interactions);
     },
 
