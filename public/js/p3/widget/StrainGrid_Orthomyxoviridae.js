@@ -61,6 +61,18 @@ define([
       // s_m: { label: 'M', field: 'm', hidden: true },
       // s_l: { label: 'L', field: 'l', hidden: true },
       s_other_segments: { label: 'Other Segments', field: 'other_segments', hidden: false },
+      date_added: { label: 'Date Added', field: 'date_inserted', hidden: false, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
     },
     startup: function () {
       var _self = this;

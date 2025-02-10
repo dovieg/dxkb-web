@@ -63,7 +63,7 @@ define([
           const totalRows = grid.totalRows;
           const currentQuery = `in(exp_id,(${_self.eids.join(',')}))`;
           const authToken = (window.App.authorizationToken) ? `&http_authorization=${encodeURIComponent(window.App.authorizationToken)}` : ''
-          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})`
+          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})&select(exp_id,study_name,study_title,exp_name,exp_title,public_identifier,exp_type,biosets,organism,strain,treatment_type,treatment_name,treatment_amount,treatment_duration,date_inserted)`
 
           on(downloadTT.domNode, 'div:click', function (evt) {
             const typeAccept = evt.target.attributes.rel.value

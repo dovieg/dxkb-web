@@ -567,7 +567,7 @@ define(['./formatter'], function (formatter) {
     date_inserted: {
       label: 'Date Inserted',
       field: 'date_inserted',
-      hidden: true,
+      hidden: false,
       formatter: formatter.dateOnly,
       group: 'Additional Info'
     },

@@ -47,7 +47,19 @@ define([
       segments: { label: 'Segments', field: 'segments', hidden: true },
       length: { label: 'Length', field: 'length', hidden: true },
       sequence: { label: 'Sequence', field: 'sequence', hidden: true },
-      comments: { label: 'Comments', field: 'comments', hidden: true }
+      comments: { label: 'Comments', field: 'comments', hidden: true },
+      date_added: { label: 'Date Added', field: 'date_inserted', hidden: false, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
     },
     startup: function () {
       var _self = this;

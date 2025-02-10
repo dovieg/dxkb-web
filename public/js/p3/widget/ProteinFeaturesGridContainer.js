@@ -52,7 +52,7 @@ define([
           const primaryKey = _self.primaryKey
           const currentQuery = _self.grid.get('query')
           const authToken = (window.App.authorizationToken) ? `&http_authorization=${encodeURIComponent(window.App.authorizationToken)}` : ''
-          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})`
+          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})&select(id,genome_id,genome_name,taxon_id,feature_id,patric_id,refseq_locus_tag,aa_sequence_md5,gene,product,interpro_id,interpro_description,feature_type,source,source_id,description,classification,score,e_value,evidence,publication,start,end,segments,length,sequence,comments,date_inserted)`
 
           on(downloadTT.domNode, 'div:click', function (evt) {
             const typeAccept = evt.target.attributes.rel.value

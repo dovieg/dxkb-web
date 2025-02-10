@@ -47,6 +47,18 @@ define([
       authors: { label: 'Authors', field: 'authors', hidden: true },
       release_date: { label: 'Release Date', field: 'release_date', hidden: false },
       file_path: { label: 'File Path', field: 'file_path', hidden: true },
+      date_added: { label: 'Date Added', field: 'date_inserted', hidden: false, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
     },
     startup: function () {
       var _self = this;

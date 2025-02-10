@@ -52,7 +52,7 @@ define([
           const primaryKey = _self.primaryKey
           const currentQuery = _self.grid.get('query')
           const authToken = (window.App.authorizationToken) ? `&http_authorization=${encodeURIComponent(window.App.authorizationToken)}` : ''
-          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})`
+          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})&select(project_identifier,contributing_institution,sample_identifier,host_identifier,host_type,host_species,host_common_name,host_sex,host_age,host_age_group,host_health,collection_country,collection_state,collection_city,collection_date,collection_year,test_type,test_result,test_interpretation,serotype,comments,date_inserted)`
 
           on(downloadTT.domNode, 'div:click', function (evt) {
             const typeAccept = evt.target.attributes.rel.value

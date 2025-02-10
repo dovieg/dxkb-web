@@ -67,8 +67,19 @@ define([
       aa_sequence_md5: { label: 'AA Sequence MD5', field: 'aa_sequence_md5', hidden: true },
 
       gene: { label: 'Gene Symbol', field: 'gene', hidden: false },
+      date_added: { label: 'Date Added', field: 'date_inserted', hidden: false, formatter: function(value) {
+        if (value) {
+          const newDate = new Date(value);
+          const newDateFormatted = newDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+            });
+            value = newDateFormatted;
+          }
+        return value;
+      } },
       product: { label: 'Product', field: 'product', hidden: false },
-
       plfam_id: { label: 'PATRIC Local Family', field: 'plfam_id', hidden: true },
       pgfam_id: { label: 'PATRIC Global Family', field: 'pgfam_id', hidden: true },
       sog_id: { label: 'SOG ID', field: 'sog_id', hidden: true },
