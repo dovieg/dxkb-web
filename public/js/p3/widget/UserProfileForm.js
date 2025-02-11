@@ -29,7 +29,7 @@ define([
       }
     },
     onEmailChanged: function(evt){
-      console.log('onEmailChainged"')
+      console.log('onEmailChanged"')
       this.fieldChanged(evt);
       console.log('this.emailField.value: ', this.emailField.value, this.emailField)
       console.log("this.userprofileStored: ", this.userprofileStored);
