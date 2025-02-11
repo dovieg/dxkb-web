@@ -117,7 +117,7 @@
 .selectedList {
 	padding: 0;
 	white-space: nowrap;
-	background: #ffcb00;
+	background: var(--cepi-yellow);
 	color: #333;
 	text-align: center;
 	min-height: 21px;

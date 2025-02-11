@@ -1012,6 +1012,11 @@
   float: right;
 }
 
+#bv-brc-page .teams div {
+  justify-content: space-between;
+}
+
+
 #bv-brc-page .contact-content a,
 #bv-brc-page .announcements-content a,
 #bv-brc-page .publications-content a,
@@ -1323,11 +1328,13 @@ pre.bv-brc-code-block button:active {
 .overview-section {
   display: flex;
   flex-direction: column;
-  height: auto;        /* Allow height to grow */
+  height: auto;
+  /* Allow height to grow */
   margin: 10px 5px 20px 5px;
   border: 1px solid var(--cepi-malibu);
   border-radius: 15px;
-  overflow: visible;   /* Show all content */
+  overflow: visible;
+  /* Show all content */
   padding: 5px 10px 5px 10px !important;
 }
 
@@ -1352,7 +1359,7 @@ pre.bv-brc-code-block button:active {
   margin-top: 15px;
 }
 
-.claro .dijitTooltipDialog .dijitTooltipContainer {
+.claro .dijitTooltipABLeft .dijitTooltipContainer {
   -webkit-border-bottom-right-radius: 20px;
   -webkit-border-bottom-left-radius: 20px;
   -webkit-border-top-right-radius: 20px;
@@ -1365,7 +1372,7 @@ pre.bv-brc-code-block button:active {
   /* background-color: var(--cepi-yellow); */
 }
 
-.claro .dijitTooltipDialog .dijitTooltipBelow .dijitTooltipABRight .dijitTooltipContainer {
+.claro .dijitTooltipABRight .dijitTooltipContainer {
   -webkit-border-bottom-right-radius: 20px;
   -webkit-border-bottom-left-radius: 20px;
   -webkit-border-top-left-radius: 20px;
@@ -1457,7 +1464,9 @@ pre.bv-brc-code-block button:active {
   background-color: var(--cepi-bone) !important;
 }
 
-.dijitTabPane, .dijitStackContainer-child, .dijitAccordionContainer-child {
+.dijitTabPane,
+.dijitStackContainer-child,
+.dijitAccordionContainer-child {
   background-color: var(--cepi-white) !important;
 }
 
@@ -1479,4 +1488,66 @@ pre.bv-brc-code-block button:active {
 
 .dijitContentPane {
   background-color: var(--cepi-bone) !important;
+}
+
+.team-members-list {
+  column-count: 1;
+  column-gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+  column-fill: auto;
+  max-height: 220px;
+}
+
+/* Switch to 2 columns when list has more than 8 members */
+.team-members-list:has(li:nth-child(9)) {
+  column-count: 2;
+  max-height: 220px;
+}
+
+/* Switch to 3 columns when list has more than 16 members */
+.team-members-list:has(li:nth-child(17)) {
+  column-count: 3;
+  max-height: 220px;
+}
+
+/* Switch to 4 columns when list has more than 24 members */
+.team-members-list:has(li:nth-child(25)) {
+  column-count: 4;
+  max-height: 220px;
+}
+
+.team-members-list li {
+  break-inside: avoid;
+  margin-bottom: 0.25rem;
+  display: block;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+
+.page-content-subheader a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  font-family: inherit;
+  line-height: inherit;
+  margin: inherit;
+  padding: inherit;
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-content-subheader a .icon-external-link {
+  color: inherit;
+  font-size: inherit;
+  opacity: 1;
+  scale: 0.65;
+}
+
+.page-content-subheader a:hover,
+.page-content-subheader a:hover .icon-external-link {
+  color: var(--cepi-sapphire);
+  transition: color 0.2s ease;
+  text-decoration: none;
 }

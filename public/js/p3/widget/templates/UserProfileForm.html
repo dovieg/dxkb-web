@@ -9,12 +9,14 @@
         <span style="color:red;">*</span>= required
       </div>
     </div>
-    <div data-dojo-attach-point="brcAds" class="" style="padding:8px;margin:8px;font-size:1em;border:1px solid #333;">
-      <h3>DXKB vs. BV-BRC login</h3>
+
+    <div data-dojo-attach-point="brcAds" class="" style="padding:8px;margin:8px;font-size:1em;border:1px solid #333;background-color: var(--cepi-white);">
+      <h3>DXKB & BV-BRC Logins</h3>
       <p style="margin-bottom:8px;">For your convenience, DXKB uses the same login system as <a href="https://www.bv-brc.org" target="_blank">BV-BRC</a>. If you already have a BV-BRC account, you can use it to <a href="/login">login</a> to DXKB. If not, you can set up an account on this page.  Your DXKB account login will also be valid on the BV-BRC website.</p>
     </div>
-      <div class="" data-dojo-attach-point="mainForm" style="max-width:580px; display:block; border: 1px solid gray;margin:4px;margin-top: 28px;margin-bottom:28px; padding:4px;padding-top:8px;">
-      <span style="position:relative;top: -17px; border: none; background: #fff;padding: 4px; color: #333;font-weight:600;">Identification</span>
+
+    <div class="" data-dojo-attach-point="mainForm" style="max-width:580px; display:block; border: 1px solid gray;margin:4px;margin-top: 28px;margin-bottom:28px; padding:4px;padding-top:8px;">
+      <span style="position:relative; border: none; padding: 4px; color: #333;font-weight:600;">Identification</span>
       <table style="border-spacing:0">
         <tbody>
             <tr>
@@ -32,6 +34,7 @@
 
               </td>
             </tr>
+
             <tr data-dojo-attach-point="verification_message" class="dijitHidden">
               <td colspan="3">
                 <div data-dojo-attach-point="verification_message_inner" class="verification_message_inner"><p><i class="user_profile_warning_icon icon-warning" style="color:orange;"></i>This email address has not been verified. This may prevent you from resetting your password or reporting errors.  Click "resend" to resend the validation email. Alterneatively, you may update your email address and then click "Update Profile" below, which will automatically send you a new verification email. </p></div>
@@ -47,12 +50,14 @@
             <tr><td style="width:15%;text-align:right;vertical-align:top;"><span style="color:red;">*</span> Last Name:</td><td><div data-dojo-type="dijit/form/ValidationTextBox" style="width:100%" name="last_name" value="" data-dojo-attach-point="lname" data-dojo-props="placeholder:'Last Name',promptMessage:'Enter your last name', intermediateChanges: true" data-dojo-attach-event="onChange: fieldChanged" required="true"></div></td></tr>
             <tr><td style="width:15%;text-align:right;vertical-align:top;">Organization:</td><td colspan="2"><div style="width:100%" data-dojo-type="dijit/form/TextBox" name="affiliation" value=""></div></td></tr>
             <tr><td style="width:15%;text-align:right;vertical-align:top;">Organisms:</td><td colspan="2"><div name="organisms" data-dojo-type="dijit/form/Textarea" value=""></div></td></tr>
-            <tr><td style="width:15%;text-align:right;vertical-align:top;">Interests:</td><td colspan="2"><div rows="5" name="interests" style="height:75px;max-width:99%" data-dojo-type="dijit/form/SimpleTextarea" value=""></div></td></tr>
+            <tr><td style="width:15%;text-align:right;vertical-align:top;">Interests:</td><td colspan="2"><div rows="5" name="interests" style="height:75px;max-width:99%;resize:vertical;" data-dojo-type="dijit/form/SimpleTextarea" value=""></div></td></tr>
           </tbody>
       </table>
       <p class="HideWithAuth">Click <a href="https://lists.bv-brc.org/mailman/listinfo/all-users" target="_blank">HERE</a> to sign up for the BV-BRC mailing list.</p>
+      <!-- TODO: Add DXKB mailing list signup -->
       <p class="HideWithAuth">Click <a href="" target="_blank">HERE</a> to sign up for the DXKB mailing list.</p>
     </div>
+
     <div class="" data-dojo-attach-point="setPasswordForm" style="max-width:580px; display:block; border: 1px solid gray;margin:4px;margin-top: 28px;margin-bottom:28px; padding:4px;padding-top:8px;">
       <span style="position:relative;top: -17px; border: none; background: #fff;padding: 4px; color: #333;font-weight:600;">Set Password</span>
       <table>
@@ -69,8 +74,9 @@
       </table>
       <div data-dojo-attach-point="password_error" style="color:red; margin-top:20px;display:none"><p>The passwords must match</p></div>
     </div>
-    <div data-dojo-attach-point="notificationsContainer">
-    </div>
+
+    <div data-dojo-attach-point="notificationsContainer"></div>
+
     <div style="max-width: 580px;margin:4px;margin-top: 28px;">
       <div class="upSubmit" style="" data-dojo-attach-point="udProfButton" type="submit" value="Submit" data-dojo-type="dijit/form/Button">Update Profile</div>
       <div class="newSubmit" style="display:none" data-dojo-attach-point="submitButton" type="submit" value="Submit" data-dojo-type="dijit/form/Button">Register</div>
@@ -78,6 +84,7 @@
         <p class="regFormErrors" style="color:red"></p>
       </div>
     </div>
+
     <div class="regMessage dijitHidden" data-dojo-attach-point="regMessage" style="margin:4px;margin-top:16px;padding:4px;font-size:1.1em;">
       <p style="color: green;font-size:1.1em;margin-bottom: 12px;">
           Your registration has been received. An email has been sent containing the remainder of the registration process.
