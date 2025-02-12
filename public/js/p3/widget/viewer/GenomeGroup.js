@@ -99,7 +99,7 @@ define([
       }
 
       if (activeTab) {
-        const pageTitle = 'Genome Group ' + activeTab.title + ' | BV-BRC';
+        const pageTitle = 'Genome Group ' + activeTab.title + ' | DXKB';
         if (window.document.title !== pageTitle) {
           window.document.title = pageTitle;
         }

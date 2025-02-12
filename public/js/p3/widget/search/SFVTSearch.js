@@ -33,7 +33,7 @@ define([
   return declare([SearchBase], {
     templateString: template,
     searchAppName: 'Sequence Feature Variant Type (SFVT) Search - BETA',
-    pageTitle: 'Sequence Feature Variant Type Search | BV-BRC',
+    pageTitle: 'Sequence Feature Variant Type Search | DXKB',
     dataKey: 'genome_feature',
     resultUrlBase: '/view/Taxonomy/{taxon_id}?',
     resultUrlHash: '#view_tab=sfvt',

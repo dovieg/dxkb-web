@@ -23,7 +23,7 @@ define([
   return declare([SearchBase], {
     templateString: template,
     searchAppName: 'Pathway Search',
-    pageTitle: 'Pathway Search | BV-BRC',
+    pageTitle: 'Pathway Search | DXKB',
     dataKey: 'pathway',
     resultUrlBase: '/view/PathwayList/?',
     resultUrlHash: '#view_tab',

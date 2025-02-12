@@ -23,7 +23,7 @@ define([
   return declare([SearchBase], {
     templateString: template,
     searchAppName: 'Epitope Search',
-    pageTitle: 'Epitope Search | BV-BRC',
+    pageTitle: 'Epitope Search | DXKB',
     dataKey: 'epitope',
     resultUrlBase: '/view/EpitopeList/?',
     resultUrlHash: '#view_tab=epitope',

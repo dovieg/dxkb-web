@@ -111,7 +111,7 @@ define([
       }
       // console.log(active, this.state);
       if (activeTab) {
-        var pageTitle = 'Protein List ' + activeTab.title + '| BV-BRC';
+        var pageTitle = 'Protein List ' + activeTab.title + '| DXKB';
         // console.log("Feature List: ", pageTitle);
         if (window.document.title !== pageTitle) {
           window.document.title = pageTitle;

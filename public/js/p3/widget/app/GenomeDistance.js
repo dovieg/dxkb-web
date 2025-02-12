@@ -19,7 +19,7 @@ define([
     applicationLabel: 'Similar Genome Finder',
     applicationDescription: 'The Similar Genome Finder Service will find similar public genomes in BV-BRC or compute genome distance estimation using Mash/MinHash. It returns a set of genomes matching the specified similarity criteria.',
     videoLink: 'https://youtu.be/hZu2qK5TcgU',
-    pageTitle: 'Similar Genome Finder Service | BV-BRC',
+    pageTitle: 'Similar Genome Finder Service | DXKB',
     appBaseURL: '',
     applicationHelp: 'quick_references/services/similar_genome_finder_service.html',
     tutorialLink: 'tutorial/similar_genome_finder/similar_genome_finder.html',

@@ -20,7 +20,7 @@ define([
     applicationDescription: 'The Model Reconstruction Service integrates and augments technologies for genome annotation, construction of gene-protein-reaction (GPR) associations, generation of biomass reactions, reaction network assembly, thermodynamic analysis of reaction reversibility, and model optimization, to generate draft genome-scale metabolic models. The service is capable of generating functioning draft metabolic models of an organism starting from an assembled genome sequence.',
     applicationHelp: 'quick_references/services/model_reconstruction_service.html',
     tutorialLink: 'tutorial/metabolic_model_reconstruction/metabolic_model_reconstruction.html',
-    pageTitle: 'Reconstruct Metabolic Model',
+    pageTitle: 'Reconstruct Metabolic Model | DXKB',
     required: true,
     code_four: false,
     constructor: function () {

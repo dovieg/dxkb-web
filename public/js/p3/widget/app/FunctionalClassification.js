@@ -14,7 +14,7 @@ define([
 
   return declare([AppBase], {
     baseClass: 'App Assembly2',
-    pageTitle: 'Functional Classification Service',
+    pageTitle: 'Functional Classification Service | DXKB',
     templateString: Template,
     applicationName: 'FunctionalClassification',
     requireAuth: true,

@@ -23,7 +23,7 @@ define([
     applicationHelp: 'quick_references/services/proteome_comparison_service.html',
     tutorialLink: 'tutorial/proteome_comparison/proteome_comparison.html',
     videoLink: 'https://youtu.be/UJak-ifQ9FE',
-    pageTitle: 'Proteome Comparison Service | BV-BRC',
+    pageTitle: 'Proteome Comparison Service | DXKB',
     defaultPath: '',
     startingRows: 9,
     maxGenomes: 9,

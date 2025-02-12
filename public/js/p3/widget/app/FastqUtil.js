@@ -25,7 +25,7 @@ define([
     applicationHelp: 'quick_references/services/fastq_utilities_service.html',
     tutorialLink: 'tutorial/fastq_utilities/fastq_utilities.html',
     videoLink: 'https://youtube.com/playlist?list=PLWfOyhOW_Oas1LLS2wRlWzilruoSxVeJw',
-    pageTitle: 'Fastq Utilities Service | BV-BRC',
+    pageTitle: 'Fastq Utilities Service | DXKB',
     libraryData: null,
     defaultPath: '',
     startingRows: 16,

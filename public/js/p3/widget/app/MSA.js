@@ -23,7 +23,7 @@ define([
     applicationHelp: 'quick_references/services/msa_snp_variation_service.html',
     tutorialLink: 'tutorial/msa_snp_variation/msa_snp_variation.html',
     videoLink: 'https://youtu.be/ea6GboAZPQs',
-    pageTitle: 'Multiple Sequence Alignment & SNP / Variation Analysis Service | BV-BRC',
+    pageTitle: 'Multiple Sequence Alignment & SNP / Variation Analysis Service | DXKB',
     appBaseURL: 'MSA',
     defaultPath: '',
     startingRows: 14,

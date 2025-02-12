@@ -24,7 +24,7 @@ define([
     applicationName: 'ComparativeSystems',
     applicationHelp: 'quick_references/services/comparative_systems.html',
     tutorialLink: 'tutorial/comparative_systems/comparative_systems.html',
-    pageTitle: 'Comparative Systems Service | BV-BRC',
+    pageTitle: 'Comparative Systems Service | DXKB',
     libraryData: null,
     defaultPath: '',
     startingRows: 8,
