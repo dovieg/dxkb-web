@@ -25,7 +25,7 @@ define([
     applicationHelp: 'quick_references/services/rna_seq_analysis_service.html',
     tutorialLink: 'tutorial/rna_seq/rna_seq.html',
     videoLink: 'https://youtu.be/kEhdQJ2o-tI',
-    pageTitle: 'RNA-Seq Analysis Service | BV-BRC',
+    pageTitle: 'RNA-Seq Analysis Service | DXKB',
     libraryData: null,
     defaultPath: '',
     startingRows: 18,

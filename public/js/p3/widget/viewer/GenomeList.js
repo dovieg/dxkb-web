@@ -71,7 +71,7 @@ define([
       activeTab.set('state', activeQueryState)
 
       if (activeTab) {
-        var pageTitle = 'Genome List ' + activeTab.title + ' | BV-BRC';
+        var pageTitle = 'Genome List ' + activeTab.title + ' | DXKB';
         if (window.document.title !== pageTitle) {
           window.document.title = pageTitle;
         }

@@ -14,7 +14,7 @@ define([
 
   return declare([AppBase], {
     baseClass: 'ComprehensiveGenomeAnalysis',
-    pageTitle: 'Comprehensive Genome Analysis Service | BV-BRC',
+    pageTitle: 'Comprehensive Genome Analysis Service | DXKB',
     templateString: Template,
     applicationName: 'ComprehensiveGenomeAnalysis',
     requireAuth: true,

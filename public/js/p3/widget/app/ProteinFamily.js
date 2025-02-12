@@ -20,7 +20,7 @@ define([
     applicationHelp: 'quick_references/services/protein_family_service.html',
     tutorialLink: 'tutorial/protein_family_sorter/protein_family_sorter.html',
     videoLink: '',
-    pageTitle: 'Protein Family Sorter',
+    pageTitle: 'Protein Family Sorter | DXKB',
     libraryData: null,
     defaultPath: '',
     startingRows: 8,

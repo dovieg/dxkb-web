@@ -20,7 +20,7 @@ define([
         'by the user before submitting the sequences to the Genbank.',
     videoLink: '',
     templateFolderURL: 'https://www.bv-brc.org/workspace/BVBRC@patricbrc.org/BV-BRC%20Templates',
-    pageTitle: 'Sequence Submission Service | BV-BRC',
+    pageTitle: 'Sequence Submission Service | DXKB',
     appBaseURL: 'Sequence Submission',
     templateString: Template,
     applicationName: 'SequenceSubmission',

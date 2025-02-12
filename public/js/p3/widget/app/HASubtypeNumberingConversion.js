@@ -39,7 +39,7 @@ define([
   return declare([AppBase], {
     baseClass: 'HASubtypeNumberingConversion',
     requireAuth: true,
-    pageTitle: 'HA Subtype Numbering Conversion | BV-BRC',
+    pageTitle: 'HA Subtype Numbering Conversion | DXKB',
     appBaseURL: 'HA Subtype Numbering Conversion',
     templateString: Template,
     applicationName: 'HASubtypeNumberingConversion',
