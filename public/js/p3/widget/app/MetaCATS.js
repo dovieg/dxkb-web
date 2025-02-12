@@ -19,7 +19,7 @@ define([
     applicationHelp: 'quick_references/services/metacats.html',
     tutorialLink: 'tutorial/metacats/metacats.html',
     videoLink: '',
-    pageTitle: 'MetaCATS Service | BV-BRC',
+    pageTitle: 'MetaCATS Service | DXKB',
     appBaseURL: 'MetaCATS',
     startingRows: 10,
     maxGroups: 10,

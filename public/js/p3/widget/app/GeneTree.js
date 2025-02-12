@@ -23,7 +23,7 @@ define([
     applicationHelp: 'quick_references/services/genetree.html',
     tutorialLink: 'tutorial/genetree/genetree.html',
     videoLink: 'https://youtu.be/VtXWBRSdXRo',
-    pageTitle: 'Gene Tree Service | BV-BRC',
+    pageTitle: 'Gene Tree Service | DXKB',
     defaultPath: '',
     startingRows: 3,
     metadataStartingRows: 5,

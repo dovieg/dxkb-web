@@ -21,7 +21,7 @@ define([
     applicationHelp: 'quick_references/services/phylogenetic_tree_building_service.html',
     tutorialLink: 'tutorial/phylogenetic_tree/phylogenetic_tree.html',
     videoLink: 'https://youtu.be/ckNPGPwoT5U',
-    pageTitle: 'Phylogenetic Tree Building Service | BV-BRC',
+    pageTitle: 'Phylogenetic Tree Building Service | DXKB',
     defaultPath: '',
     startingRows: 5,
 

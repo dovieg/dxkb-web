@@ -23,7 +23,7 @@ define([
     applicationHelp: 'quick_references/services/tn_seq_analysis_service.html',
     tutorialLink: 'tutorial/tn-seq/tn-seq.html',
     videoLink: '',
-    pageTitle: 'Tn-Seq Analysis Service | BV-BRC',
+    pageTitle: 'Tn-Seq Analysis Service | DXKB',
     libraryData: null,
     defaultPath: '',
     startingRows: 11,

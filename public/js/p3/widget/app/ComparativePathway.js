@@ -19,7 +19,7 @@ define([
     applicationName: 'ComparativePathway',
     applicationHelp: 'quick_references/services/comparative_pathway_service.html',
     tutorialLink: 'tutorial/comparative_pathways/comparative_pathways.html',
-    pageTitle: 'Comparative Pathway Tool',
+    pageTitle: 'Comparative Pathway Tool | DXKB',
     libraryData: null,
     defaultPath: '',
     startingRows: 8,

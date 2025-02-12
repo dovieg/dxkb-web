@@ -23,7 +23,7 @@ define([
   return declare([SearchBase], {
     templateString: template,
     searchAppName: 'Domain and Motif Search',
-    pageTitle: 'Domain and Motif Search | BV-BRC',
+    pageTitle: 'Domain and Motif Search | DXKB',
     dataKey: 'protein_feature',
     resultUrlBase: '/view/DomainsAndMotifsList/?',
     resultUrlHash: '#view_tab',

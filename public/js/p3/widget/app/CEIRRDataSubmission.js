@@ -15,7 +15,7 @@ define([
     requireAuth: true,
     applicationDescription: '',
     videoLink: '',
-    pageTitle: 'CEIRR Data Submission Service | BV-BRC',
+    pageTitle: 'CEIRR Data Submission Service | DXKB',
     appBaseURL: 'CEIRR Data Submission',
     templateString: Template,
     applicationName: 'CEIRRDataSubmission',

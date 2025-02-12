@@ -22,7 +22,7 @@ define([
     applicationHelp: 'quick_references/services/variation_analysis_service.html',
     tutorialLink: 'tutorial/variation_analysis/variation_analysis.html',
     videoLink: '',
-    pageTitle: 'Variation Analysis Service | BV-BRC',
+    pageTitle: 'Variation Analysis Service | DXKB',
     libraryData: null,
     defaultPath: '',
     startingRows: 7,

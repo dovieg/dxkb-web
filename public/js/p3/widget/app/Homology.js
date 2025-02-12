@@ -94,7 +94,7 @@ define([
     applicationLabel: 'BLAST',
     applicationDescription: 'The BLAST service uses BLAST (Basic Local Aligment Search Tool) to search against public or private genomes or other databases using DNA or protein sequence(s).',
     videoLink: 'https://youtu.be/PJ9vdCnozMg',
-    pageTitle: 'BLAST Service | BV-BRC',
+    pageTitle: 'BLAST Service | DXKB',
     appBaseURL: 'Homology',
     addedGenomes: 0,
     maxGenomes: 20,

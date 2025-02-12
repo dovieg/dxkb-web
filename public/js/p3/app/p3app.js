@@ -216,7 +216,7 @@ define([
         newState.value = path;
         newState.set = 'path';
         newState.requireAuth = true;
-        newState.pageTitle = 'Jobs Status | BV-BRC';
+        newState.pageTitle = 'Jobs Status | DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -255,7 +255,7 @@ define([
         newState.value = PathJoin(_self.dataAPI, 'content', path);
         newState.set = 'href';
         newState.requireAuth = false;
-        newState.pageTitle = 'BV-BRC';
+        newState.pageTitle = 'DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -311,7 +311,7 @@ define([
         newState.value = /* _self.dataAPI +*/ '/public/help/' + path;
         newState.set = 'href';
         newState.requireAuth = false;
-        newState.pageTitle = 'BV-BRC';
+        newState.pageTitle = 'DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -335,7 +335,7 @@ define([
         newState.value = path;
         newState.set = 'path';
         newState.requireAuth = false;
-        newState.pageTitle = 'Workspaces | BV-BRC';
+        newState.pageTitle = 'Workspaces | DXKB';
         _self.navigate(newState);
       });
 
@@ -371,7 +371,7 @@ define([
         newState.value = path;
         newState.set = 'path';
         newState.requireAuth = false;
-        newState.pageTitle = 'System Status | BV-BRC';
+        newState.pageTitle = 'System Status | DXKB';
 
         _self.navigate(newState);
       });

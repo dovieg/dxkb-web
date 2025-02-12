@@ -16,7 +16,7 @@ define([
 
   return declare([AppBase], {
     baseClass: 'App Assembly',
-    pageTitle: 'Genome Assembly Service | BV-BRC',
+    pageTitle: 'Genome Assembly Service | DXKB',
     templateString: Template,
     applicationName: 'GenomeAssembly',
     requireAuth: true,

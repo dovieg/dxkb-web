@@ -17,7 +17,7 @@ define([
     applicationHelp: 'quick_references/services/genome_alignment_service.html',
     tutorialLink: 'tutorial/genome_alignment/genome_alignment.html',
     videoLink: 'https://youtu.be/uvRzymyh_hM',
-    pageTitle: 'Genome Alignment Service | BV-BRC',
+    pageTitle: 'Genome Alignment Service | DXKB',
     requireAuth: true,
     applicationLabel: 'Genome Alignment (Mauve)',
     applicationDescription: 'The Whole Genome Alignment Service aligns genomes using progressiveMauve.',
