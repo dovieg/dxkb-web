@@ -14,31 +14,31 @@ const newsArticles = [
     {
         title: "Temp Title 1",
         link: "https://unsplash.com/photos/purple-cells-L7en7Lb-Ovc",
-        image: "https://images.unsplash.com/photo-1576086213369-97a306d36557",
+        image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         title: "Temp Title 2",
         link: "/outbreaks/H5N1/#view_tab=overview",
-        image: "https://images.unsplash.com/photo-1475906089153-644d9452ce87",
+        image: "https://images.unsplash.com/photo-1475906089153-644d9452ce87?w=800",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         title: "Temp Title 3 extra long title",
         link: "/outbreaks/Mpox/#view_tab=overview",
-        image: "https://images.unsplash.com/photo-1590859808308-3d2d9c515b1a",
+        image: "https://images.unsplash.com/photo-1590859808308-3d2d9c515b1a?w=800",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         title: "Temp Title 4",
         link: "/outbreaks/H5N1/#view_tab=overview",
-        image: "https://images.unsplash.com/photo-1595131838595-3154b9f4450b",
+        image: "https://images.unsplash.com/photo-1595131838595-3154b9f4450b?w=800",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         title: "Temp Title 5",
         link: "/outbreaks/Mpox/#view_tab=overview",
-        image: "https://images.unsplash.com/photo-1579165466741-7f35e4755660",
+        image: "https://images.unsplash.com/photo-1579165466741-7f35e4755660?w=800",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
 ];
@@ -139,7 +139,7 @@ function moveCarousel(direction) {
         setTimeout(() => {
             wrapper.style.transition = 'transform 0.3s ease';
         }, 50);
-    }, 500); // Match this with the CSS transition duration
+    }, 300); // Match this with the CSS transition duration
 }
 
 // Initial render
