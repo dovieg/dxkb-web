@@ -856,6 +856,7 @@
   margin-bottom: 0.5rem;
   font-weight: 400;
   margin-bottom: 16px;
+  width: fit-content;
 }
 
 .footer-link:hover {
