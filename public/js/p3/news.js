@@ -50,6 +50,10 @@ function renderArticles() {
     const outbreaksContainer = document.querySelector('.outbreaks');
     outbreaksContainer.innerHTML = ''; // Clear existing articles
 
+    // Create wrapper for sliding animation
+    const wrapper = document.createElement('div');
+    wrapper.className = 'carousel-wrapper';
+
     for (let i = 0; i < articlesToShow; i++) {
         const articleIndex = (currentIndex + i) % newsArticles.length;
         const article = newsArticles[articleIndex];
@@ -59,7 +63,7 @@ function renderArticles() {
         articleDiv.style.flexDirection = 'column';
         articleDiv.innerHTML = `
             <div class="content-image" style="width: 200px; height: 200px;">
-                <img src="${article.image}" alt="${article.title}" style="">
+                <img src="${article.image}" alt="${article.title}" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="content" style="width: fit-content; height: 200px;">
                 <div class="content-description">
@@ -68,13 +72,30 @@ function renderArticles() {
                 </div>
             </div>
         `;
-        outbreaksContainer.appendChild(articleDiv);
+        wrapper.appendChild(articleDiv);
     }
+
+    outbreaksContainer.appendChild(wrapper);
 }
 
 function moveCarousel(direction) {
-    currentIndex = (currentIndex + direction + newsArticles.length) % newsArticles.length;
-    renderArticles();
+    const wrapper = document.querySelector('.carousel-wrapper');
+
+    // Add transition class
+    wrapper.style.transform = `translateX(${direction * -220}px)`; // 220px accounts for card width + gap
+
+    // After animation completes, update the content
+    setTimeout(() => {
+        currentIndex = (currentIndex + direction + newsArticles.length) % newsArticles.length;
+        wrapper.style.transition = 'none'; // Temporarily disable transition
+        wrapper.style.transform = 'translateX(0)'; // Reset position
+        renderArticles();
+
+        // Re-enable transition after brief delay
+        setTimeout(() => {
+            wrapper.style.transition = 'transform 0.5s ease';
+        }, 50);
+    }, 500); // Match this with the CSS transition duration
 }
 
 // Initial render
