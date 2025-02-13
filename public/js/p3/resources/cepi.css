@@ -71,7 +71,7 @@
 #bv-brc-right-header {
   display: flex;
   gap: 0.5rem;
-  align-items: center;
+  align-items: right;
   margin-left: auto;
 }
 
@@ -751,6 +751,7 @@
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 
 #mobile-nav-icon {
