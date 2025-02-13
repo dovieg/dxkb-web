@@ -103,82 +103,14 @@
                         <h2 style="font-size: 24px; font-weight: 600;">News</h2>
                     </div>
 
-                    <div class="outbreaks" style="flex-direction: row; gap: 20px; width: 100%; align-items: center; justify-content: center;">
+                    <div class="carousel-container">
+                        <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
 
-                        <div class="bv-brc-bottom-left card" style="flex-direction: column;">
-                            <div id="mpox-image" class="content-image" style="width: 200px; height: 160px;">
-                                <img src="https://www.bv-brc.org/api/content/images/outbreaks/mpox/poxviridae_virion_image_single.png"
-                                     alt="Influenza Virion" style="width: 200px; height:200px; object-fit: cover">
-                            </div>
-                            <div id="mpox-content" class="content" style="width: fit-content; height: 240px;">
-                                <div class="content-description">
-                                    <h2><a href="/outbreaks/Mpox/#view_tab=overview">Mpox 2024</a></h2>
-                                    <p style="text-align: left; width: fit-content;">
-                                        Monkeypox virus, the cause of Mpox, is a zoonotic disease endemic to Africa.
-                                        There are two primary clades: Clade I and Clade II. Since Jan 2022, over 99,000
-                                        global Mpox cases have been reported, mainly from Clade II.b. However, Clade I
-                                        remains a concern with increasing outbreaks in Central Africa and recent cases
-                                        outside its traditional range.
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="outbreaks">
+                            <script src="/js/p3/news.js"></script>
                         </div>
 
-                        <div class="bv-brc-bottom-left card" style="flex-direction: column;">
-                            <div id="mpox-image" class="content-image" style="width: 200px; height: 160px;">
-                                <img src="https://www.bv-brc.org/api/content/images/outbreaks/H5N1/influenza_virion_image.png"
-                                     alt="Influenza Virion" style="width: 200px; height:200px; object-fit: cover">
-                            </div>
-                            <div id="mpox-content" class="content" style="width: fit-content; height: 240px;">
-                                <div class="content-description">
-                                    <h2><a href="/outbreaks/H5N1/#view_tab=overview">Influenza H5N1 2024</a></h2>
-                                    <p style="text-align: left; width: fit-content;">
-                                        The H5N1 virus, known as bird flu, poses serious risks to wildlife, agriculture,
-                                        and humans. Since 2020, the 2.3.4.4b strain has spread globally, with rare but
-                                        severe human cases linked to infected poultry and cattle. The BV-BRC offers the
-                                        latest data, outbreak maps, and resources to support research and response
-                                        efforts. Learn more about the evolving outbreak and its impact.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bv-brc-bottom-left card" style="flex-direction: column;">
-                            <div id="mpox-image" class="content-image" style="width: 200px; height: 160px;">
-                                <img src="https://www.bv-brc.org/api/content/images/outbreaks/mpox/poxviridae_virion_image_single.png"
-                                     alt="Influenza Virion" style="width: 200px; height:200px; object-fit: cover">
-                            </div>
-                            <div id="mpox-content" class="content" style="width: fit-content; height: 240px;">
-                                <div class="content-description">
-                                    <h2><a href="/outbreaks/Mpox/#view_tab=overview">Mpox 2024</a></h2>
-                                    <p style="text-align: left; width: fit-content;">
-                                        Monkeypox virus, the cause of Mpox, is a zoonotic disease endemic to Africa.
-                                        There are two primary clades: Clade I and Clade II. Since Jan 2022, over 99,000
-                                        global Mpox cases have been reported, mainly from Clade II.b. However, Clade I
-                                        remains a concern with increasing outbreaks in Central Africa and recent cases
-                                        outside its traditional range.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bv-brc-bottom-left card" style="flex-direction: column;">
-                            <div id="mpox-image" class="content-image" style="width: 200px; height: 160px;">
-                                <img src="https://www.bv-brc.org/api/content/images/outbreaks/H5N1/influenza_virion_image.png"
-                                     alt="Influenza Virion" style="width: 200px; height:200px; object-fit: cover">
-                            </div>
-                            <div id="mpox-content" class="content" style="width: fit-content; height: 240px;">
-                                <div class="content-description">
-                                    <h2><a href="/outbreaks/H5N1/#view_tab=overview">Influenza H5N1 2024</a></h2>
-                                    <p style="text-align: left; width: fit-content;">
-                                        The H5N1 virus, known as bird flu, poses serious risks to wildlife, agriculture,
-                                        and humans. Since 2020, the 2.3.4.4b strain has spread globally, with rare but
-                                        severe human cases linked to infected poultry and cattle. The BV-BRC offers the
-                                        latest data, outbreak maps, and resources to support research and response
-                                        efforts. Learn more about the evolving outbreak and its impact.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
                     </div>
                 </div>
             </div>
