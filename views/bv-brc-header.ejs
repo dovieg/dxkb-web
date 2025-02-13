@@ -97,40 +97,6 @@
                 <div class="topMenuButton showOnLoad dijitHidden" data-dojo-type="dijit/form/DropDownButton">
                     <span style="font-size: 15px; font-weight: 600;">Viruses</span>
                     <div data-dojo-type="p3/widget/TooltipDialog">
-                        <!-- <div style="vertical-align: top;width:225px;display:inline-block;margin-right: 5px;">
-                            <div class="navbarMenuHeader">Bacterial Pathogens</div>
-                            <div class="menuItems">
-                                <% for (var i = 0; i < servicesMiddle;i++){ %>
-                                <div>
-                                    <span class="menuItem half">
-                                        <a class="" href="<%- services[i].href %>" title="<%- services[i].name %> overview"><%- services[i].name %></a>
-                                    </span>
-                                    <span class="menuItem half">
-                                        <% if (services[servicesMiddle + i]) { %>
-                                        <a class="" title="<%- services[servicesMiddle + i].name %> overview"
-                                           href="<%- services[servicesMiddle + i].href %>"><%- services[servicesMiddle + i].name %></a>
-                                        <% } %>
-                                    </span>
-                                </div>
-                                <% } %>
-                                <br>
-                                <div>
-                                    <span class="menuItem half">
-                                        <a class="navigationLink" href="/view/Bacteria/2" title="Overview page for all Bacteria genomes">All Bacteria</a>
-                                    </span>
-                                    <span class="menuItem half">
-                                        <a class="navigationLink" href="/view/Taxonomy/2157" title="Overview page for all Archea genomes">All Archaea</a>
-                                    </span>
-                                    <span class="menuItem half">
-                                        <a class="navigationLink" href="/view/Taxonomy/10239" title="Overview page for all Viruses">All Viruses</a>
-                                    </span>
-                                    <span class="menuItem half">
-                                        <a class="navigationLink" href="/view/Host/?eq(taxon_lineage_ids,2759)#view_tab=genomes"
-                                            title="Overview page for all Eukaryotic host genomes">Eukaryotic Hosts</a></span>
-                                </div>
-                            </div>
-                        </div> -->
-
                         <div style="vertical-align:top; width:max-content; display:flex; margin-right:5px; flex-direction:row;">
                             <div id="virus-families-container">
                                 <div class="navbarMenuHeader">Viral Families</div>
@@ -140,12 +106,6 @@
                                         <div>
                                             <span class="menuItem">
                                                 <a class="navigationLink" href="<%- virus_condensed[i].href %>" title="<%- virus_condensed[i].name %> overview"><%- virus_condensed[i].name %></a>
-                                            </span>
-                                            <span class="menuItem">
-                                                <% if (virus_condensed[virusCondensedLen + i]) { %>
-                                                <a class="navigationLink" title="<%- virus_condensed[virusCondensedLen + i].name %> overview"
-                                                href="<%- virus[virusCondensedLen + i].href %>"><%- virus_condensed[virusCondensedLen + i].name %></a>
-                                                <% } %>
                                             </span>
                                         </div>
                                     <% } %>
@@ -267,6 +227,7 @@
 
                     <div data-dojo-type="p3/widget/TooltipDialog">
                         <div>
+                            <div class="navbarMenuHeader">My Work</div>
                             <div class="menuItems" style="vertical-align: top;width:175px;display:inline-block">
                                 <div class="HideWithAuth">
                                     Please <a class="loginLink">sign in</a> to view your workspaces.
@@ -304,22 +265,18 @@
             <!-- USER LOGIN SECTION -->
             <div id="bv-brc-right-header">
                 <div class="HideWithAuth showOnLoad dijitHidden">
-                    <!-- <a class="auth-button navigationLink" href="/register">Register</a>
-                    <a class="auth-button navigationLink" href="/login">Sign In</a> -->
-
                     <div class="topMenuButton showOnLoad dijitHidden" data-dojo-type="dijit/form/DropDownButton" style="display: flex; align-items: right;">
                         <img class="user-profile-icon" src="/patric/images/user-circle-cut-white.svg" alt="User Profile" style="height: 28px;"/>
 
                         <div data-dojo-type="p3/widget/TooltipDialog">
                             <div>
+                                <div class="navbarMenuHeader">Account</div>
                                 <div style="vertical-align:top;display:inline-block" class="ShowWithAuth">
                                     <div class="menuItem">
-                                        <!-- <a class="navigationLink" href="/job/">My Jobs</a> -->
-                                        <a href="/login">Sign In</a>
-                                    </div>
-                                    <div  class="menuItem">
-                                        <!-- <a class="navigationLink" href="/view/GenomeList/?eq(public,false)">My Genomes</a> -->
                                         <a class="navigationLink" href="/register">Register</a>
+                                    </div>
+                                    <div class="menuItem">
+                                        <a href="/login">Sign In</a>
                                     </div>
                                 </div>
                             </div>
