@@ -50,8 +50,9 @@ function renderArticles() {
     const outbreaksContainer = document.querySelector('.outbreaks');
     outbreaksContainer.innerHTML = ''; // Clear existing articles
 
-    // Create wrapper for sliding animation
-
+    // Create two wrapper for sliding animation
+    // Using two wrappers allows for pre-loading of articles on either side of the current articles
+    // to ensure no issues with rendering articles as the user scrolls
     const outerWrapper = document.createElement('div');
     outerWrapper.className = 'outer-wrapper';
     outbreaksContainer.appendChild(outerWrapper);
@@ -59,6 +60,7 @@ function renderArticles() {
     const wrapper = document.createElement('div');
     wrapper.className = 'carousel-wrapper';
 
+    // Pre-load the last/previous article
     let articleIndex = (currentIndex - 1) % newsArticles.length;
     articleIndex < 0 ? articleIndex = newsArticles.length - 1 : articleIndex;
     let article = newsArticles[articleIndex];
@@ -100,6 +102,7 @@ function renderArticles() {
         wrapper.appendChild(articleDiv);
     }
 
+    // Pre-load the next article
     articleIndex = (currentIndex + articlesToShow) % newsArticles.length;
     article = newsArticles[articleIndex];
 
