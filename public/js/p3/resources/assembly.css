@@ -198,6 +198,7 @@ table.librarytable td > i {
 .claro .dijitDialogPaneContent {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    background-color: var(--cepi-bone);
 }
 
 .appBox {
