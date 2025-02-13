@@ -1592,6 +1592,7 @@ pre.bv-brc-code-block button:active {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
 }
 
 .carousel-button.left {
@@ -1620,7 +1621,16 @@ pre.bv-brc-code-block button:active {
   display: flex;
   transition: transform 0.3s ease;
   gap: 20px;  /* Maintain the gap between articles */
+  /* max-width: 870px; */
 }
+
+.outer-wrapper {
+  width: 880px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .bv-brc-bottom-left {
   min-width: 200px; /* Adjust width as needed */
   transition: transform 0.3s ease, opacity 0.3s ease;
