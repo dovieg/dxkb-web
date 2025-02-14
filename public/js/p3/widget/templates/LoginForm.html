@@ -1,112 +1,113 @@
-<div style="width:100%;margin-top: 28px;">
-  <div style="max-width:400px; margin-left: auto; margin-right: auto;text-align:center;">
-    <img src="/patric/images/cepi/dxkb-light-blue-yellow.svg" style='margin:0px;margin-bottom:16px;width:300px' />
-    <h4 class="alt-login-note" style="line-height: 1.9; text-align: center;">
-      Sign in with your DXKB account
-    </h4>
-    <div class="loginForm" style="width: 350px;margin-left:auto;margin-right:auto; ">
-      <form
-        dojoAttachPoint="containerNode"
-        class="${baseClass} PanelForm patric-login"
-        dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate"
-      >
-        <div class="">
-          <div style="padding:2px; margin:10px;margin-left:auto;margin-right:auto;">
+<div id="bv-brc-page">
+  <div id="bv-brc-page-container">
+    <div class="page-content-margin">
+      <div style="width:100%;margin-top: 28px;">
+        <div style="max-width:400px; margin-left: auto; margin-right: auto;text-align:center;">
+          <img src="/patric/images/cepi/dxkb-light-blue-yellow.svg" style='margin:0px;margin-bottom:16px;width:300px' />
+          <h4 class="alt-login-note" style="line-height: 1.9; text-align: center;">
+            Sign in with your DXKB account
+          </h4>
+          <div class="loginForm" style="width: 350px;margin-left:auto;margin-right:auto; ">
+            <form
+              dojoAttachPoint="containerNode"
+              class="${baseClass} PanelForm patric-login"
+              dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate"
+            >
+              <div class="">
+                <div style="padding:2px; margin:10px;margin-left:auto;margin-right:auto;">
+                  <input
+                    type="text"
+                    name="username"
+                    data-dojo-attach-point="unField"
+                    data-dojo-type="dijit/form/TextBox"
+                    style="width:100%"
+                    data-dojo-props="placeholder:'Your DXKB username or email address', intermediateChanges: true"
+                    data-dojo-attach-event="onChange: validatePatricCreds"
+                    required="true"
+                  /><br/>
+                </div>
+                <div style="padding:2px;margin-left:auto;margin-right:auto;">
+                  <input
+                    type="password"
+                    name="password"
+                    data-dojo-attach-point="pwField"
+                    data-dojo-type="dijit/form/TextBox"
+                    style="width:100%"
+                    data-dojo-props="placeholder:'Your password', intermediateChanges: true"
+                    data-dojo-attach-event="onChange: validatePatricCreds"
+                    required="true"
+                  />
+                </div>
+              </div>
+
+              <div class="messageContainer workingMessage">
+                Signing into DXKB...
+              </div>
+              <div class="messageContainer errorMessage">
+                We were unable to sign you in with the credentials provided.
+              </div>
+
+              <div style="padding:2px; margin-left:auto;margin-right:auto;">
+                <div
+                  data-dojo-attach-point="submitBtn"
+                  type="submit"
+                  value="Submit"
+                  data-dojo-type="dijit/form/Button"
+                  data-dojo-props="disabled:true"
+                >
+                  Sign In
+                </div>
+              </div>
+
+              <div style="margin-left:auto; margin-right:auto;margin-top:16px;padding:8px; ">
+                <a style="float:left;"class="forgotPW" data-dojo-attach-event="click: makeFPform">Forgot your password?</a> <a style="float: right;" class="forgotPW navigationLink" href="/register">Register/Subscribe</a>
+              </div>
+
+              <div class="loginError" style="color:red;margin:10px;font-size:1.1em;width:100%;"></div>
+
+              <div style="margin-top:20px; max-width:400px;">
+                <h6 style="margin-bottom:6px;">NOTE:</h6>
+                <p>You may use your DXKB or BV-BRC username or email to login to this resource if you already had an account on one of those resources.  While we are merging these resources together, you may login at those sites directly as well.</p>
+                <a href="https://patricbrc.org" target="_blank"><img  src="/patric/images/bv-brc/patric-logo.png" style="width:100px;text-align: center; vertical-align: middle;margin-right:24px;" /></a>
+                <a href="https://www.dxkb.org/" target="_blank"><img src="/patric/images/cepi/dxkb-just-logo.svg" style="width:50px;text-align: center; vertical-align: middle;" /></a>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="pwReset" style="display:none; max-width:200px; margin:auto; border:2px">
+          <h2 style="margin:0px;padding:4px;font-size:1.2em;text-align:center;background:#eee;">PASSWORD RESET</h2>
+          <p>&nbsp;</p>
+          <form>
             <input
+              data-dojo-props="placeholder:'Email Address or Username',promptMessage:'Enter your Email Address or User Name',intermediateChanges:true"
+              class="rpwi"
+              data-dojo-attach-event="onChange:fieldChanged2"
+              data-dojo-attach-point="emailAddress"
+              style="width:100%"
               type="text"
-              name="username"
-              data-dojo-attach-point="unField"
+              name="rsw"
               data-dojo-type="dijit/form/TextBox"
-              style="width:100%"
-              data-dojo-props="placeholder:'Your DXKB username or email address', intermediateChanges: true"
-              data-dojo-attach-event="onChange: validatePatricCreds"
               required="true"
-            /><br/>
-          </div>
-          <div style="padding:2px;margin-left:auto;margin-right:auto;">
-            <input
-              type="password"
-              name="password"
-              data-dojo-attach-point="pwField"
-              data-dojo-type="dijit/form/TextBox"
-              style="width:100%"
-              data-dojo-props="placeholder:'Your password', intermediateChanges: true"
-              data-dojo-attach-event="onChange: validatePatricCreds"
-              required="true"
-            />
-          </div>
+              value=""
+            >
+            <p>&nbsp;</p>
+            <div class="RSPWbutton" data-dojo-attach-event="click:onResetClick" style="margin:auto" data-dojo-attach-point="resetPWbutton" type="button" data-dojo-type="dijit/form/Button">Reset Password</div>
+          </form>
         </div>
 
-        <div class="messageContainer workingMessage">
-          Signing into DXKB...
-        </div>
-        <div class="messageContainer errorMessage">
-          We were unable to sign you in with the credentials provided.
+        <div class="pwrError" style="text-align: center; padding: 2px; margin: 10px; border: 1px solid red; border-radius: 4px;display:none">
+          Unable to reset the account with the provided email address
         </div>
 
-        <div style="padding:2px; margin-left:auto;margin-right:auto;">
-          <div
-            data-dojo-attach-point="submitBtn"
-            type="submit"
-            value="Submit"
-            data-dojo-type="dijit/form/Button"
-            data-dojo-props="disabled:true"
-          >
-            Sign In
-          </div>
+        <div class="pwrMessage" style="display:none; border:2px">
+          <h2 style="margin:0px;padding:4px;font-size:1.2em;text-align:center;background:#eee;">Your Password has been reset</h2>
+          <p>Please check your email for instructions to complete the reset process.</p>
         </div>
-
-        <div style="margin-left:auto; margin-right:auto;margin-top:16px;padding:8px; ">
-          <a style="float:left;"class="forgotPW" data-dojo-attach-event="click: makeFPform">Forgot your password?</a> <a style="float: right;" class="forgotPW navigationLink" href="/register">Register/Subscribe</a>
-        </div>
-
-        <div class="loginError" style="color:red;margin:10px;font-size:1.1em;width:100%;"></div>
-
-        <div style="margin-top:20px; max-width:400px;">
-          <h6 style="margin-bottom:6px;">NOTE:</h6>
-          <p>You may use your PATRIC or IRD/ViPR BRC username or email to login to this resource if you already had an account on one of those resources.  While we are merging these resources together, you may login at those sites directly as well.</p>
-          <a href="https://patricbrc.org" target="_blank">
-            <img  src="/patric/images/bv-brc/patric-logo.png" style="width:100px;text-align: center; vertical-align: middle;margin-right:24px;" />
-          </a>
-          <a href="https://www.viprbrc.org/" target="_blank">
-            <img src="/patric/images/bv-brc/ird-vipr-logo.png" style="width:70px;text-align: center; vertical-align: middle;" />
-          </a>
-          <p style="margin-bottom:8px;margin-top:8px;">Visit our partner Bioinformatics Resource Center, <a href="https://veupathdb.org/veupathdb/app/user/login?destination=https://veupathdb.org">VEuPathDB</a></p>
-
-        </div>
-      </form>
+        <p>&nbsp;</p>
+      </div>
     </div>
   </div>
-
-
-  <div class="pwReset" style="display:none; max-width:200px; margin:auto; border:2px">
-    <h2 style="margin:0px;padding:4px;font-size:1.2em;text-align:center;background:#eee;">PASSWORD RESET</h2>
-    <p>&nbsp;</p>
-    <form>
-      <input
-        data-dojo-props="placeholder:'Email Address or Username',promptMessage:'Enter your Email Address or User Name',intermediateChanges:true"
-        class="rpwi"
-        data-dojo-attach-event="onChange:fieldChanged2"
-        data-dojo-attach-point="emailAddress"
-        style="width:100%"
-        type="text"
-        name="rsw"
-        data-dojo-type="dijit/form/TextBox"
-        required="true"
-        value=""
-      >
-      <p>&nbsp;</p>
-      <div class="RSPWbutton" data-dojo-attach-event="click:onResetClick" style="margin:auto" data-dojo-attach-point="resetPWbutton" type="button" data-dojo-type="dijit/form/Button">Reset Password</div>
-    </form>
-  </div>
-
-  <div class="pwrError" style="text-align: center; padding: 2px; margin: 10px; border: 1px solid red; border-radius: 4px;display:none">
-    Unable to reset the account with the provided email address
-  </div>
-
-  <div class="pwrMessage" style="display:none; border:2px">
-    <h2 style="margin:0px;padding:4px;font-size:1.2em;text-align:center;background:#eee;">Your Password has been reset</h2>
-    <p>Please check your email for instructions to complete the reset process.</p>
-  </div>
-  <p>&nbsp;</p>
 </div>

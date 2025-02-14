@@ -907,6 +907,15 @@
   border-radius: 20px;
 }
 
+.page-content-margin {
+  padding: 20px 40px;
+  background: var(--white-bg);
+  flex-basis: 100%;
+  border: 2px solid var(--cepi-yellow);
+  border-radius: 20px;
+  margin: 50px auto;
+}
+
 .page-content h1 {
   padding-top: 10px;
   padding-bottom: 20px;
