@@ -120,7 +120,7 @@ iframe  {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto !important;
 }
 
 .claro {
@@ -873,6 +873,52 @@ table {
         float: right;
     }
 }
+
+/* Special columns for Outbreak pages */
+.column-prime-ob {
+    width: 55%;
+    float: left;
+}
+.column-sub-ob {
+    width: 20%;
+    float: left;
+}
+.column-opt-ob {
+    width: 25%;
+    float: right;
+}
+
+@media screen and (max-width: 767px){
+    .column-prime-ob {
+        width: 100%;
+        float: left;
+    }
+    .column-sub-ob {
+        width: 100%;
+        float: left;
+    }
+    .column-opt-ob {
+        width: 100%;
+        float: right;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .column-prime-ob {
+        width: 55%;
+        float: left;
+    }
+    .column-sub-ob {
+        width: 15%;
+        float: left;
+    }
+    .column-opt-ob {
+        width: 30%;
+        float: right;
+    }
+}
+
+
 
 .column-prime .section,
 .column-sub .section,

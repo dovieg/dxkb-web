@@ -33,8 +33,6 @@ define([
       }
 
       if (this.leftPanelContent.length > 0) {
-        domStyle.set(this.leftPanelHTML, 'width', '15%');
-        domStyle.set(this.overviewDetailsNode, 'width', '55%');
         for (let leftPanelHTML of this.leftPanelContent) {
           domConstruct.place(leftPanelHTML, this.leftPanelHTML, 2);
         }
