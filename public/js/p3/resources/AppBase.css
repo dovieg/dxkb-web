@@ -37,6 +37,45 @@
 	margin-top: 10px;
 }
 
+.PanelFormWhite {
+	background-color: var(--cepi-white);
+}
+
+.PanelFormWhite .messageContainer{
+	text-align: center;
+	margin: 4px auto;
+	padding: 4px;
+	border: 1px solid green;
+	display: none;
+	width: 300px;
+}
+
+.PanelFormWhite .submittedMessage,
+.PanelFormWhite .workingMessage {
+	color: green;
+	border-color: green;
+}
+
+.PanelFormWhite .errorMessage {
+	color: red;
+	border-color: red;
+}
+
+.PanelFormWhite.Submitted .submittedMessage,
+.PanelFormWhite.Working .workingMessage,
+.PanelFormWhite.Error .errorMessage{
+	display: block;
+}
+
+
+.formFieldsContainer {
+	text-align:center;
+}
+.PanelFormWhite .formFieldsContainer > *{
+	font-size: 1.1em;
+	margin-top: 10px;
+}
+
 .App {
 }
 

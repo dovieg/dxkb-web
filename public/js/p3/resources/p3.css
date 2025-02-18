@@ -458,6 +458,13 @@ table tr.even td {
     margin: auto;
 }
 
+@media (max-width: 768px){
+    .UserProfileForm {
+        width: 350px;
+        margin: auto;
+    }
+}
+
 .UserProfileForm Table {
     border: 0;
     width: 100%;
