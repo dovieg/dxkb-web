@@ -89,7 +89,10 @@
             <div class="nav-logo">
                 <a class="nav-logo-link" href="/">
                     <img class="bv-brc-logo" src="/patric/images/cepi/dxkb-light-blue-yellow.svg" alt="BV-BRC Logo" style="height: 36px;"/>
-                    <span><i style="color: #ffffff; font-size: 12px; padding-left: 2px;">hacked</i></span>
+                    <span style="display: flex; flex-direction: column; gap: 1px;">
+                        <i class="logo-subtext">hacked</i>
+                        <i class="logo-subtext">v<%- request.package.version %></i>
+                    </span>
                 </a>
             </div>
 
