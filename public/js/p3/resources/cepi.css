@@ -1088,6 +1088,26 @@
   justify-content: space-between;
 }
 
+#teams-grid .team-banner {
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#teams-grid .team-leader {
+  color: var(--cepi-sapphire);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+#teams-grid .team-members-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
 
 #bv-brc-page .contact-content a,
 #bv-brc-page .announcements-content a,
