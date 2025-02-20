@@ -5,7 +5,10 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - '*'  # This will trigger on PRs to any branch
+      - 'main'
+      - 'dxkb.theseed'
+      - 'dev'
+      - 'test'
 
 jobs:
   version-bump:
