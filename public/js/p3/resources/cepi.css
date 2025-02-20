@@ -968,7 +968,7 @@
 
 @media (max-width: 768px){
   .page-content-margin {
-    padding: 20px 40px;
+    padding: 10px 35px;
     background: var(--white-bg);
     border: 2px solid var(--cepi-yellow);
     border-radius: 20px;
