@@ -14,5 +14,4 @@ jobs:
       - run: npm ci
       - run: git submodule update --init
       - run: ./buildClient.sh
-      - uses: ./
 
