@@ -1,0 +1,38 @@
+name: "Version Bump on merge"
+
+on:
+  push:
+    branches:
+      - "main"
+      - "dxkb.theseed"
+      - "dev"
+      - "test"
+
+jobs:
+  bump-version:
+    name: "Bump Version on all branches when upon merge"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2"
+        with:
+          ref: ${{ github.ref }}
+      - name: "cat package.json"
+        run: cat ./package.json
+      - name: "Setup Node.js"
+        uses: "actions/setup-node@v1"
+        with:
+          node-version: 20
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag-prefix: ''
+          major-wording:  'MAJOR,cut-major'
+          minor-wording:  'Add,add,New,new,Minor,minor'
+          patch-wording:  'Patch,patch,Fix,fix,Update,update,Tweak,tweak'     # Providing patch-wording will override commit defaulting to a patch bump.
+          rc-wording:     'RELEASE,alpha'
+      - name: "cat package.json"
+        run: cat ./package.json
