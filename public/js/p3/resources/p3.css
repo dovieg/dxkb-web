@@ -454,9 +454,16 @@ table tr.even td {
 }
 
 .UserProfileForm {
-    width: 700px;
+    width: 500px;
     margin: auto;
 }
+
+/* This is for when the form is brought in as the "account settings" in a popup */
+.UserProfileForm .UserProfileForm {
+    width: 340px !important;
+}
+
+/* Putting in some gibberish */
 
 @media (max-width: 768px){
     .UserProfileForm {
