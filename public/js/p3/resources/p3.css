@@ -388,7 +388,7 @@ table tr.even td {
 
 .fa {
     cursor: pointer;
-    color: #333;
+    color: var(--cepi-big-stone);
 }
 
 .fa:hover {
@@ -454,13 +454,8 @@ table tr.even td {
 }
 
 .UserProfileForm {
-    width: 500px;
+    width: 600px;
     margin: auto;
-}
-
-/* This is for when the form is brought in as the "account settings" in a popup */
-.UserProfileForm .UserProfileForm {
-    width: 340px !important;
 }
 
 /* Putting in some gibberish */
@@ -470,6 +465,16 @@ table tr.even td {
         width: 350px;
         margin: auto;
     }
+}
+
+.RegistrationFormContainer {
+    max-width:580px;
+    display:block;
+    margin:4px;
+    margin-top:28px;
+    margin-bottom:28px;
+    padding:4px;
+    padding-top:8px;
 }
 
 .UserProfileForm Table {

@@ -1,26 +1,27 @@
 <div id="bv-brc-page">
-  <div id="bv-brc-page-container">
-    <div class="page-content-margin">
-
-      <div class="${baseClass}" style="max-width:600px; overflow-y:auto;">
+  <div id="bv-brc-page-container" style="max-width: none !important; height: fit-content; margin: 0 0 0 0;">
+    <div class="page-content-margin" style="height: fit-content;">
+      <div class="${baseClass}" style="overflow-y:auto;">
         <form dojoAttachPoint="containerNode" class="PanelFormWhite" dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
           <div data-dojo-attach-point="registrationHeading" style="max-width:580px;">
-            <h2>Registration</h2>
-            <div style="margin:4px;">
-              Review our <a href="/privacy-policy">Privacy Policy</a>.
-            </div>
+            <h2 class="page-content-header">Registration</h2>
             <div style="margin:4px;margin-bottom:16px;">
               <span style="color:red;">*</span>= required
             </div>
           </div>
 
-          <div data-dojo-attach-point="brcAds" class="" style="padding:8px;margin:8px;font-size:1em;border:1px solid #333;background-color: var(--cepi-white);">
-            <h3>DXKB & BV-BRC Logins</h3>
+          <div data-dojo-attach-point="brcAds" class="RegistrationFormContainer">
+            <h3 class="page-content-subheader">DXKB & BV-BRC Logins</h3>
+            <div class="page-content-divider"></div>
             <p style="margin-bottom:8px;">For your convenience, DXKB uses the same login system as <a href="https://www.bv-brc.org" target="_blank">BV-BRC</a>. If you already have a BV-BRC account, you can use it to <a href="/login">login</a> to DXKB. If not, you can set up an account on this page.  Your DXKB account login will also be valid on the BV-BRC website.</p>
+            <p class="HideWithAuth">Click <a href="https://lists.bv-brc.org/mailman/listinfo/all-users" target="_blank">HERE</a> to sign up for the BV-BRC mailing list.</p>
+            <!-- TODO: Add DXKB mailing list signup -->
+            <p class="HideWithAuth">Click <a href="" target="_blank">HERE</a> to sign up for the DXKB mailing list.</p>
           </div>
 
-          <div class="" data-dojo-attach-point="mainForm" style="max-width:580px; display:block; border: 1px solid gray;margin:4px;margin-top: 28px;margin-bottom:28px; padding:4px;padding-top:8px;">
-            <span style="position:relative; border: none; padding: 4px; color: #333;font-weight:600;">Identification</span>
+          <div class="RegistrationFormContainer" data-dojo-attach-point="mainForm">
+            <span class="page-content-subheader">Identification</span>
+            <div class="page-content-divider"></div>
             <table style="border-spacing:0">
               <tbody>
                   <tr>
@@ -57,13 +58,11 @@
                   <tr><td style="width:15%;text-align:right;vertical-align:top;">Interests:</td><td colspan="2"><div rows="5" name="interests" style="height:75px;max-width:99%;resize:vertical;" data-dojo-type="dijit/form/SimpleTextarea" value=""></div></td></tr>
                 </tbody>
             </table>
-            <p class="HideWithAuth">Click <a href="https://lists.bv-brc.org/mailman/listinfo/all-users" target="_blank">HERE</a> to sign up for the BV-BRC mailing list.</p>
-            <!-- TODO: Add DXKB mailing list signup -->
-            <p class="HideWithAuth">Click <a href="" target="_blank">HERE</a> to sign up for the DXKB mailing list.</p>
           </div>
 
-          <div class="" data-dojo-attach-point="setPasswordForm" style="max-width:580px; display:block; border: 1px solid gray;margin:4px;margin-top: 28px;margin-bottom:28px; padding:4px;padding-top:8px;">
-            <span style="position:relative;top: -17px; border: none; background: #fff;padding: 4px; color: #333;font-weight:600;">Set Password</span>
+          <div class="RegistrationFormContainer" data-dojo-attach-point="setPasswordForm">
+            <h3 class="page-content-subheader">Set Password</h3>
+            <div class="page-content-divider"></div>
             <table>
               <tbody>
                 <tr><th style="padding:0"><span style="color:red;">*</span>PASSWORD</th></tr>
@@ -95,6 +94,13 @@
             </p>
             <div style="margin-bottom: 12px;" data-dojo-attach-point="initialNotificationsContainer">
             </div>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <p>
+              For more information on how we use your data, please see our <a href="/privacy-policy">Privacy Policy</a>.
+              We may also send you emails to inform you of new features or changes to our services.
+            </p>
           </div>
         </form>
 
