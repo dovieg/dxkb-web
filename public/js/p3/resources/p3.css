@@ -1054,6 +1054,7 @@ div.pubmed ul li {
     font-weight: 600;
     letter-spacing: -0.01em;
     color: var(--cepi-malibu);
+    transition: all 0.2s ease;
 }
 
 .patric .PerspectiveQuery .current {

@@ -221,6 +221,7 @@
   color: var(--cepi-malibu);
   text-decoration: underline;
   font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 #bv-brc-home .cepi-info {
@@ -252,8 +253,8 @@
   gap: 1rem;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  width: 60%;
-  min-width: 500px;
+  width: 80%;
+  max-width: 1000px;
 }
 
 #bv-brc-home .outbreaks {
@@ -1427,6 +1428,7 @@ pre.bv-brc-code-block button:active {
 
 .page-content-margin a:hover {
   color: var(--cepi-sapphire);
+  transition: color 0.2s ease;
 }
 
 .about-content-list {
