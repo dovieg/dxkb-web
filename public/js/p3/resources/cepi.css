@@ -97,6 +97,12 @@
   margin-left: 0;
 }
 
+#bv-brc-header-container .logo-subtext {
+  font-size: 12px;
+  color: #ffffff;
+  padding-left: 2px;
+}
+
 #bv-brc-header-container .nav-links {
   display: flex;
 }
@@ -124,7 +130,7 @@
   background-color: var(--cepi-bone);
 }
 
-#bv-brc-home h1,
+/* #bv-brc-home h1,
 #bv-brc-page h1,
 #bv-brc-home h2,
 #bv-brc-page h2,
@@ -148,6 +154,17 @@
 #bv-brc-home h3,
 #bv-brc-page h3 {
   font-size: 1rem;
+} */
+
+#bv-brc-home a,
+#bv-brc-page a {
+  color: var(--cepi-malibu);
+}
+
+#bv-brc-home a:hover,
+#bv-brc-page a:hover {
+  color: var(--cepi-sapphire);
+  transition: all 0.2s ease;
 }
 
 #bv-brc-home p,
@@ -204,6 +221,7 @@
   color: var(--cepi-malibu);
   text-decoration: underline;
   font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 #bv-brc-home .cepi-info {
@@ -235,8 +253,8 @@
   gap: 1rem;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  width: 60%;
-  min-width: 500px;
+  width: 80%;
+  max-width: 1000px;
 }
 
 #bv-brc-home .outbreaks {
@@ -965,11 +983,12 @@
   border: 2px solid var(--cepi-yellow);
   border-radius: 20px;
   margin: 30px auto;
+  max-height: fit-content;
 }
 
 @media (max-width: 768px){
   .page-content-margin {
-    padding: 20px 40px;
+    padding: 10px 35px;
     background: var(--white-bg);
     border: 2px solid var(--cepi-yellow);
     border-radius: 20px;
@@ -1086,6 +1105,26 @@
 
 #bv-brc-page .teams div {
   justify-content: space-between;
+}
+
+#teams-grid .team-banner {
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#teams-grid .team-leader {
+  color: var(--cepi-sapphire);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+#teams-grid .team-members-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
 }
 
 
@@ -1347,20 +1386,20 @@ pre.bv-brc-code-block button:active {
   background-color: var(--cepi-light-blue);
 }
 
-#bv-brc-page .page-content-header {
+.page-content-header {
   font-weight: 600;
   color: var(--cepi-sapphire);
   font-size: xx-large;
 }
 
-#bv-brc-page .page-content-subheader {
+.page-content-subheader {
   font-size: x-large;
   font-weight: 600;
   color: var(--cepi-malibu);
   margin-bottom: 0;
 }
 
-#bv-brc-page .page-content-subheader-inline {
+.page-content-subheader-inline {
   font-size: x-large;
   font-weight: 600;
   color: var(--cepi-malibu);
@@ -1368,22 +1407,31 @@ pre.bv-brc-code-block button:active {
   display: inline;
 }
 
-#bv-brc-page .page-content-divider {
+.page-content-divider {
   border: 1px solid var(--cepi-malibu);
   margin: 0 0 10px 0;
 }
 
-#bv-brc-page .page-content-sub-subheader {
+.page-content-sub-subheader {
   font-size: 16px;
   color: var(--cepi-yellow);
   font-weight: bold;
 }
 
-#bv-brc-page .page-content-sub-subheader p {
+.page-content-sub-subheader p {
   font-size: 16px;
 }
 
-#bv-brc-page .about-content-list {
+.page-content-margin a {
+  color: var(--cepi-malibu);
+}
+
+.page-content-margin a:hover {
+  color: var(--cepi-sapphire);
+  transition: color 0.2s ease;
+}
+
+.about-content-list {
   font-size: 16px;
 }
 

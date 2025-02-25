@@ -362,8 +362,22 @@ define([
           w.destroy()
         })
         domConstruct.destroy(this.setPasswordForm)
+        console.log("this: ", this)
+        domConstruct.destroy(this.brcAds)
+
         this.notificationsContainer.innerHTML = 'Click <a href="https://lists.bv-brc.org/mailman/listinfo/all-users" target="_blank">HERE</a> to manage your BV-BRC mailing list subscription.'
+        this.notificationsContainer.innerHTML = 'Click <a href="https://lists.bv-brc.org/mailman/listinfo/all-users" target="_blank">HERE</a> to manage your DXKB mailing list subscription. (PlaceHolder)'
+
         domClass.add(this.registrationHeading, 'dijitHidden')
+        console.log("this.mainForm: ", this.mainForm)
+        this.registrationHeading.style.marginTop = '0px'
+        this.mainForm.style.marginTop = '0px'
+        document.getElementById("page-content-margin-id").style.marginTop = '0px'
+        document.getElementById("page-content-margin-id").style.marginBottom = '0px'
+        document.getElementById("page-content-margin-id").style.paddingTop = '10px'
+        document.getElementById("page-content-margin-id").style.paddingBottom = '10px'
+        document.getElementById("page-content-margin-id").style.paddingLeft = '20px'
+        document.getElementById("page-content-margin-id").style.paddingRight = '20px'
 
         if (this.userprofileStored.email_verified){
           domClass.remove(this.email_verified_domnode,"dijitHidden")

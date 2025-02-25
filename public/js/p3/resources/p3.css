@@ -388,7 +388,7 @@ table tr.even td {
 
 .fa {
     cursor: pointer;
-    color: #333;
+    color: var(--cepi-big-stone);
 }
 
 .fa:hover {
@@ -454,15 +454,27 @@ table tr.even td {
 }
 
 .UserProfileForm {
-    width: 700px;
+    width: 600px;
     margin: auto;
 }
+
+/* Putting in some gibberish */
 
 @media (max-width: 768px){
     .UserProfileForm {
         width: 350px;
         margin: auto;
     }
+}
+
+.RegistrationFormContainer {
+    max-width:580px;
+    display:block;
+    margin:4px;
+    margin-top:28px;
+    margin-bottom:28px;
+    padding:4px;
+    padding-top:8px;
 }
 
 .UserProfileForm Table {
@@ -1042,6 +1054,7 @@ div.pubmed ul li {
     font-weight: 600;
     letter-spacing: -0.01em;
     color: var(--cepi-malibu);
+    transition: all 0.2s ease;
 }
 
 .patric .PerspectiveQuery .current {

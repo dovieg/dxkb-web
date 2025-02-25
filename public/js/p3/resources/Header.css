@@ -75,7 +75,7 @@
 .menuItems a:hover {
     color: var(--cepi-malibu);
     text-decoration: underline;
-    font-weight: 600;
+    transition: all 0.1s ease;
 }
 
 .TopMenuBar .TopMenuLink, .TopMenuBar .TopMenuLink A {

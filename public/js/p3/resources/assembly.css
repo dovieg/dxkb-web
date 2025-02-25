@@ -49,34 +49,8 @@
     margin-top: 10px;
 }
 
-.appTitle .breadcrumb {
-    /*font-weight: 600;*/
-}
-
 .appTitle h3 {
     margin: 0 0 10px 10px;
-}
-
-/* .appTitle p {
-    margin-left: 15px;
-} */
-
-.appTitle .page-content-header {
-    font-weight: 600;
-    color: var(--cepi-sapphire);
-    font-size: xx-large;
-}
-
-.appTitle .page-content-subheader {
-    font-size: x-large;
-    font-weight: 600;
-    color: var(--cepi-malibu);
-    margin-bottom: 0;
-}
-
-.appTitle .page-content-divider {
-    border: 1px solid var(--cepi-malibu);
-    margin: 0 0 10px 0;
 }
 
 .paramlabel,

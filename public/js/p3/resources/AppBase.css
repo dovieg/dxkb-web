@@ -1,5 +1,6 @@
 .PanelForm {
 	background-color: var(--cepi-bone);
+	overflow-x: hidden;
 }
 
 .PanelForm .messageContainer{
