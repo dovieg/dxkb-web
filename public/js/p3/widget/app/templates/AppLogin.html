@@ -1,22 +1,22 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}"
   dojoAttachEvent="onsubmit:_onSubmit,onchange:validate">
-  <div class="appTemplate">
+  <div class="appTemplate page-content" style="margin-top: 40px;">
     <div class="appTitle">
-      <span class="breadcrumb">Services</span>
-      <h3>${applicationLabel}
-      </h3>
-      <p>${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a
+      <h1 class="page-content-header">Services</h1>
+      <h2 class="page-content-subheader">${applicationLabel}</h2>
+      <hr class="page-content-divider" />
+      <p style="font-size: 14px; font-weight: 500;">${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a
           href="${docsServiceURL}${applicationHelp}" target="_blank">User Guide</a> and
         <a href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a>.
       </p>
       <br>
       <div class="infobox iconbox infobutton dialoginfo">
         <i class="fa icon-lock fa-1x" title="Please log in with your ViPR or PATRIC account use this service"></i>
-      </div> Please sign in with your BV-BRC account or your existing PATRIC or ViPR / IRD account in order to use this
-      service.
+        <p style="font-size: 14px; font-weight: 800; display: inline;">Please sign in with your DXKB / BV-BRC account in order to use this service.</p>
+      </div>
     </div>
-    <div class="LoginForm" data-dojo-type="p3/widget/LoginForm"
-      style="display: inlin-block;width:500px; margin-left:auto;margin-right:auto;font-size:1.1em;margin-bottom:20px;margin-top:10px;padding:10px;">
-    </div>
+  </div>
+  <div class="LoginForm" data-dojo-type="p3/widget/LoginForm"
+    style="width:100%;margin-left:auto;margin-right:auto;font-size:1.1em;margin-bottom:20px;">
   </div>
 </form>
