@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-var debug = require('debug')('p3-web');
+var debug = require('debug')('p3-test');
 var app = require('../app');
-var conf = require('../config');
+var conf = require('../config-test');
 
-debug('Launching p3-web...');
+debug('Launching p3-test...');
 
 app.set('port', conf.get('http_port') || 3000);
 
