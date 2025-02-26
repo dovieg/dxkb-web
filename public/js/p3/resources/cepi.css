@@ -1730,3 +1730,17 @@ pre.bv-brc-code-block button:active {
   transform: translateX(0);
   opacity: 1;
 }
+
+.results-table {
+  width:75%;
+  margin: auto;
+  font-size:large;
+}
+
+@media (width < 768px) {
+  .results-table {
+    width:100%;
+    margin: auto;
+    font-size:unset;
+  }
+}
