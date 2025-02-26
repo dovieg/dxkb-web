@@ -1119,6 +1119,13 @@
   font-size: 16px;
 }
 
+#teams-grid .team-leader:hover{
+  color: var(--cepi-malibu);
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
 
 #teams-grid .team-members-container {
   display: flex;
