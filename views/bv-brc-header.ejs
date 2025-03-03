@@ -287,15 +287,24 @@
                     </div>
                 </div>
 
+                <div class="showOnLoad ShowWithAuth dijitHidden WorkspaceController">
+                    <div data-dojo-type="p3/widget/UploadStatus">
+                    </div>
+
+                    <div data-dojo-type="p3/widget/JobStatus">
+                        <div class="JobStatusButton">
+                        </div>
+                    </div>
+                </div>
+
                 <div id="mobile-search-icon">
                     <button class="search-icon" onclick="toggleSearch()">
                         <span class="icon-search fa-2x"></span>
                     </button>
                 </div>
 
-
                 <div class="showOnLoad ShowWithAuth dijitHidden topMenuButtonIcon"
-                        data-dojo-type="dijit/form/DropDownButton" data-dojo-props="iconClass:'icon-user fa-2x login-btn'" style="display: flex; justify-content: center; align-self: center;">
+                        data-dojo-type="dijit/form/DropDownButton" data-dojo-props="iconClass:'icon-user fa-2x login-btn'" style="justify-content: center; align-self: center;">
                     <div class="warning_icon user_warning_icon icon-warning fa fa-1x"> </div>
                     <div data-dojo-type="p3/widget/TooltipDialog">
                         <div>Signed in as <span id="signedInAs" style="font-weight:bold;color: var(--cepi-malibu);"></span></div>
