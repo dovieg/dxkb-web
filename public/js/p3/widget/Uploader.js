@@ -25,9 +25,6 @@ define([
     pathLabel: 'Upload file to: ',
     buttonLabel: 'Select Files',
     typeLabel: 'Upload type: ',
-    style: {
-      minWidth: '600px',
-    },
     _setPathAttr: function (val) {
       this.path = val;
       this.destinationPath.innerHTML = val;
