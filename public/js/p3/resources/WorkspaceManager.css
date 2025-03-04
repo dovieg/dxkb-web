@@ -348,6 +348,10 @@ th.dgrid-cell.wsItemMembers {
 	border-bottom: 3px solid #c0d3a2;
 }
 
+.JobManager {
+	background-color: var(--cepi-bone);
+}
+
 .ActionButtonWrapper {
 	font-size: 1.1em;
 	display: inline-block;
