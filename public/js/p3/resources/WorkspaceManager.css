@@ -4,9 +4,7 @@
 }
 
 .WorkspaceController {
-	/* display: none; */
-	background:var(--cepi-big-stone);
-	border-top: none;
+	display: inline-block;
 }
 
 /* browser header used all over the site */
@@ -241,10 +239,11 @@ th.dgrid-cell.wsItemMembers {
 	position: relative;
 	padding:1px;
 	margin:2px;
-	border-radius:3px;
+	border-radius:5px;
 	background: #FFFFFF;
 	color:#333;
 	font-size: 1.1em;
+	border: 1px solid var(--cepi-big-stone);
 }
 
 .JobStatusButton {

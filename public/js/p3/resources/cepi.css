@@ -1315,7 +1315,7 @@ pre.bv-brc-code-block button:active {
   position: absolute;
   max-height: 75vh;
   overflow-y: auto;
-  background-color: #f9f9f9;
+  background-color: var(--cepi-white);
   padding: 1rem;
   top: 50px;
   right: 0.5rem;
@@ -1754,3 +1754,22 @@ pre.bv-brc-code-block button:active {
   transform: translateY(-45px) rotate(180deg);
 }
 
+.desktop-only {
+  display: inline-block;
+}
+
+@media (min-width: 1px) and (max-width: 1023px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (min-width: 1px) and (max-width: 1023px) {
+  .mobile-only {
+    display: inline-block;
+  }
+}
