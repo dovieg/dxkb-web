@@ -1744,3 +1744,13 @@ pre.bv-brc-code-block button:active {
     font-size:unset;
   }
 }
+
+#dijit__MasterTooltip_0 {
+  margin-top: 56px;
+}
+
+#dijit__MasterTooltip_0 .dijitTooltipConnector {
+  margin-top: 0px;
+  transform: translateY(-45px) rotate(180deg);
+}
+
