@@ -1,4 +1,5 @@
 <script>
+
 dojoConfig = {
     parseOnLoad: false,
     packages: [
@@ -188,11 +189,72 @@ const load_scripts = [
 <% if (request && request.production){ %>
   <script src="/js/<%- request.package.version %>/dojo/dojo.js"></script>
   <script>
+
   require(<%- JSON.stringify(request.productionLayers) %>, function(){
     <% } else { %>
       <script src="/js/dojo/dojo.js"></script>
       <script>
       <% } %>
+
+      require([
+      "dojo/dom",
+      "dojo/dom-geometry",
+      "dojo/on",
+      "dojo/query",
+      "dojo/domReady!"
+    ], function(dom, domGeometry, on, query) {
+
+      function adjustHeight() {
+        var uContainer = dom.byId("uniqName_13_0");
+        if (uContainer === null) {
+          var uContainer = dom.byId("uniqName_11_0");
+        }
+        if (uContainer === null) {
+          var uContainer = dom.byId("ApplicationContainer");
+        }
+        var appContainer = dom.byId("ApplicationContainer");
+        var contentHeight = uContainer.scrollHeight + 60;
+        uContainer.style.height = contentHeight + "px";
+        appContainer.style.height = contentHeight + "px";
+      }
+
+      // Call the function to adjust height initially
+      timeoutId = setTimeout(function() {
+              adjustHeight();
+            }, 250); //
+
+      // Using MutationObserver to watch for changes in the DOM
+      var observer = new MutationObserver(function(mutations) {
+        console.log("Mutation detected"); // Debug log to see if observer is firing
+        // If any mutations occur, reset the timeout to adjust height after 5 seconds
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+
+        // Set a timeout to adjust height after 5 seconds
+        timeoutId = setTimeout(function() {
+          adjustHeight();
+        }, 250);
+      });
+
+      var cContainer = dom.byId("centerContent");
+      if(cContainer != null) {
+      // Observe the container for changes to its child nodes
+      observer.observe(dom.byId("centerContent"), {
+        childList: true,
+        subtree: true
+      });
+      }
+
+      query("a.navigationLink").forEach(function(link) {
+        on(link, "click", function(event) {
+          timeoutId = setTimeout(function() {
+            location.reload();
+            }, 10); //
+        });
+      });
+    });
+
       require(["<%= request.applicationModule %>"], function(App){
         appOpts = <%- JSON.stringify(request.applicationOptions || {}) %>;
         appOpts.workspaceAPI = "<%= request.applicationOptions.workspaceServiceURL %>";
