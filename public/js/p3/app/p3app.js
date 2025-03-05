@@ -724,13 +724,25 @@ define([
     },
     // uploadJobsWidget: function (action) {
     //   if (action === 'show') {
-    //     // console.log('I want to see the upload and jobs widget');
-    //     // var wsc = new WorkspaceController({ region: 'bottom' });
+    //     console.log('I want to see the upload and jobs widget');
+    //     var wsc = new WorkspaceController({ region: 'bottom' });
     //     var ac = this.getApplicationContainer();
-    //     // console.log(ac);
-    //     // var uploadBar = ac.domNode.getElementsByClassName('WorkspaceController');
+    //     console.log("AC", ac);
+    //     var uploadBar = ac.domNode.getElementsByClassName('WorkspaceController');
+    //     console.log("UPLOAD BAR", uploadBar);
+    //     let navBarRight = document.getElementById('bv-brc-right-header');
+    //     console.log("NAV BAR RIGHT", navBarRight);
+
+    //     // Only add the widget if it doesn't already exist
     //     if (uploadBar.length === 0) {
-    //       ac.addChild(wsc);
+    //       // Use the widget's domNode property to get the actual DOM node
+    //       navBarRight.insertBefore(wsc.domNode, navBarRight.firstChild);
+    //       // Start the widget
+    //       wsc.startup();
+    //       console.log("ADDED WSC", wsc);
+
+    //       let jobsStatusPopup = ac.domNode.getElementsByClassName('JobStatusButton');
+    //       console.log("JOBS STATUS POPUP", jobsStatusPopup);
     //     }
     //   } else {
     //     console.log('I should not see the upload and jobs widget');

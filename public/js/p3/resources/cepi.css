@@ -1822,3 +1822,32 @@ pre.bv-brc-code-block button:active {
   }
 
 }
+
+#dijit__MasterTooltip_0 {
+  margin-top: 56px;
+}
+
+#dijit__MasterTooltip_0 .dijitTooltipConnector {
+  margin-top: 0px;
+  transform: translateY(-45px) rotate(180deg);
+}
+
+.desktop-only {
+  display: inline-block;
+}
+
+@media (min-width: 1px) and (max-width: 1023px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (min-width: 1px) and (max-width: 1023px) {
+  .mobile-only {
+    display: inline-block;
+  }
+}
