@@ -1,4 +1,5 @@
 <script>
+
 dojoConfig = {
     parseOnLoad: false,
     packages: [
@@ -188,11 +189,102 @@ const load_scripts = [
 <% if (request && request.production){ %>
   <script src="/js/<%- request.package.version %>/dojo/dojo.js"></script>
   <script>
+
   require(<%- JSON.stringify(request.productionLayers) %>, function(){
     <% } else { %>
       <script src="/js/dojo/dojo.js"></script>
       <script>
       <% } %>
+
+      require([
+      "dojo/dom",
+      "dojo/dom-geometry",
+      "dojo/on",
+      "dojo/query",
+      "dojo/domReady!"
+    ], function(dom, domGeometry, on, query) {
+
+      function adjustHeight() {
+        console.log('in function');
+        // These seemingly random div ids come from stepping through the pages and finding which ones exist and the proper order in which to
+        // check them to ensure proper reactions. I'm not honestly sure of the origin of this naming convention, I'm just working with what I
+        // got here! -DJG (3/5/25)
+        // These first three are the three possibilities on Services pages. Mostly it's the first one, but the other two show up and need to be dealt with
+        var uContainer = dom.byId("uniqName_13_0");
+        if (uContainer === null) {
+          var uContainer = dom.byId("uniqName_17_0");
+        }
+        if (uContainer === null) {
+          var uContainer = dom.byId("uniqName_11_0");
+        }
+        if (uContainer === null) {
+          // This is the one-time case of the results page to the Advanced Search. The id of the div changes, so we need to grab it by its class.
+          var divs = query(".AdvancedSearch");
+          var firstDiv = divs[0];
+          var uContainer = firstDiv;
+        }
+        // If nothing else is there, we just default to the ApplicationContainer so as not to break the code
+        if (uContainer === null) {
+          var uContainer = dom.byId("ApplicationContainer");
+        }
+        var appContainer = dom.byId("ApplicationContainer");
+        // We grab the full height of the included page....
+        var contentHeight = uContainer.scrollHeight + 60;
+        // Reset both of these since, depending on the page, one of them is the one that needs it and there are no ill effects to resizing both
+        uContainer.style.height = contentHeight + "px";
+        appContainer.style.height = contentHeight + "px";
+      }
+
+      // Call the function to adjust height initially
+      timeoutId = setTimeout(function() {
+              adjustHeight();
+            }, 250); //
+
+      // Using MutationObserver to watch for changes in the DOM
+      var observer = new MutationObserver(function(mutations) {
+        console.log("Mutation detected"); // Debug log to see if observer is firing
+
+        // We need to check if we're on the search page to adjust the timeout time since that needs more. We can't just leave it as higher since that will
+        // negatively impact all the other pages.
+        var divs = query(".AdvancedSearch");
+        if (divs[0] != null) {
+          timespan = 3000;
+        }
+        else {
+          timespan = 250;
+        }
+
+        // If any mutations occur, reset the timeout
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+
+        // This can't be immediate since sometimes the page changes haven't finished yet, which jams things up.
+        // I played around on the search results page, which is where this came into play, and 3 seconds seemed to
+        // be the lowest I could go with a high enough success rate.
+        timeoutId = setTimeout(function() {
+          adjustHeight();
+        }, timespan);
+      });
+
+      var cContainer = dom.byId("centerContent");
+      if(cContainer != null) {
+      // Observe the container for changes to its child nodes
+      observer.observe(dom.byId("centerContent"), {
+        childList: true,
+        subtree: true
+      });
+      }
+
+      query("a.navigationLink").forEach(function(link) {
+        on(link, "click", function(event) {
+          timeoutId = setTimeout(function() {
+            location.reload();
+            }, 10); //
+        });
+      });
+    });
+
       require(["<%= request.applicationModule %>"], function(App){
         appOpts = <%- JSON.stringify(request.applicationOptions || {}) %>;
         appOpts.workspaceAPI = "<%= request.applicationOptions.workspaceServiceURL %>";

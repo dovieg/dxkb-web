@@ -195,6 +195,7 @@ define([
         // console.log("Workspace URL Callback", params.newPath);
         var newState = populateState(params);
         // console.log("newState /register", params)
+        console.log("newState", newState);
         /* istanbul ignore next */
         // var path = params.params[0] || '/';
         newState.widgetClass = 'p3/widget/UserProfileForm';
