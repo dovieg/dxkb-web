@@ -13,6 +13,12 @@ define([
 ) {
 
   function processQuery(query, searchOption) {
+    console.log('im in search');
+    timeoutId = setTimeout(function() {
+      location.reload();
+//      adjustHeight();
+      }, 1000); //
+
     // console.log("processQuery query: ", query, "searchOption: ", searchOption);
     // replace some special characters
     query = query.replace(/'/g, '').replace(/:/g, ' ');
@@ -116,7 +122,7 @@ define([
             // clear = true;
             break;
           case 'protein_features':
-            Topic.publish('/navigate', { href: '/view/ProteinFeaturesList/?' + q });
+            Topic.publish('/navigate', { href: '/view/DomainsAndMotifsList/?' + q });
             break;
           case 'protein_structures':
             Topic.publish('/navigate', { href: '/view/ProteinStructureList/?' + q });
