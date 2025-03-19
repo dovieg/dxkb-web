@@ -52,8 +52,8 @@ define([
 
     _setTaxonomyAttr: function (taxon) {
       this.createSummary(taxon)
-      this.createExternalLinks(taxon);
-      this.createPubmedLinks(taxon);
+      // this.createExternalLinks(taxon);
+      // this.createPubmedLinks(taxon);
     },
 
     createSummary: function (taxon) {

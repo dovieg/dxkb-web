@@ -26,7 +26,7 @@ define([
     applicationHelp: 'quick_references/services/primer_design_service.html',
     tutorialLink: 'tutorial/primer_design/primer_design.html',
     videoLink: 'https://youtu.be/4MlDw9V5H7w',
-    pageTitle: 'Primer Design Service | BV-BRC',
+    pageTitle: 'Primer Design Service | DXKB',
     libraryData: null,
     defaultPath: '',
 

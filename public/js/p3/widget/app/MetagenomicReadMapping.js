@@ -14,7 +14,7 @@ define([
 
   return declare([AppBase], {
     baseClass: 'App MetagenomicReadMapping',
-    pageTitle: 'Metagenomic Read Mapping Service | BV-BRC',
+    pageTitle: 'Metagenomic Read Mapping Service | DXKB',
     templateString: Template,
     applicationName: 'MetagenomicReadMapping',
     requireAuth: true,

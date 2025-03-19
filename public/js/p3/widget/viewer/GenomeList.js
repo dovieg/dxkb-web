@@ -71,7 +71,7 @@ define([
       activeTab.set('state', activeQueryState)
 
       if (activeTab) {
-        var pageTitle = 'Genome List ' + activeTab.title + ' | BV-BRC';
+        var pageTitle = 'Genome List ' + activeTab.title + ' | DXKB';
         if (window.document.title !== pageTitle) {
           window.document.title = pageTitle;
         }
@@ -151,52 +151,11 @@ define([
         disabled: false
       });
 
-      this.proteins = new ProteinGridContainer({
-        title: 'Proteins',
-        id: this.viewer.id + '_proteins',
-        disabled: false
-      });
-      this.specialtyGenes = new SpecialtyGeneGridContainer({
-        title: 'Specialty Genes',
-        id: this.viewer.id + '_specialtyGenes',
-        disabled: false,
-        state: this.state
-      });
-      this.pathways = new PathwaysContainer({
-        title: 'Pathways',
-        id: this.viewer.id + '_pathways',
-        disabled: false
-      });
-
-      this.subsystems = new SubSystemsContainer({
-        title: 'Subsystems',
-        id: this.viewer.id + '_subsystems',
-        disabled: false
-      });
-
-      // this.proteinFamilies = new ProteinFamiliesContainer({
-      //   title: 'Protein Families',
-      //   id: this.viewer.id + '_proteinFamilies',
-      //   disabled: false
-      // });
-      // this.experiments = new ExperimentsContainer({
-      //   title: 'Experiments',
-      //   id: this.viewer.id + '_experiments',
-      //   disabled: false,
-      //   state: this.state
-      // })
-
       this.viewer.addChild(this.overview)
       this.viewer.addChild(this.genomes)
       this.viewer.addChild(this.sequences);
       this.viewer.addChild(this.amr);
       this.viewer.addChild(this.features);
-      this.viewer.addChild(this.proteins);
-      this.viewer.addChild(this.specialtyGenes);
-      // this.viewer.addChild(this.proteinFamilies);
-      this.viewer.addChild(this.pathways);
-      this.viewer.addChild(this.subsystems);
-      // this.viewer.addChild(this.experiments);
     }
   });
 });

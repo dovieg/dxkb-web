@@ -186,7 +186,7 @@ define([
         newState.value = path;
         newState.set = 'path';
         newState.requireAuth = false;
-        newState.pageTitle = 'Login | BV-BRC';
+        newState.pageTitle = 'Login | DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -195,13 +195,14 @@ define([
         // console.log("Workspace URL Callback", params.newPath);
         var newState = populateState(params);
         // console.log("newState /register", params)
+        console.log("newState", newState);
         /* istanbul ignore next */
         // var path = params.params[0] || '/';
         newState.widgetClass = 'p3/widget/UserProfileForm';
         newState.value = '/register'
         newState.set = 'path';
         newState.requireAuth = false;
-        newState.pageTitle = 'Registration | BV-BRC';
+        newState.pageTitle = 'Registration | DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -216,7 +217,7 @@ define([
         newState.value = path;
         newState.set = 'path';
         newState.requireAuth = true;
-        newState.pageTitle = 'Jobs Status | BV-BRC';
+        newState.pageTitle = 'Jobs Status | DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -255,7 +256,7 @@ define([
         newState.value = PathJoin(_self.dataAPI, 'content', path);
         newState.set = 'href';
         newState.requireAuth = false;
-        newState.pageTitle = 'BV-BRC';
+        newState.pageTitle = 'DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -311,7 +312,7 @@ define([
         newState.value = /* _self.dataAPI +*/ '/public/help/' + path;
         newState.set = 'href';
         newState.requireAuth = false;
-        newState.pageTitle = 'BV-BRC';
+        newState.pageTitle = 'DXKB';
         // console.log("Navigate to ", newState);
         _self.navigate(newState);
       });
@@ -335,7 +336,7 @@ define([
         newState.value = path;
         newState.set = 'path';
         newState.requireAuth = false;
-        newState.pageTitle = 'Workspaces | BV-BRC';
+        newState.pageTitle = 'Workspaces | DXKB';
         _self.navigate(newState);
       });
 
@@ -371,27 +372,26 @@ define([
         newState.value = path;
         newState.set = 'path';
         newState.requireAuth = false;
-        newState.pageTitle = 'System Status | BV-BRC';
+        newState.pageTitle = 'System Status | DXKB';
 
         _self.navigate(newState);
       });
 
       Router.register('/searches(/.*)', function (params, path) {
-        var parts = path.split('/');
+        let newState = getState(params, path);
+        let parts = newState.pathname.split('/');
         parts.shift();
-        var type = parts.shift();
-        var viewerParams;
-        if (parts.length > 0) {
-          viewerParams = parts.join('/');
-        } else {
-          viewerParams = '';
-        }
+        const type = parts.shift();
 
-        var newState = populateState(params);
         newState.widgetClass = 'p3/widget/search/' + type;
-        newState.value = viewerParams;
-        newState.set = 'params';
         newState.requireAuth = false;
+
+        if (newState.search) {
+          newState.search.split('&').map(s => {
+            const [key, value] = s.split('=');
+            newState[key] = decodeURIComponent(value);
+          });
+        }
 
         _self.navigate(newState);
       });
@@ -559,7 +559,7 @@ define([
             }
           }, false)
           // show the upload and jobs widget
-          window.App.uploadJobsWidget('show');
+          // window.App.uploadJobsWidget('show');
           window.App.checkSU();
           window.App.alreadyLoggedIn = true;
         } else {
@@ -723,20 +723,32 @@ define([
         console.log('loginWithVipr: not logged in yet (?)');
       }
     },
-    uploadJobsWidget: function (action) {
-      if (action === 'show') {
-        // console.log('I want to see the upload and jobs widget');
-        var wsc = new WorkspaceController({ region: 'bottom' });
-        var ac = this.getApplicationContainer();
-        // console.log(ac);
-        var uploadBar = ac.domNode.getElementsByClassName('WorkspaceController');
-        if (uploadBar.length === 0) {
-          ac.addChild(wsc);
-        }
-      } else {
-        console.log('I should not see the upload and jobs widget');
-      }
-    },
+    // uploadJobsWidget: function (action) {
+    //   if (action === 'show') {
+    //     console.log('I want to see the upload and jobs widget');
+    //     var wsc = new WorkspaceController({ region: 'bottom' });
+    //     var ac = this.getApplicationContainer();
+    //     console.log("AC", ac);
+    //     var uploadBar = ac.domNode.getElementsByClassName('WorkspaceController');
+    //     console.log("UPLOAD BAR", uploadBar);
+    //     let navBarRight = document.getElementById('bv-brc-right-header');
+    //     console.log("NAV BAR RIGHT", navBarRight);
+
+    //     // Only add the widget if it doesn't already exist
+    //     if (uploadBar.length === 0) {
+    //       // Use the widget's domNode property to get the actual DOM node
+    //       navBarRight.insertBefore(wsc.domNode, navBarRight.firstChild);
+    //       // Start the widget
+    //       wsc.startup();
+    //       console.log("ADDED WSC", wsc);
+
+    //       let jobsStatusPopup = ac.domNode.getElementsByClassName('JobStatusButton');
+    //       console.log("JOBS STATUS POPUP", jobsStatusPopup);
+    //     }
+    //   } else {
+    //     console.log('I should not see the upload and jobs widget');
+    //   }
+    // },
     refreshUser: function () {
       return xhr.get(this.userServiceURL + '/user/' + window.localStorage.userid, {
         headers: {
@@ -775,7 +787,7 @@ define([
         localStorage.removeItem('Auserid');
         window.location.assign('/');
         // remove the upload and jobs widget
-        window.App.uploadJobsWidget('hide');
+        // window.App.uploadJobsWidget('hide');
       } else {
         alert('upload is in progress, try Logout again later');
       }
@@ -833,41 +845,62 @@ define([
       var wsNode = dom.byId('YourWorkspaces');
       domConstruct.empty('YourWorkspaces');
 
-      data.forEach(function (ws) {
-        /* istanbul ignore if */
-        if (ws.name !== 'home') return;
-        var d = domConstruct.create('div', { style: { 'padding-left': '12px' } }, wsNode);
+      let wsMobileNode = dom.byId('YourWorkspaces-mobile');
+      domConstruct.empty('YourWorkspaces-mobile');
+
+      const ws = data.find(d => d.name === 'home');
+      if (ws) {
+        var d = domConstruct.create('div', {style: {'padding-left': '12px'}}, wsNode);
         domConstruct.create('i', {
           'class': 'fa icon-caret-down fa-1x noHoverIcon',
-          style: { 'margin-right': '4px' }
+          style: {'margin-right': '4px'}
         }, d);
         domConstruct.create('a', {
           'class': 'navigationLink',
           href: '/workspace' + ws.path,
           innerHTML: ws.name
         }, d);
+        domConstruct.create('a', {
+          href: '/workspace' + ws.path,
+          innerHTML: ws.name
+        }, wsMobileNode);
         domConstruct.create('br', {}, d);
         domConstruct.create('a', {
           'class': 'navigationLink',
-          'style': { 'padding-left': '16px' },
+          'style': {'padding-left': '16px'},
           href: '/workspace' + ws.path + '/Genome%20Groups',
           innerHTML: 'Genome Groups'
         }, d);
+        domConstruct.create('a', {
+          'style': {'padding-left': '16px'},
+          href: '/workspace' + ws.path + '/Genome%20Groups',
+          innerHTML: 'Genome Groups'
+        }, wsMobileNode);
         domConstruct.create('br', {}, d);
         domConstruct.create('a', {
           'class': 'navigationLink',
-          'style': { 'padding-left': '16px' },
+          'style': {'padding-left': '16px'},
           href: '/workspace' + ws.path + '/Feature%20Groups',
           innerHTML: 'Feature Groups'
         }, d);
+        domConstruct.create('a', {
+          'style': {'padding-left': '16px'},
+          href: '/workspace' + ws.path + '/Feature%20Groups',
+          innerHTML: 'Feature Groups'
+        }, wsMobileNode);
         domConstruct.create('br', {}, d);
         domConstruct.create('a', {
           'class': 'navigationLink',
-          'style': { 'padding-left': '16px' },
+          'style': {'padding-left': '16px'},
           href: '/workspace' + ws.path + '/Experiment%20Groups',
           innerHTML: 'Experiment Groups'
         }, d);
-      });
+        domConstruct.create('a', {
+          'style': {'padding-left': '16px'},
+          href: '/workspace' + ws.path + '/Experiment%20Groups',
+          innerHTML: 'Experiment Groups'
+        }, wsMobileNode);
+      }
     }
   });
 });

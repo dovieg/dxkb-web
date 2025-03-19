@@ -3,7 +3,7 @@ var debug = require('debug')('p3-web');
 var app = require('../app');
 var conf = require('../config');
 
-debug('Launching p3-www...');
+debug('Launching p3-web...');
 
 app.set('port', conf.get('http_port') || 7032);
 

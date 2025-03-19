@@ -1,87 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-        <title>BV-BRC Team | BV-BRC</title>
-		<%- include('../header') %>
-	</head>
-	<body class="claro patric <% if (request.isAuthenticated && request.isAuthenticated()) { %>Authenticated<% } %>">
-		<div id="ApplicationContainer" data-dojo-type="dijit/layout/BorderContainer" class="layoutContainer" data-dojo-props="id:'ApplicationContainer',gutters:false,liveSplitters:false">
-			<%- include('../bv-brc-header') %>
-            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="padding:0px;border:0px solid #ddd;background:inherit;">
-                <div id="bv-brc-page">
-                    <div id="bv-brc-page-container">
-                        <div class="page-content">
-                          <h1 id="bv-brc-team">BV-BRC Team</h1>
-                          <div class="teams">
-                            <div class="argonne-team">
-                                <img src="../patric/images/bv-brc/uc-logo.png" alt="University of Chicago Logo">
-                                <h2 id="university-of-chicago--argonne-national-laboratory--fig">University of Chicago / Argonne National Laboratory / FIG</h2>
-                                <ul>
-                                <li><strong>Rick Stevens, Co-Principal Investigator</strong></li>
-                        	<li>Nicole Bowers</li>
-				<li>Thomas Brettin</li>
-                                <li>James Davis</li>
-                                <li>Emily Dietrich</li>
-                                <li>Marcus Nguyen</li>
-                                <li>Robert Olson</li>
-                                <li>Ross Overbeek</li>
-                                <li>Bruce Parrello</li>
-                                <li>Gordon Pusch</li>
-                                <li>Maulik Shukla</li>
-                                <li>Margo VanOeffelen</li>
-                                <li>Veronika Vonstein</li>
-			      	</ul>
-                              </div>
-                              <div class="jcvi-team">
-                                <img src="../patric/images/bv-brc/jcvi-logo.svg" alt="J. Craig Venter Institute Logo">
-                                <h2 id="j-craig-venter-institute">J. Craig Venter Institute</h2>
-                                <ul>
-                                <li><strong>Indresh Singh, JCVI Site Principal Investigator</strong></li>
-                                <li>Roshni Bhattacharya</li>
-                                <li>Anna Capria</li>
-                                <li>Mehmet Kuscuoglu</li>
-                                <li>Lucy Stewart</li>
-                                <li>Gene Tan</li>
-                                <li>Christian Zmasek</li>
-                                <li>Abril Zuniga</li>
-                                </ul>
-                              </div>
-                              <div class="virginia-team">
-                                <img src="../patric/images/bv-brc/uva-logo.png" alt="University of Virginia Logo">
-                                <h2 id="biocomplexity-institute-and-initiative-at-university-of-virginia">Biocomplexity Institute and Initiative at University of Virginia</h2>
-                                <ul>
-                                <li>Clark Cucinell</li>
-                                <li>Allan Dickerman</li>
-                                <li>Ron Kenyon</li>
-                                <li>Brian Klahn</li>
-                                <li>Chunhong Mao</li>
-                                <li>Dustin Machi</li>
-                                <li>Andrew Warren</li>
-                                <li>Rebecca Wattam</li>
-                                </ul>
-                              </div>
-                              <div class="uab-team">
-                                <img src="../patric/images/bv-brc/uab-logo.png" alt="University of Alabama at Birmingham Logo">
-                                <h2 id="university-of-alabama-at-birmingham">University of Alabama at Birmingham</h2>
-                                <ul>
-                                <li><strong>Elliot Lefkowitz, Co-Principal Investigator</strong></li>
-                                <li>Don Dempsey</li>
-                                <li>Curtis Hendrickson</li>
-                                </ul>
-                              </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <%- include('../bv-brc-footer') %>
-                <style>
-                    body.patric {
-                        min-width: 830px;
-                    }
-                </style>
-            </div>
-        </div>
 
-		<%- include('../javascript') %>
-	</body>
+<head>
+  <title>DXKB Team</title>
+  <%- include('../header') %>
+</head>
+
+<body class="claro patric <% if (request.isAuthenticated && request.isAuthenticated()) { %>Authenticated<% } %>">
+  <div id="ApplicationContainer" data-dojo-type="dijit/layout/BorderContainer" class="layoutContainer" data-dojo-props="id:'ApplicationContainer',gutters:false,liveSplitters:false">
+    <%- include('../bv-brc-header') %>
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="padding:0px;border:0px solid #ddd;background:inherit;">
+      <div id="bv-brc-page">
+        <div id="bv-brc-page-container">
+          <div class="page-content">
+            <div class="teams">
+              <h1 id="bv-brc-team" class="page-content-header">DXKB Team</h1>
+              <p>
+                The DXKB team is made up of several talented individuals at a number of different locations. Below are the institutions that are a part of our group.
+              </p>
+              <br />
+
+              <div id="teams-grid">
+                <div class="uchicago-team">
+                  <h2 id="university-of-chicago" class="page-content-subheader">
+                    <a href="https://www.uchicago.edu/" target="_blank">
+                      University of Chicago
+                      <i class="fa icon-external-link"></i>
+                    </a>
+                  </h2>
+                  <hr class="page-content-divider" />
+
+                  <div class="team-banner">
+                    <strong>
+                      <a class="team-leader" href="https://cs.uchicago.edu/people/rick-stevens/" target="_blank">
+                        Rick Stevens, Co-Investigator
+                      </a>
+                    </strong>
+                    <img src="../patric/images/bv-brc/uc-logo.png" alt="University of Chicago Logo" class="teamlogo">
+                  </div>
+
+                  <div class="team-members-container">
+                    <ul class="team-members-list">
+                      <li>Alex Brace</li>
+                      <li>Alex Partin</li>
+                      <li>Andreas Wilke</li>
+                      <li>Arvind Ramanathan</li>
+                      <li>Bharat Kale</li>
+                      <li>Bob Olson</li>
+                      <li>Brian Hsu</li>
+                      <li>Bruce Parrello</li>
+                      <li>Carla Mann</li>
+                      <li>Chris Escobar</li>
+                      <li>Chris Thomas</li>
+                      <li>Christian Seitz</li>
+                      <li>Clark Cucinell</li>
+                      <li>Dovie Gelerinter</li>
+                      <li>Heng Ma</li>
+                      <li>James Davis</li>
+                      <li>Jamie Overbeek</li>
+                      <li>Justin Podowski</li>
+                      <li>Kyle Hippe</li>
+                      <li>Marcus Nguyen</li>
+                      <li>Maulik Shukla</li>
+                      <li>Nick Chia</li>
+                      <li>Nicole Bowers</li>
+                      <li>Ozan Gokdemir</li>
+                      <li>Thomas Brettin</li>
+                    </ul>
+                  </div>
+                  <br clear="all" />
+                </div>
+
+                <div class="hmri-team">
+                  <h2 id="houston-methodist-research-institute" class="page-content-subheader">
+                    <a href="https://www.houstonmethodist.org/academic-institute/" target="_blank">
+                      Houston Methodist Research Institute
+                      <i class="fa icon-external-link"></i>
+                    </a>
+                  </h2>
+                  <hr class="page-content-divider">
+
+                  <div class="team-banner">
+                    <strong>
+                      <a class="team-leader" href="https://scholars.houstonmethodist.org/en/persons/jimmy-gollihar" target="_blank">
+                        Jimmy Gollihar, Principal Investigator
+                      </a>
+                    </strong>
+                    <img src="../patric/images/hmri-logo.png" alt="Houston Methodist Research Institute Logo" class="teamlogo">
+                  </div>
+
+                  <div class="team-members-container">
+                    <ul class="team-members-list">
+                      <li>Adalia Brixen</li>
+                      <li>Andrew P Horton</li>
+                      <li>Daniel Kluttz</li>
+                      <li>Daniel R Boutz</li>
+                      <li>Jon Corral</li>
+                      <li>Kameka Johnson</li>
+                      <li>Kenneth Roman</li>
+                      <li>Michelle Byrom</li>
+                      <li>Omar Daher</li>
+                      <li>Philipp Ilinykh</li>
+                      <li>Raghav Shroff</li>
+                      <li>Shaunak Kar</li>
+                      <li>Thomas H Segall-Shapiro</li>
+                    </ul>
+                  </div>
+                  <br clear="all" />
+                </div>
+
+                <div class="ut-austin-team">
+                  <h2 id="university-of-texas-at-austin" class="page-content-subheader">
+                    <a href="https://www.utexas.edu/" target="_blank">
+                      University of Texas at Austin
+                      <i class="fa icon-external-link"></i>
+                    </a>
+                  </h2>
+                  <hr class="page-content-divider" />
+
+                  <div class="team-banner">
+                    <strong>
+                      <a class="team-leader" href="https://molecularbiosci.utexas.edu/directory/jason-mclellan" target="_blank">
+                        Jason McLellan, Co-Investigator
+                      </a>
+                    </strong>
+                    <img src="../patric/images/ut-austin.png" alt="University of Texas at Austin Logo" class="teamlogo">
+                  </div>
+
+                  <div class="team-members-container">
+                    <ul class="team-members-list">
+                      <li>Nasim Abdi</li>
+                      <li>Nicole Johnson</li>
+                  </div>
+                  <br clear="all" />
+                </div>
+
+                <div class="jcvi-team">
+                  <h2 id="j-craig-venter-institute" class="page-content-subheader">
+                    <a href="https://www.jcvi.org/" target="_blank">
+                      J. Craig Venter Institute
+                      <i class="fa icon-external-link"></i>
+                    </a>
+                  </h2>
+                  <hr class="page-content-divider">
+
+                  <div class="team-banner">
+                    <strong>
+                      <a class="team-leader" href="https://www.jcvi.org/about/gene-tan" target="_blank">
+                        Gene Tan, Co-Investigator
+                      </a>
+                    </strong>
+                    <img src="../patric/images/jcvi-logo.png" alt="J. Craig Venter Institute Logo" class="teamlogo">
+                  </div>
+
+                  <div class="team-members-container">
+                    <ul class="team-members-list">
+                      <li>Abril Zuniga</li>
+                      <li>Christian Zmasek</li>
+                      <li>Max Qian</li>
+                    </ul>
+                  </div>
+                  <br clear="all" />
+                </div>
+
+                <div class="utmb-team">
+                  <h2 id="university-of-texas-medical-branch" class="page-content-subheader">
+                    <a href="https://www.utmb.edu/" target="_blank">
+                      University of Texas Medical Branch
+                      <i class="fa icon-external-link"></i>
+                    </a>
+                  </h2>
+                  <hr class="page-content-divider">
+
+                  <div class="team-banner">
+                    <strong>
+                      <a class="team-leader" href="https://www.utmb.edu/scsb/bios/scott-c-weaver-phd" target="_blank">
+                        Scott Weaver, Co-Investigator
+                      </a>
+                    </strong>
+                    <img src="../patric/images/utmb-logo.png" alt="University of Texas Medical Branch Logo" class="teamlogo">
+                  </div>
+
+                  <div class="team-members-container">
+                    <ul class="team-members-list">
+                      <li>Alexander Freiberg</li>
+                    </ul>
+                  </div>
+                  <br clear="all" />
+                </div>
+
+                <div class="lajolla-team">
+                  <h2 id="lajolla-institute" class="page-content-subheader">
+                    <a href="https://www.lji.org/" target="_blank">
+                      La Jolla Institute for Immunology
+                      <i class="fa icon-external-link"></i>
+                    </a>
+                  </h2>
+                  <hr class="page-content-divider">
+
+                  <div class="team-banner">
+                    <strong>
+                      <a class="team-leader" href="https://www.lji.org/labs/sette-lab/" target="_blank">
+                        Alessandro Sette, Co-Investigator
+                      </a>
+                    </strong>
+                    <img src="../patric/images/lajolla-logo.png" alt="La Jolla Institute for Immunology Logo" class="teamlogo">
+                  </div>
+
+                  <div class="team-members-container">
+                    <ul class="team-members-list">
+                      <li>Alba Grifoni</li>
+                    </ul>
+                  </div>
+                  <br clear="all" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('../bv-brc-footer') %>
+    </div>
+  </div>
+
+  <%- include('../javascript') %>
+</body>
+
 </html>

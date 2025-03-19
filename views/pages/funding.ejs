@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Funding | DXKB</title>
+		<%- include('../header') %>
+	</head>
+	<body class="claro patric <% if (request.isAuthenticated && request.isAuthenticated()) { %>Authenticated<% } %>">
+		<div id="ApplicationContainer" data-dojo-type="dijit/layout/BorderContainer" class="layoutContainer" data-dojo-props="id:'ApplicationContainer',gutters:false,liveSplitters:false">
+			<%- include('../bv-brc-header') %>
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="padding:0px;border:0px solid #ddd;background:inherit;">
+                <div id="bv-brc-page">
+                    <div id="bv-brc-page-container">
+                        <div class="page-content citation-content">
+                          <h1 id="citation" class="page-content-header">Funding</h1>
+                          <h2 id="citing-bv-brc" class="page-content-subheader">CEPI</h2>
+                          <hr class="page-content-divider" />
+                          <p>This project is supported by the Coalition for Epidemic Preparedness Innovations (CEPI) under the Disease X Program. We gratefully acknowledge CEPI’s commitment to advancing global health security and its pivotal role in funding initiatives aimed at preventing and controlling infectious disease outbreaks.</p>
+                          <br>
+
+                        </div>
+                    </div>
+                </div>
+                <%- include('../bv-brc-footer') %>
+            </div>
+        </div>
+
+		<%- include('../javascript') %>
+	</body>
+</html>

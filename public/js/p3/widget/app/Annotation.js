@@ -18,7 +18,7 @@ define([
     applicationHelp: 'quick_references/services/genome_annotation_service.html',
     tutorialLink: 'tutorial/genome_annotation/genome_annotation.html',
     videoLink: '',
-    pageTitle: 'Genome Annotation Service | BV-BRC',
+    pageTitle: 'Genome Annotation Service | DXKB',
     required: true,
     genera_four: ['Acholeplasma', 'Entomoplasma', 'Hepatoplasma', 'Hodgkinia', 'Mesoplasma', 'Mycoplasma', 'Spiroplasma', 'Ureaplasma'],
     code_four: false,

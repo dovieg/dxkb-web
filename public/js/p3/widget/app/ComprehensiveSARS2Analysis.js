@@ -14,7 +14,7 @@ define([
 
   return declare([AppBase], {
     baseClass: 'App ComprehensiveSARS2Analysis',
-    pageTitle: 'SARS-CoV-2 Genome Assembly and Annotation Service | BV-BRC',
+    pageTitle: 'SARS-CoV-2 Genome Assembly and Annotation Service | DXKB',
     templateString: Template,
     applicationName: 'ComprehensiveSARS2Analysis',
     requireAuth: true,

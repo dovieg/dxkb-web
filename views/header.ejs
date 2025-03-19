@@ -1,28 +1,1002 @@
+<%
+const load_css = [
+	"p3/resources/p3.css",
+	"heatmap/dist/hotmap.css"
+]
+%>
 
-	<%
-	const load_css = [
-		"p3/resources/p3.css",
-		"molstar/mol-bvbrc/molstar.css",
-		"mauve_viewer/dist/mauve-viewer.css",
-		"heatmap/dist/hotmap.css",
-	]
-	%>
+<% if (request && request.production){ %>
+  <% load_css.forEach(function(url){ %>
+	<link rel='stylesheet' href="/js/<%- request.package.version %>/<%- url %>" />
+  <% }) %>
+<% } else { %>
+  <% load_css.forEach(function(url){ %>
+	<link rel='stylesheet' href="/js/<%- url %>" />
+  <% }) %>
+<% } %>
 
-	<% if (request && request.production){ %>
-	  <% load_css.forEach(function(url){ %>
-		<link rel='stylesheet' href="/js/<%- request.package.version %>/<%- url %>" />
-	  <% }) %>
-	<% } else { %>
-	  <% load_css.forEach(function(url){ %>
-		<link rel='stylesheet' href="/js/<%- url %>" />
-	  <% }) %>
-	<% } %>
+<%
+// Define routes with their corresponding descriptions
+var routes = [
+	{
+		href: '/home',
+		title: "Home - DXKB: Disease X Knowledge Base",
+		description: "DXKB provides comprehensive information about emerging viruses and vaccine development strategies.",
+		robots: "index,dontfollow",
+		keywords: "DXKB, emerging viruses, vaccine development, Disease X, pandemic preparedness"
+	},
+	{
+		href: '/job',
+		title: "DXKB Jobs - Track Vaccine Development Progress",
+		description: "Monitor and manage vaccine development workflows and analysis pipelines.",
+		robots: "index,follow",
+		keywords: "vaccine development, Disease X research, analysis workflows, DXKB tools"
+	},
+	{
+		href: '/view/Host/?eq(taxon_lineage_ids,2759)',
+		title: "Host Organisms - Study Viral Host Interactions",
+		description: "Explore virus-host interactions and disease mechanisms for vaccine development.",
+		robots: "index,dontfollow",
+		keywords: "viral hosts, disease mechanisms, vaccine targets, DXKB database"
+	},
+	{
+		href: '/',
+		description: "DXKB: Leading resource for emerging virus information and vaccine development strategies.",
+		robots: "index,follow",
+		keywords: "DXKB, Disease X, vaccine development, emerging viruses, pandemic preparation"
+	}
+];
+
+var searches = [
+	{
+		href: '/searches/TaxaSearch',
+		title: "Taxa Search - Track Viral Classification",
+		description: "Search taxonomic data to understand viral classification and evolution.",
+		robots: "index,follow",
+		keywords: "viral taxonomy, emerging viruses, Disease X classification, DXKB search"
+	},
+	{
+		href: '/searches/GenomeSearch',
+		title: "Genome Search - Analyze Viral Genomes",
+		description: "Search and analyze viral genome data for vaccine development.",
+		robots: "index,follow",
+		keywords: "viral genomes, vaccine targets, DXKB database"
+	},
+	{
+		href: '/searches/StrainSearch',
+		title: "Strain Search - Monitor Viral Variants",
+		description: "Track and monitor different strains and variants of emerging viruses.",
+		robots: "index,follow",
+		keywords: "viral strains, variant tracking, vaccine efficacy"
+	},
+	{
+		href: '/searches/GenomicFeatureSearch',
+		title: "Genomic Feature Search - Study Viral Characteristics",
+		description: "Analyze genomic features of viruses for vaccine design.",
+		robots: "index,follow",
+		keywords: "viral genomics, vaccine development, DXKB features"
+	},
+	{
+		href: '/searches/ProteinSearch',
+		title: "Protein Search - Analyze Viral Proteins",
+		description: "Study viral proteins for vaccine target identification.",
+		robots: "index,follow",
+		keywords: "viral proteins, vaccine targets, DXKB database"
+	},
+	{
+		href: '/searches/SpecialtyGeneSearch',
+		title: "Specialty Gene Search - Track Viral Genes",
+		description: "Search for specialized genes involved in viral infection and immunity.",
+		robots: "index,follow",
+		keywords: "viral genes, immune response, DXKB search"
+	},
+	{
+		href: '/searches/DomainAndMotifSearch',
+		title: "Domain and Motif Search - Study Viral Proteins",
+		description: "Analyze protein domains and motifs in emerging viruses for vaccine design.",
+		robots: "index,follow",
+		keywords: "protein domains, viral analysis, vaccine development"
+	},
+	{
+		href: '/searches/EpitopeSearch',
+		title: "Epitope Search - Study Vaccine Targets",
+		description: "Search epitope data to identify potential vaccine targets.",
+		robots: "index,follow",
+		keywords: "viral epitopes, vaccine design, DXKB database"
+	},
+	{
+		href: '/searches/ProteinStructureSearch',
+		title: "Protein Structure Search - Analyze Viral Proteins",
+		description: "Study viral protein structures for vaccine development.",
+		robots: "index,follow",
+		keywords: "viral proteins, structural biology, vaccine design"
+	},
+	{
+		href: '/searches/PathwaySearch',
+		title: "Pathway Search - Study Viral Biology",
+		description: "Analyze viral pathways for therapeutic targeting.",
+		robots: "index,follow",
+		keywords: "viral pathways, disease mechanisms, vaccine strategies"
+	},
+	{
+		href: '/searches/SubsystemSearch',
+		title: "Subsystem Search - Analyze Viral Systems",
+		description: "Study biological systems in emerging viruses for vaccine development.",
+		robots: "index,follow",
+		keywords: "viral biology, vaccine development, DXKB search"
+	},
+	{
+		href: '/searches/SurveillanceSearch',
+		title: "Surveillance Search - Track Viral Spread",
+		description: "Access surveillance data for tracking emerging viral threats.",
+		robots: "index,follow",
+		keywords: "viral surveillance, outbreak tracking, DXKB database"
+	},
+	{
+		href: '/searches/SerologySearch',
+		title: "Serology Search - Study Vaccine Responses",
+		description: "Search serological data to understand vaccine-induced immunity.",
+		robots: "index,follow",
+		keywords: "serology data, vaccine response, DXKB tools"
+	},
+	{
+		href: '/searches/SFVTSearch',
+		title: "SFVT Search - Track Viral Variants",
+		description: "Search sequence feature variants in viral populations.",
+		robots: "index,follow",
+		keywords: "viral variants, vaccine efficacy, DXKB database"
+	}
+];
+
+// Define descriptions for bacteria and viruses
+var bacteria = [
+	{
+		name: "Bacteria",
+		href: "/view/Bacteria/2",
+		title: "Bacteria - Vaccine Development Database",
+		description: "Access bacterial pathogen data to support vaccine development strategies.",
+		robots: "index,dontfollow",
+		keywords: "bacterial vaccines, pathogen data, DXKB database"
+	},
+	{
+		name: "Archaea",
+		href: "/view/Taxonomy/2157",
+		title: "Archaea - Novel Antigen Research",
+		description: "Study archaeal proteins as potential novel vaccine antigens.",
+		robots: "index,dontfollow",
+		keywords: "archaeal antigens, vaccine development, DXKB database"
+	},
+	{
+		name: "Acinetobacter",
+		href: "/view/Taxonomy/469",
+		title: "Acinetobacter - Hospital Vaccine Research",
+		description: "Research vaccine strategies against hospital-acquired Acinetobacter infections.",
+		robots: "index,dontfollow",
+		keywords: "Acinetobacter vaccines, hospital infections, DXKB research"
+	},
+	{
+		name: "Bacillus",
+		href: "/view/Taxonomy/1386",
+		title: "Bacillus - Food Safety Vaccines",
+		description: "Study vaccine approaches for foodborne Bacillus pathogens.",
+		robots: "index,dontfollow",
+		keywords: "Bacillus vaccines, food safety, DXKB research"
+	},
+	{
+		name: "Bartonella",
+		href: "/view/Taxonomy/773",
+		title: "Bartonella - Vector Disease Prevention",
+		description: "Research vaccines against vector-borne Bartonella infections.",
+		robots: "index,dontfollow",
+		keywords: "Bartonella vaccines, vector prevention, DXKB database"
+	},
+	{
+		name: "Borreliella",
+		href: "/view/Taxonomy/64895",
+		title: "Borreliella - Lyme Disease Prevention",
+		description: "Study vaccine development against Lyme disease pathogens.",
+		robots: "index,dontfollow",
+		keywords: "Lyme vaccines, disease prevention, DXKB research"
+	},
+	{
+		name: "Brucella",
+		href: "/view/Taxonomy/234",
+		title: "Brucella - Zoonotic Disease Vaccines",
+		description: "Research vaccine strategies for Brucella zoonotic infections.",
+		robots: "index,dontfollow",
+		keywords: "Brucella vaccines, zoonotic prevention, DXKB database"
+	},
+	{
+		name: "Burkholderia",
+		href: "/view/Taxonomy/32008",
+		title: "Burkholderia - Environmental Pathogen Vaccines",
+		description: "Study vaccine approaches against environmental Burkholderia strains.",
+		robots: "index,dontfollow",
+		keywords: "Burkholderia vaccines, pathogen prevention, DXKB research"
+	},
+	{
+		name: "Campylobacter",
+		href: "/view/Taxonomy/194",
+		title: "Campylobacter - Food Safety Vaccines",
+		description: "Research vaccines against foodborne Campylobacter infections.",
+		robots: "index,dontfollow",
+		keywords: "Campylobacter vaccines, food safety, DXKB database"
+	},
+	{
+		name: "Chlamydia",
+		href: "/view/Taxonomy/810",
+		title: "Chlamydia - STI Prevention Research",
+		description: "Study vaccine development strategies against Chlamydia infections.",
+		robots: "index,dontfollow",
+		keywords: "Chlamydia vaccines, STI prevention, DXKB research"
+	},
+	{
+		name: "Clostridium",
+		href: "/view/Taxonomy/1485",
+		title: "Clostridium - Healthcare Infection Prevention",
+		description: "Research vaccines against healthcare-associated Clostridium infections.",
+		robots: "index,dontfollow",
+		keywords: "Clostridium vaccines, infection prevention, DXKB database"
+	},
+	{
+		name: "Coxiella",
+		href: "/view/Taxonomy/776",
+		title: "Coxiella - Q Fever Prevention",
+		description: "Study vaccine approaches against Q fever pathogens.",
+		robots: "index,dontfollow",
+		keywords: "Q fever vaccines, disease prevention, DXKB research"
+	},
+	{
+		name: "Ehrlichia",
+		href: "/view/Taxonomy/943",
+		title: "Ehrlichia - Tick Disease Vaccines",
+		description: "Research vaccine strategies against tick-borne Ehrlichia infections.",
+		robots: "index,dontfollow",
+		keywords: "Ehrlichia vaccines, tick prevention, DXKB database"
+	},
+	{
+		name: "Escherichia",
+		href: "/view/Taxonomy/561",
+		title: "Escherichia - E. coli Vaccine Research",
+		description: "Study vaccine development against pathogenic E. coli strains.",
+		robots: "index,dontfollow",
+		keywords: "E. coli vaccines, pathogen prevention, DXKB research"
+	},
+	{
+		name: "Francisella",
+		href: "/view/Taxonomy/262",
+		title: "Francisella - Tularemia Prevention",
+		description: "Research vaccine approaches against tularemia pathogens.",
+		robots: "index,dontfollow",
+		keywords: "tularemia vaccines, disease prevention, DXKB database"
+	},
+	{
+		name: "Helicobacter",
+		href: "/view/Taxonomy/209",
+		title: "Helicobacter - H. pylori Vaccine Studies",
+		description: "Study vaccine strategies against H. pylori infections.",
+		robots: "index,dontfollow",
+		keywords: "H. pylori vaccines, infection prevention, DXKB research"
+	},
+	{
+		name: "Listeria",
+		href: "/view/Taxonomy/1637",
+		title: "Listeria - Food Safety Vaccines",
+		description: "Research vaccines against foodborne Listeria infections.",
+		robots: "index,dontfollow",
+		keywords: "Listeria vaccines, food safety, DXKB database"
+	},
+	{
+		name: "Mycobacterium",
+		href: "/view/Taxonomy/1763",
+		title: "Mycobacterium - TB Vaccine Research",
+		description: "Study improved vaccine strategies against tuberculosis.",
+		robots: "index,dontfollow",
+		keywords: "TB vaccines, disease prevention, DXKB research"
+	},
+	{
+		name: "Pseudomonas",
+		href: "/view/Taxonomy/286",
+		title: "Pseudomonas - Hospital Infection Vaccines",
+		description: "Research vaccines against healthcare-associated Pseudomonas infections.",
+		robots: "index,dontfollow",
+		keywords: "Pseudomonas vaccines, infection prevention, DXKB database"
+	},
+	{
+		name: "Rickettsia",
+		href: "/view/Taxonomy/780",
+		title: "Rickettsia - Vector Disease Prevention",
+		description: "Study vaccine approaches against tick-borne Rickettsia infections.",
+		robots: "index,dontfollow",
+		keywords: "Rickettsia vaccines, vector prevention, DXKB research"
+	},
+	{
+		name: "Salmonella",
+		href: "/view/Taxonomy/590",
+		title: "Salmonella - Food Safety Vaccines",
+		description: "Research vaccine strategies against foodborne Salmonella strains.",
+		robots: "index,dontfollow",
+		keywords: "Salmonella vaccines, food safety, DXKB database"
+	},
+	{
+		name: "Shigella",
+		href: "/view/Taxonomy/620",
+		title: "Shigella - Dysentery Prevention",
+		description: "Study vaccine development against Shigella infections.",
+		robots: "index,dontfollow",
+		keywords: "Shigella vaccines, dysentery prevention, DXKB research"
+	},
+	{
+		name: "Staphylococcus",
+		href: "/view/Taxonomy/1279",
+		title: "Staphylococcus - MRSA Vaccine Research",
+		description: "Research vaccine strategies against MRSA and other Staphylococcus strains.",
+		robots: "index,dontfollow",
+		keywords: "MRSA vaccines, infection prevention, DXKB database"
+	},
+	{
+		name: "Streptococcus",
+		href: "/view/Taxonomy/1301",
+		title: "Streptococcus - Vaccine Development",
+		description: "Study vaccine approaches against Streptococcal infections.",
+		robots: "index,dontfollow",
+		keywords: "Streptococcus vaccines, infection prevention, DXKB research"
+	},
+	{
+		name: "Vibrio",
+		href: "/view/Taxonomy/662",
+		title: "Vibrio - Waterborne Disease Vaccines",
+		description: "Research vaccines against waterborne Vibrio pathogens.",
+		robots: "index,dontfollow",
+		keywords: "Vibrio vaccines, waterborne prevention, DXKB database"
+	},
+	{
+		name: "Yersinia",
+		href: "/view/Taxonomy/629",
+		title: "Yersinia - Plague Prevention Research",
+		description: "Study vaccine development against plague-causing Yersinia strains.",
+		robots: "index,dontfollow",
+		keywords: "plague vaccines, disease prevention, DXKB research"
+	}
+];
+
+var virus = [
+	{
+		name: "Virus",
+		href: "/view/Taxonomy/10239",
+		title: "Viruses - Disease X Viral Database",
+		description: "Access comprehensive viral data to support vaccine development against emerging viruses.",
+		robots: "index,dontfollow",
+		keywords: "viral pathogens, vaccine development, Disease X, DXKB database"
+	},
+	{
+		name: "Adenoviridae",
+		href: "/view/Taxonomy/10508",
+		title: "Adenoviridae - Vaccine Development Research",
+		description: "Study adenovirus biology and immunology for vaccine vector development.",
+		robots: "index,dontfollow",
+		keywords: "adenovirus vectors, vaccine platforms, DXKB research"
+	},
+	{
+		name: "Asfarviridae",
+		href: "/view/Taxonomy/137992",
+		title: "Asfarviridae - Emerging Disease Research",
+		description: "Research African swine fever virus for vaccine development strategies.",
+		robots: "index,dontfollow",
+		keywords: "African swine fever, vaccine development, DXKB database"
+	},
+	{
+		name: "Bunyavirales",
+		href: "/view/Taxonomy/1980410",
+		title: "Bunyavirales - Emerging Pathogen Vaccines",
+		description: "Study bunyavirus immunology for vaccine development against emerging threats.",
+		robots: "index,dontfollow",
+		keywords: "bunyavirus vaccines, emerging pathogens, DXKB research"
+	},
+	{
+		name: "Caliciviridae",
+		href: "/view/Taxonomy/11974",
+		title: "Caliciviridae - Vaccine Strategy Research",
+		description: "Research norovirus and calicivirus vaccine development approaches.",
+		robots: "index,dontfollow",
+		keywords: "norovirus vaccines, viral immunity, DXKB database"
+	},
+	{
+		name: "Coronaviridae",
+		href: "/view/Taxonomy/11118",
+		title: "Coronaviridae - Pandemic Vaccine Research",
+		description: "Study coronavirus biology and immunity for vaccine development.",
+		robots: "index,dontfollow",
+		keywords: "coronavirus vaccines, pandemic preparedness, DXKB research"
+	},
+	{
+		name: "Filoviridae",
+		href: "/view/Taxonomy/11266",
+		title: "Filoviridae - Hemorrhagic Fever Vaccines",
+		description: "Research vaccine strategies against Ebola and related filoviruses.",
+		robots: "index,dontfollow",
+		keywords: "filovirus vaccines, hemorrhagic fever prevention, DXKB database"
+	},
+	{
+		name: "Flaviviridae",
+		href: "/view/Taxonomy/11050",
+		title: "Flaviviridae - Arbovirus Vaccine Research",
+		description: "Study flavivirus immunology for vaccine development strategies.",
+		robots: "index,dontfollow",
+		keywords: "flavivirus vaccines, arbovirus prevention, DXKB research"
+	},
+	{
+		name: "Hepadnaviridae",
+		href: "/view/Taxonomy/10404",
+		title: "Hepadnaviridae - Hepatitis B Vaccines",
+		description: "Research improved vaccine strategies against hepatitis B virus.",
+		robots: "index,dontfollow",
+		keywords: "hepatitis B vaccines, viral immunity, DXKB database"
+	},
+	{
+		name: "Hepeviridae",
+		href: "/view/Taxonomy/291484",
+		title: "Hepeviridae - Hepatitis E Prevention",
+		description: "Study hepatitis E virus for vaccine development approaches.",
+		robots: "index,dontfollow",
+		keywords: "hepatitis E vaccines, viral prevention, DXKB research"
+	},
+	{
+		name: "Herpesvirales",
+		href: "/view/Taxonomy/548681",
+		title: "Herpesvirales - Herpesvirus Vaccines",
+		description: "Research vaccine strategies against various herpesviruses.",
+		robots: "index,dontfollow",
+		keywords: "herpesvirus vaccines, viral prevention, DXKB database"
+	},
+	{
+		name: "Orthomyxoviridae",
+		href: "/view/Taxonomy/11308",
+		title: "Orthomyxoviridae - Influenza Vaccines",
+		description: "Study influenza virus biology for improved vaccine development.",
+		robots: "index,dontfollow",
+		keywords: "influenza vaccines, viral immunity, DXKB research"
+	},
+	{
+		name: "Paramyxoviridae",
+		href: "/view/Taxonomy/11158",
+		title: "Paramyxoviridae - Respiratory Vaccines",
+		description: "Research vaccine approaches against measles, mumps and respiratory viruses.",
+		robots: "index,dontfollow",
+		keywords: "paramyxovirus vaccines, respiratory prevention, DXKB database"
+	},
+	{
+		name: "Parvoviridae",
+		href: "/view/Taxonomy/10780",
+		title: "Parvoviridae - Viral Vaccine Research",
+		description: "Study parvovirus biology for vaccine development strategies.",
+		robots: "index,dontfollow",
+		keywords: "parvovirus vaccines, viral prevention, DXKB research"
+	},
+	{
+		name: "Picornaviridae",
+		href: "/view/Taxonomy/12058",
+		title: "Picornaviridae - Enterovirus Vaccines",
+		description: "Research vaccine approaches against enteroviruses and related pathogens.",
+		robots: "index,dontfollow",
+		keywords: "enterovirus vaccines, viral prevention, DXKB database"
+	},
+	{
+		name: "Pneumoviridae",
+		href: "/view/Taxonomy/11244",
+		title: "Pneumoviridae - RSV Vaccine Research",
+		description: "Study RSV and related viruses for vaccine development.",
+		robots: "index,dontfollow",
+		keywords: "RSV vaccines, respiratory prevention, DXKB research"
+	},
+	{
+		name: "Polyomaviridae",
+		href: "/view/Taxonomy/151341",
+		title: "Polyomaviridae - Viral Vaccine Studies",
+		description: "Research vaccine strategies against polyomaviruses.",
+		robots: "index,dontfollow",
+		keywords: "polyomavirus vaccines, viral prevention, DXKB database"
+	},
+	{
+		name: "Poxviridae",
+		href: "/view/Taxonomy/10240",
+		title: "Poxviridae - Poxvirus Vaccines",
+		description: "Study poxvirus immunology for vaccine development approaches.",
+		robots: "index,dontfollow",
+		keywords: "poxvirus vaccines, viral prevention, DXKB research"
+	},
+	{
+		name: "Reovirales",
+		href: "/view/Taxonomy/2732541",
+		title: "Reovirales - Rotavirus Vaccines",
+		description: "Research vaccine strategies against rotaviruses and related pathogens.",
+		robots: "index,dontfollow",
+		keywords: "rotavirus vaccines, viral prevention, DXKB database"
+	},
+	{
+		name: "Rhabdoviridae",
+		href: "/view/Taxonomy/11270",
+		title: "Rhabdoviridae - Rabies Prevention",
+		description: "Study rabies virus for improved vaccine development.",
+		robots: "index,dontfollow",
+		keywords: "rabies vaccines, viral prevention, DXKB research"
+	},
+	{
+		name: "Togaviridae",
+		href: "/view/Taxonomy/11018",
+		title: "Togaviridae - Arbovirus Vaccines",
+		description: "Research vaccine approaches against togaviruses and arboviruses.",
+		robots: "index,dontfollow",
+		keywords: "togavirus vaccines, arbovirus prevention, DXKB database"
+	}
+];
+
+var featuredVirus = [
+	{
+		name: "Bacteriophages",
+		href: "/view/GenomeList/?eq(genome_name,phage)",
+		title: "Bacteriophages - Therapeutic Applications",
+		description: "Research bacteriophages for therapeutic and vaccine development.",
+		robots: "index,dontfollow",
+		keywords: "phage therapy, vaccine development, DXKB research"
+	},
+	{
+		name: "Dengue virus",
+		href: "/view/Taxonomy/12637",
+		title: "Dengue Virus - Vaccine Development",
+		description: "Study dengue virus immunology for vaccine development.",
+		robots: "index,dontfollow",
+		keywords: "dengue vaccines, viral immunity, DXKB database"
+	},
+	{
+		name: "Ebolavirus",
+		href: "/view/Taxonomy/186536",
+		title: "Ebolavirus - Vaccine Research",
+		description: "Research vaccine strategies against Ebola virus.",
+		robots: "index,dontfollow",
+		keywords: "Ebola vaccines, viral prevention, DXKB research"
+	},
+	{
+		name: "Enterovirus",
+		href: "/view/Taxonomy/12059",
+		title: "Enterovirus - Vaccine Development",
+		description: "Study enterovirus biology for vaccine development approaches.",
+		robots: "index,dontfollow",
+		keywords: "enterovirus vaccines, viral prevention, DXKB database"
+	},
+	{
+		name: "Hepacivirus",
+		href: "/view/Taxonomy/11102",
+		title: "Hepacivirus - HCV Vaccine Research",
+		description: "Research vaccine strategies against hepatitis C virus.",
+		robots: "index,dontfollow",
+		keywords: "HCV vaccines, viral prevention, DXKB research"
+	},
+	{
+		name: "Influenza A virus",
+		href: "/view/Taxonomy/11320",
+		title: "Influenza A - Vaccine Development",
+		description: "Study influenza A immunology for improved vaccines.",
+		robots: "index,dontfollow",
+		keywords: "influenza vaccines, viral prevention, DXKB database"
+	},
+	{
+		name: "Mammarenavirus lassaense",
+		href: "/view/Taxonomy/3052310",
+		title: "Lassa Virus - Vaccine Research",
+		description: "Research vaccine approaches against Lassa fever virus.",
+		robots: "index,dontfollow",
+		keywords: "Lassa vaccines, viral prevention, DXKB research"
+	},
+	{
+		name: "Monkeypox virus",
+		href: "/view/Taxonomy/10244",
+		title: "Monkeypox - Vaccine Development",
+		description: "Study monkeypox virus for vaccine development strategies.",
+		robots: "index,dontfollow",
+		keywords: "monkeypox vaccines, viral prevention, DXKB database"
+	},
+	{
+		name: "SARS-CoV-2",
+		href: "/view/Taxonomy/2697049",
+		title: "SARS-CoV-2 - COVID-19 Vaccines",
+		description: "Research vaccine approaches against SARS-CoV-2 variants.",
+		robots: "index,dontfollow",
+		keywords: "COVID vaccines, viral immunity, DXKB research"
+	},
+	{
+		name: "Zika virus",
+		href: "/view/Taxonomy/64320",
+		title: "Zika Virus - Vaccine Development",
+		description: "Study Zika virus biology for vaccine development strategies.",
+		robots: "index,dontfollow",
+		keywords: "Zika vaccines, viral prevention, DXKB database"
+	}
+];
+
+var toolsAndServices = [
+	{
+		name: "Genome Assembly",
+		href: "/app/Assembly2",
+		title: "Genome Assembly - Analyze Viral Genomes",
+		description: "Assemble viral genomes to understand emerging pathogens for vaccine development.",
+		robots: "index,follow",
+		keywords: "viral genome assembly, vaccine development, DXKB tools"
+	},
+	{
+		name: "Genome Annotation",
+		href: "/app/Annotation",
+		title: "Genome Annotation - Study Viral Genes",
+		description: "Annotate viral genomes to identify potential vaccine targets.",
+		robots: "index,follow",
+		keywords: "viral gene annotation, vaccine targets, DXKB tools"
+	},
+	{
+		name: "Comprehensive Genome Analysis",
+		href: "/app/ComprehensiveGenomeAnalysis",
+		title: "Comprehensive Analysis - Study Viral Biology",
+		description: "Analyze viral genomes comprehensively for vaccine design strategies.",
+		robots: "index,follow",
+		keywords: "viral genome analysis, vaccine design, DXKB tools"
+	},
+	{
+		name: "BLAST",
+		href: "/app/Homology",
+		title: "BLAST - Compare Viral Sequences",
+		description: "Search for similar viral sequences to identify conserved vaccine targets.",
+		robots: "index,follow",
+		keywords: "viral sequence comparison, vaccine targets, DXKB tools"
+	},
+	{
+		name: "Primer Design",
+		href: "/app/PrimerDesign",
+		title: "Primer Design - Develop Viral Tests",
+		description: "Design primers for viral detection and vaccine testing.",
+		robots: "index,follow",
+		keywords: "viral diagnostics, vaccine testing, DXKB tools"
+	},
+	{
+		name: "Similar Genome Finder",
+		href: "/app/GenomeDistance",
+		title: "Genome Finder - Track Viral Relatives",
+		description: "Find related viral strains to inform vaccine development.",
+		robots: "index,follow",
+		keywords: "viral strain tracking, vaccine development, DXKB tools"
+	},
+	{
+		name: "Genome Alignment",
+		href: "/app/GenomeAlignment",
+		title: "Genome Alignment - Compare Viral Strains",
+		description: "Compare viral genomes to optimize vaccine coverage.",
+		robots: "index,follow",
+		keywords: "viral comparison, vaccine coverage, DXKB tools"
+	},
+	{
+		name: "Variation Analysis",
+		href: "/app/Variation",
+		title: "Variation Analysis - Track Viral Changes",
+		description: "Analyze viral variations to maintain vaccine efficacy.",
+		robots: "index,follow",
+		keywords: "viral variation, vaccine efficacy, DXKB tools"
+	},
+	{
+		name: "Tn-Seq Analysis",
+		href: "/app/Tnseq",
+		title: "Tn-Seq Analysis - Study Viral Genes",
+		description: "Analyze viral gene functions for vaccine target identification.",
+		robots: "index,follow",
+		keywords: "viral genes, vaccine targets, DXKB tools"
+	},
+	{
+		name: "Bacterial Genome Tree",
+		href: "/app/PhylogeneticTree",
+		title: "Pathogen Tree - Track Viral Evolution",
+		description: "Track evolution of viral pathogens to predict vaccine needs.",
+		robots: "index,follow",
+		keywords: "viral evolution, vaccine development, DXKB tools"
+	},
+	{
+		name: "Viral Genome Tree",
+		href: "/app/ViralGenomeTree",
+		title: "Viral Evolution - Study Emerging Threats",
+		description: "Monitor viral evolution patterns to prepare vaccine strategies.",
+		robots: "index,follow",
+		keywords: "viral evolution, vaccine strategy, DXKB tools"
+	},
+	{
+		name: "Gene/Protein Tree",
+		href: "/app/GeneTree",
+		title: "Molecular Evolution - Track Viral Changes",
+		description: "Study evolution of viral genes and proteins for vaccine updates.",
+		robots: "index,follow",
+		keywords: "viral proteins, vaccine updates, DXKB tools"
+	},
+	{
+		name: "MSA and SNP Analysis",
+		href: "/app/MSA",
+		title: "Sequence Analysis - Study Viral Mutations",
+		description: "Analyze viral mutations to maintain vaccine effectiveness.",
+		robots: "index,follow",
+		keywords: "viral mutations, vaccine effectiveness, DXKB tools"
+	},
+	{
+		name: "Meta-CATS",
+		href: "/app/MetaCATS",
+		title: "Meta Analysis - Study Viral Patterns",
+		description: "Analyze patterns in viral disease data to guide vaccine development.",
+		robots: "index,follow",
+		keywords: "viral patterns, vaccine development, DXKB tools"
+	},
+	{
+		name: "Proteome Comparison",
+		href: "/app/SeqComparison",
+		title: "Proteome Analysis - Compare Viral Strains",
+		description: "Compare viral protein profiles to optimize vaccine design.",
+		robots: "index,follow",
+		keywords: "viral proteins, vaccine design, DXKB tools"
+	},
+	{
+		name: "Protein Family Sorter",
+		href: "/app/ComparativeSystems",
+		title: "Protein Classification - Study Viral Features",
+		description: "Classify viral protein families to identify vaccine targets.",
+		robots: "index,follow",
+		keywords: "viral proteins, vaccine targets, DXKB tools"
+	},
+	{
+		name: "Comparative Systems",
+		href: "/app/ComparativeSystems",
+		title: "Systems Analysis - Study Viral Mechanisms",
+		description: "Analyze viral systems to inform vaccine strategies.",
+		robots: "index,follow",
+		keywords: "viral systems, vaccine strategy, DXKB tools"
+	},
+	{
+		name: "Docking",
+		href: "/app/Docking",
+		title: "Molecular Docking - Study Vaccine Binding",
+		description: "Study vaccine-virus interactions for improved efficacy.",
+		robots: "index,follow",
+		keywords: "vaccine binding, viral targets, DXKB tools"
+	},
+	{
+		name: "Taxonomic Classification",
+		href: "/app/TaxonomicClassification",
+		title: "Viral Classification - Identify Threats",
+		description: "Classify and identify emerging viral threats for vaccine preparedness.",
+		robots: "index,follow",
+		keywords: "viral classification, vaccine preparedness, DXKB tools"
+	},
+	{
+		name: "Metagenomic Binning",
+		href: "/app/MetagenomicBinning",
+		title: "Metagenomics - Study Viral Communities",
+		description: "Analyze viral communities to inform vaccine development.",
+		robots: "index,follow",
+		keywords: "viral communities, vaccine development, DXKB tools"
+	},
+	{
+		name: "Metagenomic Read Mapping",
+		href: "/app/MetagenomicReadMapping",
+		title: "Viral Mapping - Track Emerging Threats",
+		description: "Map and track emerging viral threats for vaccine preparation.",
+		robots: "index,follow",
+		keywords: "viral tracking, vaccine preparation, DXKB tools"
+	},
+	{
+		name: "RNA-Seq Analysis",
+		href: "/app/Rnaseq",
+		title: "Gene Expression - Study Viral Activity",
+		description: "Analyze viral gene expression to identify vaccine targets.",
+		robots: "index,follow",
+		keywords: "viral expression, vaccine targets, DXKB tools"
+	},
+	{
+		name: "Expression Import",
+		href: "/app/Expression",
+		title: "Expression Analysis - Study Viral States",
+		description: "Study viral expression patterns to optimize vaccine timing.",
+		robots: "index,follow",
+		keywords: "viral expression, vaccine optimization, DXKB tools"
+	},
+	{
+		name: "Fastq Utilities",
+		href: "/app/FastqUtil",
+		title: "Sequence Tools - Process Viral Data",
+		description: "Process viral sequencing data for vaccine research.",
+		robots: "index,follow",
+		keywords: "viral sequences, vaccine research, DXKB tools"
+	},
+	{
+		name: "ID Mapper",
+		href: "/app/IDMapper",
+		title: "ID Mapping - Link Viral Data",
+		description: "Connect different types of viral data for vaccine development.",
+		robots: "index,follow",
+		keywords: "viral data, vaccine development, DXKB tools"
+	},
+	{
+		name: "SARS-CoV-2 Genome Analysis",
+		href: "/app/ComprehensiveSARS2Analysis",
+		title: "COVID-19 Analysis - Study Viral Evolution",
+		description: "Track SARS-CoV-2 evolution to update vaccine strategies.",
+		robots: "index,follow",
+		keywords: "COVID-19 evolution, vaccine updates, DXKB tools"
+	},
+	{
+		name: "SARS-CoV-2 Wastewater Analysis",
+		href: "/app/SARS2Wastewater",
+		title: "COVID-19 Surveillance - Monitor Variants",
+		description: "Monitor SARS-CoV-2 variants to assess vaccine effectiveness.",
+		robots: "index,follow",
+		keywords: "COVID-19 variants, vaccine effectiveness, DXKB tools"
+	},
+	{
+		name: "Influenza Sequence Submission",
+		href: "/app/SequenceSubmission",
+		title: "Flu Tracking - Submit Viral Data",
+		description: "Submit influenza sequence data to support vaccine development.",
+		robots: "index,follow",
+		keywords: "flu sequences, vaccine development, DXKB tools"
+	},
+	{
+		name: "Influenza HA Subtype Conversion",
+		href: "/app/HASubtypeNumberingConversion",
+		title: "Flu Analysis - Study Viral Types",
+		description: "Analyze influenza subtypes to inform vaccine design.",
+		robots: "index,follow",
+		keywords: "flu subtypes, vaccine design, DXKB tools"
+	},
+	{
+		name: "Subspecies Classification",
+		href: "/app/SubspeciesClassification",
+		title: "Strain Analysis - Track Viral Variants",
+		description: "Track and classify viral variants to maintain vaccine efficacy.",
+		robots: "index,follow",
+		keywords: "viral variants, vaccine efficacy, DXKB tools"
+	}
+];
+
+var aboutLinks = [
+	{
+		name: "About DXKB",
+		href: "/about",
+		title: "About DXKB - Disease X Knowledge Base",
+		description: "Learn about DXKB's mission in supporting vaccine development against emerging viral threats.",
+		robots: "index,follow",
+		keywords: "about DXKB, vaccine development, viral diseases, Disease X"
+	},
+	{
+		name: "Our Team",
+		href: "/team",
+		title: "DXKB Team - Vaccine Research Experts",
+		description: "Meet DXKB's team of virologists, immunologists and vaccine development experts.",
+		robots: "index,follow",
+		keywords: "DXKB team, vaccine experts, viral research"
+	},
+	{
+		name: "DXKB Calendar",
+		href: "/brc-calendar",
+		title: "DXKB Calendar - Vaccine Development Updates",
+		description: "Stay updated on vaccine development progress and emerging viral threats.",
+		robots: "index,follow",
+		keywords: "vaccine updates, viral threats, DXKB calendar"
+	},
+	{
+		name: "Publications",
+		href: "/publications",
+		title: "DXKB Research - Vaccine Studies",
+		description: "Access DXKB's research on vaccine development and viral immunology.",
+		robots: "index,follow",
+		keywords: "vaccine research, viral studies, DXKB publications"
+	},
+	{
+		name: "Citation",
+		href: "/citation",
+		title: "Cite DXKB - Reference Guidelines",
+		description: "Learn how to cite DXKB's vaccine development and viral research resources.",
+		robots: "index,follow",
+		keywords: "DXKB citation, vaccine research, viral databases"
+	},
+	{
+		name: "Related Resources",
+		href: "/related-resources",
+		title: "Related Tools - Additional Resources",
+		description: "Explore additional vaccine development and viral research resources.",
+		robots: "index,follow",
+		keywords: "vaccine resources, viral research tools, DXKB network"
+	},
+	{
+		name: "Privacy Policy",
+		href: "/privacy-policy",
+		title: "Privacy Policy - Data Protection",
+		description: "Learn how DXKB protects viral research and vaccine development data.",
+		robots: "index,follow",
+		keywords: "data privacy, research protection, DXKB policy"
+	}
+];
+
+const url = request.originalUrl || '';
+function findMetaTag(items, tag) {
+	if (url.includes('workspace')) {
+		return null;
+	}
+	for (let item of items) {
+		if (url.startsWith(item.href)) {
+			return item[tag];
+		}
+	}
+	return null;
+}
+
+// Consolidated function usage to find description and robots meta tags
+let pageDescription = '';
+let robots = '';
+let keywords = '';
+let title = '';
+
+pageDescription =
+	findMetaTag(bacteria, "description") ||
+	findMetaTag(virus, "description") ||
+	findMetaTag(featuredVirus, "description") ||
+	findMetaTag(searches, "description") ||
+	findMetaTag(toolsAndServices, "description") ||
+	findMetaTag(aboutLinks, "description") ||
+	findMetaTag(routes, "description") ||
+	pageDescription;
+
+robots =
+	findMetaTag(bacteria, "robots") ||
+	findMetaTag(virus, "robots") ||
+	findMetaTag(featuredVirus, "robots") ||
+	findMetaTag(searches, "robots") ||
+	findMetaTag(toolsAndServices, "robots") ||
+	findMetaTag(aboutLinks, "robots") ||
+	findMetaTag(routes, "robots") ||
+	robots;
+
+keywords =
+	findMetaTag(bacteria, "keywords") ||
+	findMetaTag(virus, "keywords") ||
+	findMetaTag(featuredVirus, "keywords") ||
+	findMetaTag(searches, "keywords") ||
+	findMetaTag(toolsAndServices, "keywords") ||
+	findMetaTag(aboutLinks, "keywords") ||
+	findMetaTag(routes, "keywords") ||
+	keywords;
+
+title =
+	findMetaTag(bacteria, "title") ||
+	findMetaTag(virus, "title") ||
+	findMetaTag(featuredVirus, "title") ||
+	findMetaTag(searches, "title") ||
+	findMetaTag(toolsAndServices, "title") ||
+	findMetaTag(aboutLinks, "title") ||
+	findMetaTag(routes, "title") ||
+	title;
+%>
+
+<% if (pageDescription?.length > 0) {%>
+	<meta name="description" content="<%= pageDescription %>"/>
+<% } %>
+<% if (robots?.length > 0) { %>
+	<meta name="robots" content="<%= robots %>"/>
+<% } %>
+<% if (keywords?.length > 0) { %>
+	<meta name="keywords" content="<%= keywords %>"/>
+<% } %>
+<% if (title?.length > 0) { %>
+	<meta name="title" content="<%= title %>"/>
+<% } %>
 
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="Keywords" content="PATRIC, Pathosystems Resource Integration Center"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="google-site-verification" content="TkjceNtwo7upCQl_gx8Zmhhp9tCmc08LitZGuvQ1Eb8" />
-	<link rel="manifest" href="/public/manifest.json">
-	<link rel="icon" sizes="16x16 32x32" href="/patric/favicon.ico">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="Keywords" content="DXKB: Disease X Knowledge Base"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="manifest" href="/public/manifest.json"/>
+<link rel="icon" sizes="16x16 32x32" href="/favicon.ico"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+<% if (!request.originalUrl || !request.originalUrl.includes('workspace')) { %>
+	<link rel="canonical" href="<%= request.originalUrl ? 'https://www.dxkb.org' + request.originalUrl : 'https://www.dxkb.org' %>"/>
+<% } %>

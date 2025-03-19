@@ -23,7 +23,8 @@
 @import url("./SearchResults.css");
 @import url("./DataItemFormatter.css");
 @import url("./D3StackedBarChart.css");
-@import url("bv-brc.css");
+/* @import url("bv-brc.css"); */
+@import url("cepi.css");
 @import url("./dlp.css");
 @import url("./help.css");
 @import url("webpage.css");
@@ -43,7 +44,7 @@
 }
 
 .icon-sort-alpha-asc:hover {
-  color: #e75200;
+  color: var(--cepi-malibu);
 }
 
 .bp-reset-element, body, h1, h2, h3, h4, h5, h6, article, aside, details, figcaption, figure,
@@ -75,17 +76,12 @@ body.patric {
 }
 
 body.patric {
-    min-width: 1099px;
+    min-width: 320px;
 }
 
-A, A:visited {
-    text-decoration: none;
-    color: #09456f;
-    cursor: pointer;
-}
 A:hover {
     text-decoration: underline;
-    color: #34698e;
+    color: var(--cepi-sapphire);
 }
 
 body.patric *:focus {
@@ -124,7 +120,7 @@ iframe  {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto !important;
 }
 
 .claro {
@@ -292,6 +288,7 @@ table tr.even td {
 .claro .dijitDialog {
     perspective: 2000px;
     -webkit-perspective: 2000px;
+    border-radius: 15px;
 }
 
 .claro .flippableDialog.dijitDialog {
@@ -318,7 +315,9 @@ table tr.even td {
     -webkit-transform-style: preserve-3d;
     -webkit-transition: transform 1s;
     position: relative;
+    border-radius: 15px;
 }
+
 
 .claro .dijitDialog .backpaneTitleBar,
 .claro .dijitDialog .dijitDialogTitleBar,
@@ -368,7 +367,7 @@ table tr.even td {
 }
 
 .ActionBar {
-    background: #76a72d;
+    background: var(--cepi-yellow);
     border-left: 1px solid #777;
     overflow: hidden;
     padding-top: 6px;
@@ -389,11 +388,11 @@ table tr.even td {
 
 .fa {
     cursor: pointer;
-    color: #333;
+    color: var(--cepi-big-stone);
 }
 
 .fa:hover {
-    color: #e75200;
+    color: var(--cepi-malibu);
 }
 
 .tutorialButton > a:hover,
@@ -455,8 +454,35 @@ table tr.even td {
 }
 
 .UserProfileForm {
-    width: 700px;
+    width: 600px;
     margin: auto;
+}
+
+/* This is for when the form is brought in as the "account settings" in a popup */
+.UserProfileForm .UserProfileForm {
+    width: 500px !important;
+}
+
+@media (max-width: 768px){
+    .UserProfileForm {
+        width: 475px;
+        margin: auto;
+    }
+
+    /* This is for when the form is brought in as the "account settings" in a popup */
+    .UserProfileForm .UserProfileForm {
+        width: 340px !important;
+    }
+}
+
+.RegistrationFormContainer {
+    max-width:580px;
+    display:block;
+    margin:4px;
+    margin-top:28px;
+    margin-bottom:28px;
+    padding:4px;
+    padding-top:8px;
 }
 
 .UserProfileForm Table {
@@ -477,11 +503,15 @@ table tr.even td {
     padding: 4px;
 }
 
-.GlobalSearch .dijitSelect,
+.GlobalSearch .dijitSelect{
+    margin: 0;
+    border: 0;
+    border-radius: 15px;
+}
+
 .GlobalSearch .dijitTextBox {
     margin: 0;
     border: 0;
-    border-radius: 4px;
 }
 
 .GlobalSearch > table {
@@ -490,17 +520,17 @@ table tr.even td {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 15px;
 }
 
 .GlobalSearch {
-    border-radius: 4px;
+    border-radius: 15px;
     background: #fff;
     padding: 0;
 }
 
 body.patric .dijitTabContainerTop-tabs .dijitTabChecked {
-    border-top: 5px solid #629821;
+    border-top: 5px solid var(--cepi-yellow);
     background: #fff none;
     padding-top: 2px;
     transition-duration: 0s;
@@ -715,11 +745,11 @@ div.overview {
 }
 
 .queryModel {
-    color: #76a72d;
+    color: var(--cepi-yellow);
 }
 
 .queryField {
-    color: #34698e;
+    color: var(--navy);
 }
 
 .queryValue {
@@ -777,7 +807,7 @@ div.tooltip {
 }
 
 .red {
-    background: #ff0000;
+    background: var(--cepi-yellow);
 }
 
 .kegg-map-legend-label {
@@ -858,23 +888,93 @@ table {
 }
 @media screen and (min-width: 1200px){
     .column-prime {
-        width: 47.99%;
+        width: 50%;
         float: left;
     }
     .column-sub {
-        width: 29.99%;
+        width: 20%;
         float: left;
     }
     .column-opt {
-        width: 21.99%;
+        width: 30%;
         float: right;
     }
 }
+
+/* Special columns for Outbreak pages */
+.column-prime-ob {
+    width: 55%;
+    float: left;
+}
+.column-sub-ob {
+    width: 20%;
+    float: left;
+}
+.column-opt-ob {
+    width: 25%;
+    float: right;
+}
+
+@media screen and (max-width: 767px){
+    .column-prime-ob {
+        width: 100%;
+        float: left;
+    }
+    .column-sub-ob {
+        width: 100%;
+        float: left;
+    }
+    .column-opt-ob {
+        width: 100%;
+        float: right;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .column-prime-ob {
+        width: 55%;
+        float: left;
+    }
+    .column-sub-ob {
+        width: 15%;
+        float: left;
+    }
+    .column-opt-ob {
+        width: 30%;
+        float: right;
+    }
+}
+
+
 
 .column-prime .section,
 .column-sub .section,
 .column-opt .section{
     padding: 0 5px;
+}
+
+.navbarMenuHeader,
+.section-title {
+	/*
+    background-color: #34698e;
+    color: #efefef;
+    padding: 2px;
+    padding-left: 20px;
+    border-radius: 6px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 2px 2px 2px #555;
+    margin-bottom: 8px;
+	*/
+
+    background: var(--blue-tint);
+    border-radius: 0;
+    text-align: left;
+    box-shadow: none;
+    margin-top: 12px;
+    padding-left: 4px;
+    color: var(--cepi-white);
+    font-weight: 600;
 }
 
 .menuHeader,
@@ -891,7 +991,7 @@ table {
     margin-bottom: 8px;
 	*/
 
-    background: #34598e;
+    background: var(--blue-shade);
     border-radius: 0;
     text-align: left;
     box-shadow: none;
@@ -901,13 +1001,13 @@ table {
 
 .section-title span.wrap {
     background: #fff;
-text-transform: capitalize;
-color: #666666;
-font-weight: normal;
-font-family: "Didact Gothic", Arial, Helvetica, sans-serif;
-font-size: 16px;
-line-height: 20px;
-padding: 5px 5px 5px 0;
+    text-transform: capitalize;
+    color: var(--cepi-sapphire);
+    font-weight: bold;
+    font-family: "Didact Gothic", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 5px 5px 5px 0;
 }
 
 .section-title-plain {
@@ -915,16 +1015,6 @@ padding: 5px 5px 5px 0;
     font-family: "Didact Gothic", Arial, Helvetica, sans-serif;
     font-size: 1.5em;
     margin-right: 10px;
-}
-.section-title span.wrap {
-    background: #fff;
-    text-transform: capitalize;
-    color: #666666;
-    font-weight: normal;
-    font-family: "Didact Gothic", Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 20px;
-    padding: 5px 5px 5px 0;
 }
 
 .menuHeader {
@@ -954,20 +1044,49 @@ div.pubmed ul li {
 	padding: 0;
 }
 
+.PerspectiveType {
+    color: var(--cepi-sapphire);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.patric .PerspectiveQuery .navigationLink {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--cepi-sapphire);
+}
+
+.patric .PerspectiveQuery .navigationLink:hover {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--cepi-malibu);
+    transition: all 0.2s ease;
+}
+
 .patric .PerspectiveQuery .current {
+    font-family: 'Roboto', Arial, sans-serif;
     font-size: 1.1em;
     font-weight: bold;
-    color: #76a72d;
+    color: var(--cepi-yellow);
 }
+
+.patric .PerspectiveQuery .current:hover {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: -0.00em;
+    color: var(--cepi-malibu);}
 
 .patric .PerspectiveTotalCount {
 	color: #666666;
 }
 
 .patric .PerspectiveHeader .PerspectiveIcon.fa {
-    font-size:2.4em;
+    font-size:3.6em;
     float:left;
-    color:#76a72d;
+    color:var(--cepi-yellow);
     margin:4px;
     padding-right: 3px;
 }

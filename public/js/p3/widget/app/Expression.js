@@ -18,7 +18,7 @@ define([
     applicationHelp: 'quick_references/services/expression_data_import_service.html',
     tutorialLink: 'tutorial/expression_import/expression_import.html',
     videoLink: 'https://youtu.be/6MZUq42jx78',
-    pageTitle: 'Expression Import Service | BV-BVRC',
+    pageTitle: 'Expression Import Service | DXKB',
     defaultPath: '',
     constructor: function () {
       this._selfSet = true;
@@ -96,7 +96,7 @@ define([
         } finally {
           sessionStorage.removeItem(rerun_key);
         }
-        
+
       }
     },
 

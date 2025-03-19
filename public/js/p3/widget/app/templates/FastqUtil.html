@@ -1,9 +1,9 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}"
   dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-  <div class="appTemplate">
+  <div class="appTemplate page-content" style="margin-top: 40px; margin-bottom: 40px;">
     <div class="appTitle">
-      <span class="breadcrumb">Services</span>
-      <h3>${applicationLabel}
+      <h1 class="page-content-header">Services</h1>
+      <h2 class="page-content-subheader">${applicationLabel}
         <div name="overview" class="infobox iconbox infobutton dialoginfo">
           <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
         </div>
@@ -13,12 +13,13 @@
         <div class="infobox iconbox videoButton videoInfo">
           <a href="${videoLink}" target="_blank" ><i class="fa icon-play-circle fa-1x" title="click to open the video tutorial"></i></a>
         </div>
-      </h3>
-      <p>
+      </h2>
+      <hr class="page-content-divider" />
+      <p style="font-size: 14px; font-weight: 500;">
         ${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a>, <a href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a> and <a href="${videoLink}" target="_blank">Instructional Video</a>.
       </p>
     </div>
-    <div class="formFieldsContainer">
+    <div class="formFieldsContainer" style="margin-top: 20px;">
       <div style="display: none;">
         <input data-dojo-type="dijit/form/NumberTextBox" value="0" required="true" data-dojo-attach-point="numlibs"
           data-dojo-props="constraints:{min:1,max:1000}," />
@@ -30,7 +31,7 @@
       <table class="assemblyblocks" style="width:100%">
         <tr>
           <td>
-            <div id="pipelineBox" class="appBox appShadow" style="min-height: 280px; height:auto;">
+            <div id="pipelineBox" class="appBox appShadow" style="min-height: 260px; height:auto;">
               <div style="width:85%;display:inline-block;">
                 <label class="appBoxLabel">Parameters</label>
                 <div name="parameters" class="infobox iconbox infobutton dialoginfo">
@@ -38,7 +39,7 @@
                 </div>
               </div>
               <div class="appRow">
-                <label class="paramlabel">Output Folder</label><br>
+                <label class="paramlabel" style="width: fit-content;">Output Folder</label><br>
                 <div data-dojo-type="p3/widget/WorkspaceObjectSelector" name="output_path"
                   data-dojo-attach-point="output_path" style="width:300px" required="true"
                   data-dojo-props="title:'Select an Output Folder',autoSelectCurrent:true,selectionText:'Destination',type:['folder'],multi:false"
@@ -56,7 +57,7 @@
             </div>
           </td>
           <td>
-            <div id="conditionbox" class="appBox appShadow" style="min-height: 220px; height:auto; width:330px">
+            <div id="conditionbox" class="appBox appShadow" style="min-height: 260px; height:auto; width:330px">
               <div class="headerrow">
                 <label class="appBoxLabel">Pipeline</label>
                 <div name="pipeline" class="infobox iconbox infobutton tooltipinfo">
@@ -151,7 +152,7 @@
                   data-dojo-props="type:['reads'],multi:false"></div>
               </div>
             </div>
-            <div class="appBox appShadow">
+            <div class="appBox appShadow" style="height: 106px;">
               <div class="headerrow">
                 <div style="width:85%;display:inline-block;">
                   <label class="appBoxLabel">SRA run accession</label>

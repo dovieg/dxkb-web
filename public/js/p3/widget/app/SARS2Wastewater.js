@@ -14,7 +14,7 @@ define([
 
   return declare([AppBase], {
     baseClass: 'App SARS2Wastewater Analysis',
-    pageTitle: 'SARS-CoV-2 Wastewater | BV-BRC',
+    pageTitle: 'SARS-CoV-2 Wastewater | DXKB',
     templateString: Template,
     applicationName: 'SARS2Wastewater',
     requireAuth: true,
@@ -324,7 +324,7 @@ define([
                       // sample level date is optional
                         lrec.sample_level_date = this.sample_level_date.value
                         this.sample_level_date.reset()
-                    } 
+                    }
                       this.addLibraryRow(lrec, infoLabels, 'srrdata');
                     }
                     this.srr_accession_validation_message.innerHTML = '';
@@ -360,8 +360,8 @@ define([
       if (!accession && !single_read && !paired_r1) {
         this.submit_selected_libs_validation_message.innerHTML = ' <br> All three fields are empty.<br>Hint: Fill in one input field.';
         // give an error for the user
-      } 
-      // step 2 if more than one field has something in it - tell the user to go hey only one at a time 
+      }
+      // step 2 if more than one field has something in it - tell the user to go hey only one at a time
       else if ((accession && paired_r1) || (accession && single_read) || (paired_r1 && single_read)) {
         this.submit_selected_libs_validation_message.innerHTML = ' <br> You can only submit one sample at a time.<br>';
       }
@@ -422,7 +422,7 @@ define([
           lrec.sample_level_date = this.sample_level_date.value
           // reset date textbox
           this.sample_level_date.reset()
-      } 
+      }
         this.addLibraryRow(lrec, infoLabels, 'singledata');
         // empty single lib search box after adding to thel ibrary row
         this.single_end_libsWidget.searchBox.reset()
@@ -490,11 +490,11 @@ define([
           // If the string is not empty add to library
           // sample level date is optional
           lrec.sample_level_date = this.sample_level_date.value
-          // clear sample level date box 
+          // clear sample level date box
           this.sample_level_date.reset()
-      } 
+      }
         this.addLibraryRow(lrec, infoLabels, 'pairdata');
-        // // reset the singe end libs box 
+        // // reset the singe end libs box
         this.read1.searchBox.reset()
         this.read2.searchBox.reset()
       }
@@ -676,7 +676,7 @@ define([
       if (this.single_end_libs.length) {
         values.single_end_libs = this.single_end_libs;
       }
-      
+
       this.sra_libs = srrAccessionList.map(function (lrec) {
         var rrec = {};
         Object.keys(lrec).forEach(lang.hitch(this, function (attr) {

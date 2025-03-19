@@ -18,6 +18,12 @@
     margin-bottom: 20px;
 }
 
+.helpModal {
+    background-color: var(--cepi-light-blue-gray);
+    border-radius: 15px;
+    padding: 10px 20px 10px 20px;
+}
+
 .helpModal .headerlink {
     display: none
 }
@@ -43,16 +49,8 @@
     margin-top: 10px;
 }
 
-.appTitle .breadcrumb {
-    /*font-weight: 600;*/
-}
-
 .appTitle h3 {
     margin: 0 0 10px 10px;
-}
-
-.appTitle p {
-    margin-left: 15px;
 }
 
 .paramlabel,
@@ -164,15 +162,27 @@ table.librarytable td > i {
 }
 
 .claro .dijitDialogTitleBar {
-    background-color: #F0F1F3;
+    background-color: var(--cepi-light-blue);
+    background-image: none;
+    border: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.claro .dijitDialogPaneContent {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: var(--cepi-bone);
 }
 
 .appBox {
-    background-color: #F0F1F3;
-    margin: 0 0 10px 10px;
+    background-color: var(--cepi-light-blue-gray);
+    margin: 0 20px 20px 0;
     width: auto;
-    padding: 5px 0 10px 10px;
     text-align: left;
+    border: 1px solid var(--cepi-light-gray);
+    border-radius: 15px;
+    padding: 10px 20px 10px 20px;
 }
 
 .appRowSegment {
@@ -211,7 +221,7 @@ table.librarytable td > i {
 }
 
 div.infobox i {
-    color: rgb(52, 105, 142);
+    color: var(--cepi-sapphire);
 }
 
 label.appBoxLabel {

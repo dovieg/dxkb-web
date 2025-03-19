@@ -14,7 +14,7 @@ define([
 
   return declare([AppBase], {
     baseClass: 'App TaxonomicClassification',
-    pageTitle: 'Taxonomic Classification Service | BV-BRC ',
+    pageTitle: 'Taxonomic Classification Service | DXKB',
     templateString: Template,
     applicationName: 'TaxonomicClassification',
     requireAuth: true,
@@ -149,7 +149,7 @@ define([
           this.analysis_type.removeOption({value: 'microbiome', label: 'Microbiome Analysis'});
           this.analysis_type.removeOption({value: 'pathogen', label: 'Species Identification'});
           this.analysis_type.set('disabled', true);
-          this.host_genome.set('disabled', true);     
+          this.host_genome.set('disabled', true);
       } else {
           console.log('Invalid Selection');
           this.analysis_type.set('disabled', true);
@@ -489,7 +489,7 @@ define([
       if (this.single_end_libs.length) {
         values.single_end_libs = this.single_end_libs;
       }
-      
+
       this.sra_libs = srrAccessionList.map(function (lrec) {
         var rrec = {};
         Object.keys(lrec).forEach(lang.hitch(this, function (attr) {
@@ -535,6 +535,8 @@ define([
             AppBase.prototype.loadLibrary.call(this, job_data, param_dict);
             this.setAnalysisType(job_data);
             this.output_path.set('value', job_data['output_path']);
+            this.save_unclassified_sequences_yes.set('value', job_data['save_unclassified_sequences']);
+            this.save_classified_sequences_yes.set('value', job_data['save_classified_sequences']);
             this.form_flag = true;
           }
         } catch (error) {
@@ -544,8 +546,8 @@ define([
         }
       }
     },
+
     setAnalysisType: function (job_data) {
-      console.log('job_data = ', job_data);
       if ((job_data['sequence_type'] === 'sixteenS')) {
         this.wgs.set('checked', false);
         this.sixteenS.set('checked', true);

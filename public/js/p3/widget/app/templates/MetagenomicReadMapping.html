@@ -1,20 +1,21 @@
 <form dojoAttachPoint="containerNode" class="PanelForm App ${baseClass}" dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit">
-  <div class="appTemplate">
+  <div class="appTemplate page-content" style="margin-top: 40px; margin-bottom: 40px;">
     <div class="appTitle">
-      <span class="breadcrumb">Services</span>
-      <h3>${applicationLabel}
+      <h1 class="page-content-header">Services</h1>
+      <h2 class="page-content-subheader">${applicationLabel}
         <div name="overview" class="infobox iconbox infobutton dialoginfo">
           <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
         </div>
         <div class="infobox iconbox tutorialButton tutorialInfo">
           <a href="${docsServiceURL}${tutorialLink}" target="_blank" ><i class="fa icon-books fa-1x" title="click to open tutorial"></i></a>
         </div>
-      </h3>
-      <p>${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a> and
+      </h2>
+      <hr class="page-content-divider" />
+      <p style="font-size: 14px; font-weight: 500;">${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a> and
         <a href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a>.
       </p>
     </div>
-    <div class="formFieldsContainer">
+    <div class="formFieldsContainer" style="margin-top: 20px;">
       <div style="display: none;">
         <input data-dojo-type="dijit/form/NumberTextBox" value="0" required="true" data-dojo-attach-point="numlibs" data-dojo-props="constraints:{min:1,max:1000}," />
       </div>
@@ -23,7 +24,7 @@
           <td>
             <div id="pairedBox" class="appBox appShadow">
               <div class="headerrow">
-                <div style="width: 400px;display:inline-block;">
+                <div style="width: 330px;display:inline-block;">
                   <label class="appBoxLabel">Input File</label>
                   <div name="input-file" class="infobox iconbox infobutton dialoginfo">
                     <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
@@ -50,7 +51,7 @@
                 <div style="width:85%;display:inline-block;">
                   <label class="paramlabel">Single read library</label>
                 </div>
-                <div style="width:10%;display:inline-block;"><i data-dojo-attach-event="click:onAddSingle" class="fa icon-arrow-circle-o-right fa-lg"></i></div>
+                <div style="display:inline-block;"><i data-dojo-attach-event="click:onAddSingle" class="fa icon-arrow-circle-o-right fa-lg"></i></div>
               </div>
               <div class="appRow">
                 <div data-dojo-type="p3/widget/WorkspaceObjectSelector" name="libdat_readfile" data-dojo-attach-point="single_end_libsWidget" style="width:285px" required="false" data-dojo-props="type:['reads'],multi:false,placeHolder:'READ FILE'"></div>
@@ -59,7 +60,7 @@
                 <div style="width:85%;display:inline-block;">
                   <label class="paramlabel">SRA run accession</label> <i data-dojo-attach-point="srr_accession_validation_message"></i>
                 </div>
-                <div style="width:10%;display:inline-block;"><i data-dojo-attach-event="click:onAddSRR" class="fa icon-arrow-circle-o-right fa-lg"></i></div>
+                <div style="display:inline-block;"><i data-dojo-attach-event="click:onAddSRR" class="fa icon-arrow-circle-o-right fa-lg"></i></div>
               </div>
               <div class="appRow">
                 <div data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="srr_accession" style="width: 300px" required="false" data-dojo-props="intermediateChanges:true, missingMessage:'You must provide an accession', trim:true, placeHolder:'SRR'"></div>
@@ -67,7 +68,7 @@
             </div>
           </td>
           <td>
-            <div class="appBox appShadow" style="height:213px; width:400px">
+            <div class="appBox appShadow" style="height:213px; width:310px">
               <div class="headerrow">
                 <label class="appBoxLabel">Selected libraries</label>
                 <div name="selected-libraries" class="infobox iconbox infobutton tooltipinfo">
@@ -86,7 +87,7 @@
           </td>
         </tr>
       </table>
-      <div id="parameterBox" style="width:400px; " class="appBox appShadow">
+      <div id="parameterBox" style="width:330px;" class="appBox appShadow">
         <div class="headerrow">
           <div style="width:85%;display:inline-block;">
             <label class="appBoxLabel">Parameters</label>
@@ -131,7 +132,7 @@
         </div>
         <div class="appRow">
             <label class="paramlabel">Output Name</label><br>
-            <div data-dojo-type="p3/widget/WorkspaceFilenameValidationTextBox" data-dojo-attach-point="outputFileWidget" name="output_file"   style="width:380px" required="true" data-dojo-props="promptMessage:'The output name for your Mapping Results',missingMessage:'Output Name must be provided.',trim:true,placeHolder:'Output Name'"></div>
+            <div data-dojo-type="p3/widget/WorkspaceFilenameValidationTextBox" data-dojo-attach-point="outputFileWidget" name="output_file"   style="width:300px" required="true" data-dojo-props="promptMessage:'The output name for your Mapping Results',missingMessage:'Output Name must be provided.',trim:true,placeHolder:'Output Name'"></div>
         </div>
       </div>
     </div>

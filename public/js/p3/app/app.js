@@ -292,7 +292,7 @@ define([
            Topic.publish(msg.topic, msg.payload);
           }
         } catch (err){
-          console.log("Error handling window message: ", msg,err)
+          // console.log("Error handling window message: ", msg,err)
         }
       }, '*');
 
@@ -343,7 +343,7 @@ define([
         // console.log(evt);
         var dlg = new Dialog({
           title: 'User Profile',
-          content: "<div class=\"UserProfileForm\" data-dojo-id=\"userProfile\" data-dojo-type=\"p3/widget/UserProfileForm\" style=\"width:600px; margin-left:auto;margin-right:auto;font-size:1.1em;margin-bottom:10px;margin-top:10px;padding:10px;\" data-dojo-props='callbackURL: \"<%- callbackURL %>\"'></div>",
+          content: "<div class=\"UserProfileForm\" data-dojo-id=\"userProfile\" data-dojo-type=\"p3/widget/UserProfileForm\" style=\"margin-left:auto;margin-right:auto;font-size:1.1em;padding:10px;overflow-y:auto;\" data-dojo-props='callbackURL: \"<%- callbackURL %>\"'></div>",
           onHide: function(){
             console.log("Destroy User Dialog")
             var up = registry.byId('userProfile')

@@ -14,7 +14,7 @@ define([
 
   return declare([AppBase], {
     baseClass: 'App MetagenomicBinning',
-    pageTitle: 'Metagenomic Binning Service | BV-BRC',
+    pageTitle: 'Metagenomic Binning Service | DXKB',
     templateString: Template,
     applicationName: 'MetagenomeBinning',
     requireAuth: true,

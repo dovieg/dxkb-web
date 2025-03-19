@@ -93,7 +93,7 @@ define([
     refresh: function () {
       // console.log("[JobResult] refresh()");
       if (this.data) {
-        var jobHeader = '<div style="width:100%"><div style="width:100%;" ><h3 style="color:#888;font-size:1.3em;font-weight:normal;" class="normal-case close2x"><span style="" class="wrap">';
+        var jobHeader = '<div style="width:100%"><div style="width:100%;" ><h3 style="color:#888;font-size:1.3em;font-weight:normal;" class="normal-case close2x"><span style="color:var(--cepi-sapphire);font-weight:bold;" class="wrap">';
         if (this.data.autoMeta && this.data.autoMeta.app) {
           jobHeader = jobHeader + this._appLabel + ' ';
         }
@@ -101,7 +101,7 @@ define([
         // this.viewer.set('content',jobHeader);
 
         var output = [];
-        output.push(jobHeader + '<table style="width:90%" class="p3basic striped far2x" id="data-table"><tbody>');
+        output.push(jobHeader + '<table style="width:90%;background-color:var(--cepi-white);" class="p3basic striped far2x" id="data-table"><tbody>');
         var job_output = [];
 
         // add extra metadata header lines

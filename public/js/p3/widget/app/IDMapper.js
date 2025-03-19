@@ -23,7 +23,7 @@ define([
     applicationHelp: 'quick_references/services/id_mapper.html',
     tutorialLink: 'tutorial/id_mapper/id_mapper.html',
     videoLink: '',
-    pageTitle: 'ID Mapper Tool | BV-BRC',
+    pageTitle: 'ID Mapper Tool | DXKB',
     templateString: Template,
     path: '',
     mapFromIDs: null,

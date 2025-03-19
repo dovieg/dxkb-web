@@ -205,12 +205,7 @@ define([
       this.viewer.removeChild(this.sequences);
       this.viewer.removeChild(this.amr);
       this.viewer.removeChild(this.circular);
-      this.viewer.removeChild(this.specialtyGenes);
       this.viewer.removeChild(this.proteinFamilies);
-      this.viewer.removeChild(this.pathways);
-      this.viewer.removeChild(this.subsystems);
-      // this.viewer.removeChild(this.experiments);
-      // this.viewer.removeChild(this.interactions);
     },
 
     _setGenomeAttr: function (genome) {
@@ -331,12 +326,6 @@ define([
         id: this.viewer.id + '_features'
       });
 
-      this.proteins = new ProteinGridContainer({
-        title: 'Proteins',
-        id: this.viewer.id + '_proteins',
-        disabled: false
-      });
-
       this.structures = new ProteinStructureGridContainer({
         title: 'Protein Structures',
         id: this.viewer.id + '_structures'
@@ -355,26 +344,9 @@ define([
         state: lang.mixin({}, this.state)
       });
 
-      this.specialtyGenes = new SpecialtyGeneGridContainer({
-        title: 'Specialty Genes',
-        id: this.viewer.id + '_specialtyGenes',
-        state: lang.mixin({}, this.state, { search: (this.genome_id ? '?eq(genome_id,' + this.genome_id + ')' : '?ne(genome_id,*)' ) })
-      });
-
       this.proteinFeatures = new ProteinFeaturesGridContainer({
         title: 'Domains and Motifs',
         id: this.viewer.id + '_proteinFeatures'
-      });
-
-      this.pathways = new PathwaysContainer({
-        apiServer: this.apiServiceUrl,
-        title: 'Pathways',
-        id: this.viewer.id + '_pathways'
-      });
-
-      this.subsystems = new SubSystemsContainer({
-        title: 'Subsystems',
-        id: this.viewer.id + '_subsystems'
       });
 
       this.proteinFamilies = new ProteinFamiliesContainer({
@@ -402,13 +374,9 @@ define([
       this.viewer.addChild(this.circular);
       this.viewer.addChild(this.sequences);
       this.viewer.addChild(this.features);
-      this.viewer.addChild(this.proteins);
       this.viewer.addChild(this.structures);
-      this.viewer.addChild(this.specialtyGenes);
       this.viewer.addChild(this.proteinFeatures);
       this.viewer.addChild(this.proteinFamilies);
-      this.viewer.addChild(this.pathways);
-      this.viewer.addChild(this.subsystems);
       this.viewer.addChild(this.experiments);
       this.viewer.addChild(this.interactions);
     }

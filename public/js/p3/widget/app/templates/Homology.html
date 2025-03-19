@@ -1,9 +1,9 @@
 <form dojoAttachPoint="containerNode" class="PanelForm"
     dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit,onchange:validate">
-    <div class="appTemplate">
+    <div class="appTemplate page-content" style="margin-top: 40px; margin-bottom: 40px;">
         <div class="appTitle">
-            <span class="breadcrumb">Services</span>
-            <h3>${applicationLabel}
+            <h1 class="page-content-header">Services</h1>
+            <h2 class="page-content-subheader">${applicationLabel}
                 <div name="overview" class="infobox iconbox infobutton dialoginfo">
                     <i class="fa icon-info-circle fa" title="click to open info dialog"></i>
                 </div>
@@ -15,15 +15,16 @@
                     <a href="${videoLink}" target="_blank"><i class="fa icon-play-circle fa-1x"
                             title="click to open the video tutorial"></i></a>
                 </div>
-            </h3>
-            <p>
+            </h2>
+            <hr class="page-content-divider" />
+            <p style="font-size: 14px; font-weight: 500;">
                 ${applicationDescription} For further explanation, please see the ${applicationLabel} Service <a
                     href="${docsServiceURL}${applicationHelp}" target="_blank">Quick Reference Guide</a>, <a
                     href="${docsServiceURL}${tutorialLink}" target="_blank">Tutorial</a> and <a href="${videoLink}"
                     target="_blank">Instructional Video</a>.
             </p>
         </div>
-        <div id="Program_box" style="width:97%;" class="appBox appShadow">
+        <div id="Program_box" style="width:97%; margin-top: 20px;" class="appBox appShadow">
             <div class="headerrow">
                 <label class="appBoxLabel">Search program</label>
                 <div name="search-program" class="infobox iconbox infobutton dialoginfo">
@@ -287,33 +288,34 @@
                 <div class="clear"></div>
             </div>
         </div>
-    </div>
-    <div class="appSubmissionArea">
-        <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage"
-            style="margin-top:10px; text-align:center;">
-            Submitting Homology job
-        </div>
-        <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage"
-            style="margin-top:10px; text-align:center;">
-            Error submitting job
-        </div>
-        <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage"
-            style="margin-top:10px; text-align:center;">
-            Your job has been submitted successfully. Please visit your <a
-                data-dojo-attach-event="onclick:openJobsList"><u>Jobs List</u> </a>to check the status of your job and
-            access the results.
-        </div>
-        <div style="margin-top: 10px; text-align:center;">
-            <div data-dojo-attach-point="cancelButton" data-dojo-attach-event="onClick:onCancel"
-                data-dojo-type="dijit/form/Button">Cancel
+
+        <div class="appSubmissionArea">
+            <div data-dojo-attach-point="workingMessage" class="messageContainer workingMessage"
+                style="margin-top:10px; text-align:center;">
+                Submitting Homology job
             </div>
-            <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset
+            <div data-dojo-attach-point="errorMessage" class="messageContainer errorMessage"
+                style="margin-top:10px; text-align:center;">
+                Error submitting job
             </div>
-            <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit
+            <div data-dojo-attach-point="submittedMessage" class="messageContainer submittedMessage"
+                style="margin-top:10px; text-align:center;">
+                Your job has been submitted successfully. Please visit your <a
+                    data-dojo-attach-event="onclick:openJobsList"><u>Jobs List</u> </a>to check the status of your job and
+                access the results.
             </div>
-            <div id="${id}_live_job_check123" value=true data-dojo-type="dijit/form/CheckBox" checked
-                data-dojo-attach-point="live_job" data-dojo-attach-event="onChange:setLiveJob"></div>
-            <label for="${id}_live_job_check123">View results</label>
+            <div style="margin-top: 10px; text-align:center;">
+                <div data-dojo-attach-point="cancelButton" data-dojo-attach-event="onClick:onCancel"
+                    data-dojo-type="dijit/form/Button">Cancel
+                </div>
+                <div data-dojo-attach-point="resetButton" type="reset" data-dojo-type="dijit/form/Button">Reset
+                </div>
+                <div data-dojo-attach-point="submitButton" type="submit" data-dojo-type="dijit/form/Button">Submit
+                </div>
+                <div id="${id}_live_job_check123" value=true data-dojo-type="dijit/form/CheckBox" checked
+                    data-dojo-attach-point="live_job" data-dojo-attach-event="onChange:setLiveJob"></div>
+                <label for="${id}_live_job_check123">View results</label>
+            </div>
         </div>
     </div>
 </form>

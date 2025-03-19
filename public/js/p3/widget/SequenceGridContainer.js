@@ -47,7 +47,7 @@ define([
           const primaryKey = _self.primaryKey
           const currentQuery = _self.grid.get('query')
           const authToken = (window.App.authorizationToken) ? `&http_authorization=${encodeURIComponent(window.App.authorizationToken)}` : ''
-          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})`
+          const query = `${currentQuery}&sort(${primaryKey})&limit(${totalRows})&select(genome_id,genome_name,sequence_id,gi,accession,sequence_type,topology,description,gc_content,length,release_date,version,date_inserted)`
 
           on(downloadTT.domNode, 'div:click', function (evt) {
             const typeAccept = evt.target.attributes.rel.value

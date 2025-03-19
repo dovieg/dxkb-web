@@ -111,7 +111,7 @@ define([
       }
       // console.log(active, this.state);
       if (activeTab) {
-        var pageTitle = 'Protein List ' + activeTab.title + '| BV-BRC';
+        var pageTitle = 'Protein List ' + activeTab.title + '| DXKB';
         // console.log("Feature List: ", pageTitle);
         if (window.document.title !== pageTitle) {
           window.document.title = pageTitle;
@@ -137,22 +137,24 @@ define([
         id: this.viewer.id + '_overview'
       });
 
+/*
       this.proteins = new ProteinGridContainer({
         title: 'Proteins',
         id: this.viewer.id + '_features',
         tooltip: 'Proteins tab contains a list of all proteins (e.g., CDS, rRNA, tRNA, etc.) associated with a given Phylum, Class, Order, Family, Genus, Species or Genome.',
         disabled: false
       });
+*/
 
       this.compareRegionViewer = new CompareRegionContainer({
         title: 'Compare Region Viewer',
-        style: 'overflow-y:auto',
+        style: 'overflow-y:auto;',
         id: this.viewer.id + '_compareRegionViewer'
       });
 
 
       this.viewer.addChild(this.overview);
-      this.viewer.addChild(this.proteins);
+//      this.viewer.addChild(this.proteins);
       this.viewer.addChild(this.compareRegionViewer);
     },
 
