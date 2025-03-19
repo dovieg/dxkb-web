@@ -64,7 +64,7 @@ define([
 
       // Create scrollable container that fills parent width
       this.scrollContainer = domConstruct.create('div', {
-        style: 'width: 100%; height: 100%; overflow-y: auto; display: flex; flex-direction: column; padding: 0;'
+        className: 'chat-history-container'
       }, this.containerNode);
 
       this.getSessions();

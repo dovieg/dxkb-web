@@ -95,8 +95,8 @@
                 </a>
             </div>
 
-            <div data-dojo-attach-point="dropdownHeader" style="vertical-align: top; min-width: 435px; flex: 1">
-            
+            <!-- <div data-dojo-attach-point="dropdownHeader" style="vertical-align: top; min-width: 435px; flex: 1"> -->
+
             <div id="header-menu" style="display: flex; flex: 0 0 auto; align-items: left; min-width: fit-content;">
                 <div class="topMenuButton showOnLoad dijitHidden" data-dojo-type="dijit/form/DropDownButton">
                     <span style="font-size: 15px; font-weight: 600;">Viruses</span>
@@ -258,10 +258,16 @@
                        data-dojo-type="p3/widget/GlobalSearch"/>
             </div>
 
-            <!-- <div class="navbar-flex-space" style="flex-grow: 0.85;"></div> -->
+           <!-- <div class="navbar-flex-space" style="flex-grow: 0.85;"></div> -->
 
             <!-- USER LOGIN SECTION -->
             <div id="bv-brc-right-header">
+                <div id="chat-icon" style="width: 30px; align-self: right; justify-content: center; align-items: center; display: flex;">
+                    <a href="/view/Copilot">
+                        <img src="/patric/images/cepi/chat-lines.svg" alt="Chat Icon" style="width: 28px; height: 28px; justify-content: center; align-items: center;">
+                    </a>
+                </div>
+
                 <div class="HideWithAuth showOnLoad dijitHidden">
                     <div class="topMenuButton showOnLoad dijitHidden" data-dojo-type="dijit/form/DropDownButton" style="display: flex; align-items: right;">
                         <img class="user-profile-icon" src="/patric/images/user-circle-cut-white.svg" alt="User Profile" style="height: 28px;"/>
@@ -580,7 +586,7 @@
     <!-- <div class="msg-box-below-topnav"><strong>Welcome to the BV-BRC Alpha website. This site is used for active development and testing of the BV-BRC resource. Hence, the data and functionality may change frequently and without notice.</strong></div> -->
     <!-- <div class="msg-box-below-topnav"><strong>Welcome to the BV-BRC Beta website. This site is used to seek early community feedback for the BV-BRC resource, which is still under development. Please note that the data and functionality on this site may change frequently and without notice.</strong></div> -->
 </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
         var user_data = JSON.parse(localStorage.getItem('userProfile'));
         // if (user_data.roles && user_data.roles.includes('admin')) {
@@ -614,4 +620,4 @@
         var dropdownHeader = document.querySelector('[data-dojo-attach-point="dropdownHeader"]');
         dropdownHeader.appendChild(dropdownButton);
     });
-</script>
+</script> -->
