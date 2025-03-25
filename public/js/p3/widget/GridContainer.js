@@ -407,17 +407,18 @@ define([
 
             // Add options bar to top of sidebar
             var chatOptionsBar = new ChatSessionOptionsBar({
-              region: 'top',
-              style: 'height: 30px; ',
+              region: 'bottom',
+              style: 'height: 30px; background-color: #666666; ',
               copilotApi: this.copilotAPI,
               modelList: modelList,
-              ragList: ragList
+              ragList: ragList,
+              id: 'chat-options-bar',
             });
 
             // Create new chat panel
             this.chatPanel = new ChatSessionSidePanel({
               region: 'right',
-              splitter: true,
+              // splitter: true,
               style: 'width: 32%',
               copilotApi: this.copilotAPI,
               containerSelection: this.selectionActionBar.get('selection'),

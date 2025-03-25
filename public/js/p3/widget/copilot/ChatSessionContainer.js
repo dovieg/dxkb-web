@@ -275,7 +275,7 @@ define([
                 splitter: true,
                 minSize: 60,
                 maxSize: 300,
-                style: 'padding: 0 10px 10px 10px; border: 0; height: 30%;',
+                style: 'padding: 0 10px 10px 10px; border: 0; background-color: #777777; overflow-y: hidden;',
                 copilotApi: this.copilotApi,
                 chatStore: this.chatStore,
                 displayWidget: this.displayWidget,
