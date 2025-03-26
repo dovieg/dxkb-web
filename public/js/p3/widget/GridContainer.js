@@ -418,7 +418,7 @@ define([
             // Create new chat panel
             this.chatPanel = new ChatSessionSidePanel({
               region: 'right',
-              // splitter: true,
+              splitter: true,
               style: 'width: 32%',
               copilotApi: this.copilotAPI,
               containerSelection: this.selectionActionBar.get('selection'),

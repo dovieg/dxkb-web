@@ -91,7 +91,6 @@ define([
     createTitleDisplay: function() {
       this.titleDisplay = domConstruct.create('div', {
         innerHTML: this.title,
-        // style: 'cursor: pointer; padding: 5px; flex-grow: 1; font-size: 1.2em; font-weight: bold;',
         class: 'chat-title-header'
       }, this.titleContainer);
 

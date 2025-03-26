@@ -257,7 +257,8 @@ define([
         _createDisplayWidget: function() {
             this.displayWidget = new CopilotDisplay({
                 region: 'center',
-                style: 'padding: 0; border: 0; overflow: hidden; height: 100%; min-height: 100px;',
+                style: 'padding: 0; border: 0; overflow: hidden; height: auto; min-height: 100px; will-change: height;',
+                id: 'copilot-display-widget',
                 copilotApi: this.copilotApi,
                 chatStore: this.chatStore,
                 sessionId: this.sessionId
@@ -272,14 +273,15 @@ define([
         _createInputWidget: function() {
             this.inputWidget = new CopilotInput({
                 region: 'bottom',
-                splitter: true,
-                minSize: 60,
+                splitter: false,
+                minSize: 200,
                 maxSize: 300,
-                style: 'padding: 0 10px 10px 10px; border: 0; background-color: #777777; overflow-y: hidden;',
+                style: 'padding: 0 10px 10px 10px; border: 0; overflow-y: auto;',
                 copilotApi: this.copilotApi,
                 chatStore: this.chatStore,
                 displayWidget: this.displayWidget,
-                sessionId: this.sessionId
+                sessionId: this.sessionId,
+                id: 'copilot-input-widget'
             });
             this.addChild(this.inputWidget);
         },
