@@ -139,8 +139,9 @@ define([
        */
       _createModelText: function(currDiv) {
         this.modelText = domConstruct.create('div', {
+          id: 'copilot-model-text',
           innerHTML: 'Model: None',
-          style: 'padding: 2px 5px; transition: color 0.2s;',
+          class: 'copilot-model-text',
           onmouseover: function(evt) {
             evt.target.style.color = '#2196F3';
           },
@@ -161,8 +162,9 @@ define([
        */
       _createRagText: function(currDiv) {
         this.ragText = domConstruct.create('div', {
+          id: 'copilot-rag-text',
           innerHTML: 'RAG: None',
-          style: 'padding: 2px 5px; transition: color 0.2s;',
+          class: 'copilot-rag-text',
           onmouseover: function(evt) {
             evt.target.style.color = '#2196F3';
           },

@@ -1976,6 +1976,10 @@ pre.bv-brc-code-block button:active {
   min-width: fit-content;
 }
 
+.chat-session-scroll-bar-titles {
+  color: var(--cepi-sapphire);
+}
+
 .chat-session-title {
   width: 90%;
   font-size: 1.6em;
@@ -2023,3 +2027,15 @@ pre.bv-brc-code-block button:active {
   margin-bottom: 10px;
   resize: none;
 }
+
+.copilot-model-text, .copilot-rag-text {
+  cursor: pointer;
+  color: var(--cepi-sapphire);
+  padding: 2px 5px;
+  transition: color 0.2s;
+}
+
+.copilot-model-text:hover, .copilot-rag-text:hover {
+  color: var(--cepi-malibu);
+}
+

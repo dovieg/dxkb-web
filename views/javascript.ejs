@@ -228,11 +228,14 @@ const load_scripts = [
           var uContainer = dom.byId("ApplicationContainer");
         }
         var appContainer = dom.byId("ApplicationContainer");
-        // We grab the full height of the included page....
-        var contentHeight = uContainer.scrollHeight + 60;
-        // Reset both of these since, depending on the page, one of them is the one that needs it and there are no ill effects to resizing both
-        uContainer.style.height = contentHeight + "px";
-        appContainer.style.height = contentHeight + "px";
+
+        // Add check to ensure uContainer exists before accessing scrollHeight
+        if (uContainer) {
+          var contentHeight = uContainer.scrollHeight + 60;
+          // Reset both of these since, depending on the page, one of them is the one that needs it and there are no ill effects to resizing both
+          uContainer.style.height = contentHeight + "px";
+          appContainer.style.height = contentHeight + "px";
+        }
       }
 
       // Call the function to adjust height initially
