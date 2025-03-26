@@ -76,24 +76,29 @@ define([
           var leftContainer = new BorderContainer({
             region: 'left',
             splitter: true,
-            style: 'width: 240px;'
+            style: 'width: 240px;',
+            gutters: false,
+            minSize: 120,
+            maxSize: 360
           });
 
           // Add options bar to top of sidebar
           var leftTopPane = new ChatSessionOptionsBar({
             region: 'top',
-            style: 'height: 30px; ',
+            class: 'chat-options-bar',
             copilotApi: this.copilotApi,
             modelList: modelList,
-            ragList: ragList
+            ragList: ragList,
+            id: 'chat-options-bar',
           });
           leftContainer.addChild(leftTopPane);
 
           // Add scrollable chat history below options bar
           var chatSessionPane = new ChatSessionScrollBar({
             region: 'center',
-            style: 'padding: 0px; border: 1px solid grey;',
-            copilotApi: this.copilotApi
+            class: 'chat-session-scroll-bar',
+            copilotApi: this.copilotApi,
+            id: 'chat-session-scroll-bar',
           });
           leftContainer.addChild(chatSessionPane);
 
@@ -103,7 +108,8 @@ define([
           var rightContainer = new ChatSessionContainer({
             region: 'center',
             gutters: false,
-            copilotApi: this.copilotApi
+            copilotApi: this.copilotApi,
+            id: 'chat-session-container',
           });
           this.addChild(rightContainer);
 

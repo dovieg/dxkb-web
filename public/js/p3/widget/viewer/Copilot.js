@@ -64,7 +64,7 @@ define([
       _initializeGridContainer: function () {
         // Create wrapper div for grid container
         var containerNode = domConstruct.create('div', {
-          id: 'gridContainerNode',
+          id: 'gridContainerNode-copilot',
           style: 'height: 500px; width: 100%;'
         }, this.domNode);
 

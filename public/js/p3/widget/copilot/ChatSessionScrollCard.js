@@ -44,7 +44,7 @@ define([
          * - Date container with date and delete button
          */
         templateString: '<div class="chat-session-card" data-dojo-attach-point="containerNode">' +
-            '<div class="session-title" data-dojo-attach-point="titleNode"></div>' +
+            '<div class="chat-session-scroll-bar-titles" data-dojo-attach-point="titleNode"></div>' +
             '<div class="session-date-container" style="display: flex; justify-content: space-between; align-items: center;">' +
                 '<div class="session-date" data-dojo-attach-point="dateNode"></div>' +
                 '<div class="delete-button" data-dojo-attach-point="deleteButtonNode">Delete</div>' +
@@ -149,9 +149,11 @@ define([
                 // Container hover effects
                 on(this.containerNode, 'mouseover', function() {
                     this.style.backgroundColor = '#e0e0e0';
+                    this.querySelector('.chat-session-scroll-bar-titles').style.color = 'var(--cepi-malibu)'; // Darker text on hover
                 });
                 on(this.containerNode, 'mouseout', function() {
                     this.style.backgroundColor = '#f0f0f0';
+                    this.querySelector('.chat-session-scroll-bar-titles').style.color = 'var(--cepi-sapphire)'; // Darker text on hover
                 });
             }
         }
