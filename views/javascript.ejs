@@ -206,7 +206,7 @@ const load_scripts = [
 
       window.adjustHeight = function() {
 
-//        console.log('in function');
+        console.log('in function');
 
         var uContainer = null;
         var u_divs = query('[id^="uniqName"]');
@@ -247,12 +247,20 @@ const load_scripts = [
 
         // We grab the full height of the included page....
         var contentHeight = uContainer.scrollHeight + 60;
+
+        console.log('b: uheight: ', uContainer.style.height, ' appHeight: ', appContainer.style.height);
         // Reset both of these since, depending on the page, one of them is the one that needs it and there are no ill effects to resizing both
-        uContainer.style.height = contentHeight + "px";
-        appContainer.style.height = contentHeight + "px";
+        // Only resize if they have different heights...
+        if (uContainer.style.height != appContainer.style.height) {
+          uContainer.style.height = contentHeight + "px";
+          appContainer.style.height = contentHeight + "px";
+        }
+        console.log('a: uheight: ', uContainer.style.height, ' appHeight: ', appContainer.style.height);
 
 //        console.log('uc: ', uContainer);
       }
+
+      var loopNumber = 1;
 
       // Call the function to adjust height initially
       var timeoutId = setTimeout(function() {
@@ -278,13 +286,17 @@ const load_scripts = [
           timespan = 250;
         }
 
-//        console.log('timespan is ', timespan);
+        console.log('timespan is ', timespan);
 
         // This can't be immediate since sometimes the page changes haven't finished yet, which jams things up.
         // I played around on the search results page, which is where this came into play, and 3 seconds seemed to
         // be the lowest I could go with a high enough success rate.
-        timeoutId = setTimeout(function() {
+        let intervalId = setInterval(function() {
           adjustHeight();
+          loopNumber++;
+          if(loopNumber > 5) {
+            clearInterval(intervalId);
+          }
         }, timespan);
 
       });
