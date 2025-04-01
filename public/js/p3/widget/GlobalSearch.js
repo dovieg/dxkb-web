@@ -13,6 +13,11 @@ define([
 ) {
 
   function processQuery(query, searchOption) {
+    timeoutId = setTimeout(function() {
+      location.reload();
+//      adjustHeight();
+      }, 1000); //
+
     // console.log("processQuery query: ", query, "searchOption: ", searchOption);
     // replace some special characters
     query = query.replace(/'/g, '').replace(/:/g, ' ');

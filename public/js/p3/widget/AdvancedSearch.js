@@ -655,6 +655,11 @@ define([
           this.viewer.set('content', '');
         }
 
+        timeoutId = setTimeout(function() {
+          location.reload();
+    //      adjustHeight();
+          }, 1000); //
+
         Topic.publish('/navigate', { href: '/search/?' + searchToQuery(query) });
       }
     },
@@ -662,6 +667,7 @@ define([
       if (this._started) {
         return;
       }
+
       this.inherited(arguments);
       this.onSetState('state', '', this.state);
     }
