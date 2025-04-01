@@ -13,7 +13,6 @@ define([
 ) {
 
   function processQuery(query, searchOption) {
-    console.log('im in search');
     timeoutId = setTimeout(function() {
       location.reload();
 //      adjustHeight();

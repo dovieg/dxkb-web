@@ -660,8 +660,6 @@ define([
     //      adjustHeight();
           }, 1000); //
 
-          console.log('in second one');
-
         Topic.publish('/navigate', { href: '/search/?' + searchToQuery(query) });
       }
     },
