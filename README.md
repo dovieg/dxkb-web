@@ -52,5 +52,47 @@ Please: `cp p3-web.conf.sample p3-web.conf` and edit as necessary. You may need 
 
 Note: if any configuration changes are made (i.e., changes to `./p3-web.conf`), then `./bin/p3-web` must be restarted for the effects to take place within the local dev application.
 
+## Service info dialogs & documentation (`docsServiceURL`)
+
+Each service page has an **ⓘ (info)** icon in its title that opens an **Overview** dialog
+describing the service. **This content does not live in this repo.** At runtime the app fetches
+an HTML page from the separate **[dxkb-docs](https://github.com/CEPI-dxkb/dxkb-docs)** site
+(`git clone` it alongside this repo) and extracts the matching section.
+
+- The fetch logic is in `public/js/p3/widget/app/AppBase.js` → `gethelp()`.
+- It requests `docsServiceURL` + the widget's `applicationHelp` path, e.g.
+  `https://www.dxkb.org/docs/quick_references/services/genome_annotation_service.html`,
+  then injects the element whose `id` matches the info button's `name` (e.g. `overview`).
+- `docsServiceURL` defaults to `https://www.dxkb.org/docs/` (see `config.js`; override in `p3-web.conf`).
+- If the docs site is unreachable, the dialog shows a graceful
+  "Help information is currently unavailable" message instead of a dead icon.
+
+### Seeing the info dialogs work on your machine
+
+`https://www.dxkb.org/docs/` may not be published yet. To render the dialogs locally, build the
+docs from the **dxkb-docs** repo and serve them same-origin from this app:
+
+```bash
+# 1. Build the docs (see dxkb-docs/README.md for full details)
+cd /path/to/dxkb-docs/docroot
+python3 -m venv venv && source venv/bin/activate   # first time only
+pip install -r ../requirements.txt                 # first time only
+make html
+
+# 2. Drop the built HTML into this app's static folder (git-ignored)
+cp -r _build/html/* /path/to/dxkb-web/public/docs/
+
+# 3. In this repo's p3-web.conf (git-ignored, local only), add:
+#      "docsServiceURL": "/public/docs"
+#    then restart:  npm start
+```
+
+Now click an ⓘ icon, e.g. <http://localhost:3000/app/Annotation>. Hard-refresh
+(Ctrl+Shift+R) the first time, since `window.App.docsServiceURL` is cached in the browser.
+
+> `public/docs/` and the `docsServiceURL` override are **local test scaffolding only** — both are
+> git-ignored and must never be committed. Production keeps `docsServiceURL` pointing at
+> `https://www.dxkb.org/docs/`, where the dxkb-docs site is published.
+
 ## Contributing
 If you'd like to contribute please follow our [CONTRIBUTING.md]() guide for more information (coming soon).
