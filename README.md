@@ -67,28 +67,70 @@ an HTML page from the separate **[dxkb-docs](https://github.com/CEPI-dxkb/dxkb-d
 - If the docs site is unreachable, the dialog shows a graceful
   "Help information is currently unavailable" message instead of a dead icon.
 
-### Seeing the info dialogs work on your machine
+### Seeing the info dialogs work on your machine (local docs setup)
 
-`https://www.dxkb.org/docs/` may not be published yet. To render the dialogs locally, build the
-docs from the **dxkb-docs** repo and serve them same-origin from this app:
+`https://www.dxkb.org/docs/` may not be published yet. Until it is, the ⓘ icons show the
+"Help information is currently unavailable" fallback unless you build the docs locally. **Anyone
+reviewing or QA-ing a change to these dialogs needs to do this once** — `public/docs/` is
+git-ignored, so it does not arrive with a `git clone` or a branch checkout.
+
+Requires Python 3.9+ and the `enchant` native library (`sphinxcontrib-spelling` depends on it;
+`apt install libenchant-2-2` / `brew install enchant` if the install complains).
 
 ```bash
-# 1. Build the docs (see dxkb-docs/README.md for full details)
-cd /path/to/dxkb-docs/docroot
-python3 -m venv venv && source venv/bin/activate   # first time only
-pip install -r ../requirements.txt                 # first time only
-make html
+# 1. Clone the docs repo (alongside this one; it is a SEPARATE repo, not a submodule)
+git clone https://github.com/CEPI-dxkb/dxkb-docs.git
+cd dxkb-docs
 
-# 2. Drop the built HTML into this app's static folder (git-ignored)
+# 2. Create the virtualenv at the REPO ROOT (requirements.txt lives here, not in docroot/)
+python3 -m venv venv && source venv/bin/activate    # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+# 3. Build
+cd docroot
+make html            # or: python -m sphinx -b html . _build/html
+
+# 4. Copy the build into this app's static folder. mkdir first -- the folder is
+#    git-ignored, so it does NOT exist in a fresh clone and `cp` would fail.
+mkdir -p /path/to/dxkb-web/public/docs
 cp -r _build/html/* /path/to/dxkb-web/public/docs/
 
-# 3. In this repo's p3-web.conf (git-ignored, local only), add:
+# 5. In dxkb-web/p3-web.conf (git-ignored, local only) add:
 #      "docsServiceURL": "/public/docs"
-#    then restart:  npm start
+#    then start the app:  npm start
 ```
 
-Now click an ⓘ icon, e.g. <http://localhost:3000/app/Annotation>. Hard-refresh
-(Ctrl+Shift+R) the first time, since `window.App.docsServiceURL` is cached in the browser.
+Then open a service page and click the ⓘ icon — e.g.
+<http://localhost:3000/app/FrustraMPNN>.
+
+**`make html` prints ~250 warnings** about missing images and unresolved `/tutorial/...`
+cross-references. That is expected: this repo carries the page text but not the screenshots.
+The dialogs only use the text, so the warnings are harmless. What matters is the final line
+reading `build succeeded`.
+
+Two things that commonly look like "the docs didn't work":
+
+- **You must be logged in.** Most service widgets set `requireAuth: true`; when logged out the
+  entire form template is swapped for the login page, which has no ⓘ icons at all.
+- **Browser caching.** `/public/` is served with a 1-year cache. `gethelp()` fetches the doc
+  over XHR *after* page load, and a hard refresh does not revalidate sub-resource requests, so a
+  stale copy can survive both a hard refresh and a server restart. In dev, `app.js` now serves
+  `/public/docs/` with `Cache-Control: no-store` to prevent this; if you still see stale content
+  from before that fix, load the doc URL directly once and hard-refresh it, or tick
+  "Disable cache" in DevTools.
+
+To verify the wiring without clicking through the UI, check that the ids the info buttons look
+up are present in the built page:
+
+```bash
+curl -s http://localhost:3000/public/docs/quick_references/services/frustraMPNN_service.html \
+  | grep -o 'id="overview"\|id="pdb-selection"\|id="parameters"'
+```
+
+Each service form has **three** info buttons (`overview`, `pdb-selection`, `parameters`), and a
+button whose `name` has no matching element `id` renders "Help text missing". The ids come from
+the Markdown headings via MyST's `myst_heading_anchors`, so heading text and button name must
+slugify to the same string (`## PDB Selection` → `pdb-selection`).
 
 > `public/docs/` and the `docsServiceURL` override are **local test scaffolding only** — both are
 > git-ignored and must never be committed. Production keeps `docsServiceURL` pointing at
