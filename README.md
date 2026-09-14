@@ -97,7 +97,7 @@ cp -r _build/html/* /path/to/dxkb-web/public/docs/
 
 # 5. In dxkb-web/p3-web.conf (git-ignored, local only) add:
 #      "docsServiceURL": "/public/docs/"
-#    The trailing slash matters -- see the note below.
+#    (trailing slash optional -- AppBase normalizes it)
 #    then start the app:  npm start
 ```
 
@@ -141,12 +141,15 @@ A button whose `name` has no matching element `id` in the fetched doc renders "H
 The ids come from the Markdown headings via MyST's `myst_heading_anchors`, so heading text and
 button name must slugify to the same string (`## PDB Selection` → `pdb-selection`).
 
-**Trailing slash on `docsServiceURL`.** Set it with a trailing slash (`/public/docs/`). The
-templates build tutorial links by raw string concatenation (`${docsServiceURL}${tutorialLink}`),
-so omitting it yields `/public/docstutorial/...` and every tutorial link 404s. The ⓘ dialogs
-are unaffected either way -- `gethelp()` joins via `PathJoin`, which normalizes slashes -- so
-broken tutorial links with working dialogs is the signature of a missing slash. The production
-default in `config.js` already has it.
+**Trailing slash on `docsServiceURL`.** Either form works. `AppBase.postMixInProperties()`
+normalizes the value (`this.docsServiceURL = PathJoin(this.docsServiceURL) + '/'`), so
+`/public/docs` and `/public/docs/` behave identically.
+
+This was not always true. The templates build tutorial links by raw concatenation
+(`${docsServiceURL}${tutorialLink}`), so before that normalization a missing slash produced
+`/public/docstutorial/...` and 404'd every tutorial link -- while the ⓘ dialogs kept working,
+since `gethelp()` joins via `PathJoin`. If you are ever on a build without the normalization,
+that split (broken tutorial links, working dialogs) is the signature.
 
 > `public/docs/` and the `docsServiceURL` override are **local test scaffolding only** — both are
 > git-ignored and must never be committed. Production keeps `docsServiceURL` pointing at
