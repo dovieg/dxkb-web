@@ -96,7 +96,8 @@ mkdir -p /path/to/dxkb-web/public/docs
 cp -r _build/html/* /path/to/dxkb-web/public/docs/
 
 # 5. In dxkb-web/p3-web.conf (git-ignored, local only) add:
-#      "docsServiceURL": "/public/docs"
+#      "docsServiceURL": "/public/docs/"
+#    The trailing slash matters -- see the note below.
 #    then start the app:  npm start
 ```
 
@@ -127,10 +128,25 @@ curl -s http://localhost:3000/public/docs/quick_references/services/frustraMPNN_
   | grep -o 'id="overview"\|id="pdb-selection"\|id="parameters"'
 ```
 
-Each service form has **three** info buttons (`overview`, `pdb-selection`, `parameters`), and a
-button whose `name` has no matching element `id` renders "Help text missing". The ids come from
-the Markdown headings via MyST's `myst_heading_anchors`, so heading text and button name must
-slugify to the same string (`## PDB Selection` → `pdb-selection`).
+The number of info buttons varies per service -- FrustraMPNN has three (`overview`,
+`pdb-selection`, `parameters`), ComprehensiveGenomeAnalysis has seven, BLAST has one. To list the
+ones a given form expects, read the `name` attributes off its template:
+
+```bash
+grep -o 'name="[^"]*" class="[^"]*infobutton' \
+  public/js/p3/widget/app/templates/FrustraMPNN.html
+```
+
+A button whose `name` has no matching element `id` in the fetched doc renders "Help text missing".
+The ids come from the Markdown headings via MyST's `myst_heading_anchors`, so heading text and
+button name must slugify to the same string (`## PDB Selection` → `pdb-selection`).
+
+**Trailing slash on `docsServiceURL`.** Set it with a trailing slash (`/public/docs/`). The
+templates build tutorial links by raw string concatenation (`${docsServiceURL}${tutorialLink}`),
+so omitting it yields `/public/docstutorial/...` and every tutorial link 404s. The ⓘ dialogs
+are unaffected either way -- `gethelp()` joins via `PathJoin`, which normalizes slashes -- so
+broken tutorial links with working dialogs is the signature of a missing slash. The production
+default in `config.js` already has it.
 
 > `public/docs/` and the `docsServiceURL` override are **local test scaffolding only** — both are
 > git-ignored and must never be committed. Production keeps `docsServiceURL` pointing at
