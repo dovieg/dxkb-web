@@ -96,12 +96,30 @@ define([
         return;
       }
 
-      // Wire every .infobutton on the page to a Dialog/TooltipDialog. getHelpText(item)
+      // Wire this widget's .infobutton nodes to a Dialog/TooltipDialog. getHelpText(item)
       // returns the DOM fragment to show for a given button; it is used for both the
       // success path (content pulled from the fetched help doc) and the failure path
       // (a graceful fallback message so icons are never silently dead).
-      var wireButtons = function (getHelpText) {
-        query('.infobutton').forEach(function (item) {
+      //
+      // The query is scoped to this.domNode, and prior handlers/dialogs are torn down
+      // first. Both matter: the fetch is async, so a second panel (or a re-entrant
+      // gethelp on the same one) can resolve while an earlier one is still attached.
+      // An unscoped document-wide query would wire another panel's buttons too, and
+      // the duplicate click handlers would share item.open -- one showing the dialog
+      // and the next immediately hiding it, leaving the icon apparently dead.
+      var wireButtons = lang.hitch(this, function (getHelpText) {
+        query('.infobutton', this.domNode).forEach(function (item) {
+          // Tear down any wiring left by a previous gethelp() on this same node.
+          if (item.info_handles) {
+            item.info_handles.forEach(function (h) { h.remove(); });
+          }
+          item.info_handles = [];
+          if (item.info_dialog) {
+            popup.close(item.info_dialog);
+            item.info_dialog.destroyRecursive();
+            item.info_dialog = null;
+          }
+
           var help_text = getHelpText(item);
           help_text.style.overflowY = 'auto';
           help_text.style.maxHeight = '400px';
@@ -114,7 +132,7 @@ define([
               style: 'max-width: 350px;'
             });
             item.open = false;
-            on(item, 'click', function () {
+            item.info_handles.push(on(item, 'click', function () {
               if (!item.open) {
                 item.open = true;
                 item.info_dialog.show();
@@ -123,7 +141,7 @@ define([
                 item.open = false;
                 item.info_dialog.hide();
               }
-            });
+            }));
           }
           else if (domClass.contains(item, 'tooltipinfo')) {
             item.info_dialog = new TooltipDialog({
@@ -134,18 +152,18 @@ define([
                 popup.close(item.info_dialog);
               }
             });
-            on(item, 'mouseover', function () {
+            item.info_handles.push(on(item, 'mouseover', function () {
               popup.open({
                 popup: item.info_dialog,
                 around: item
               });
-            });
-            on(item, 'mouseout', function () {
+            }));
+            item.info_handles.push(on(item, 'mouseout', function () {
               popup.close(item.info_dialog);
-            });
+            }));
           }
         });
-      };
+      });
 
       xhr.get(PathJoin(this.docsServiceURL, this.applicationHelp), {
         handleAs: 'text'
