@@ -108,17 +108,10 @@ define([
       // the duplicate click handlers would share item.open -- one showing the dialog
       // and the next immediately hiding it, leaving the icon apparently dead.
       var wireButtons = lang.hitch(this, function (getHelpText) {
-        query('.infobutton', this.domNode).forEach(function (item) {
+        query('.infobutton', this.domNode).forEach(lang.hitch(this, function (item) {
           // Tear down any wiring left by a previous gethelp() on this same node.
-          if (item.info_handles) {
-            item.info_handles.forEach(function (h) { h.remove(); });
-          }
+          this._teardownHelpButton(item);
           item.info_handles = [];
-          if (item.info_dialog) {
-            popup.close(item.info_dialog);
-            item.info_dialog.destroyRecursive();
-            item.info_dialog = null;
-          }
 
           var help_text = getHelpText(item);
           help_text.style.overflowY = 'auto';
@@ -162,7 +155,7 @@ define([
               popup.close(item.info_dialog);
             }));
           }
-        });
+        }));
       });
 
       xhr.get(PathJoin(this.docsServiceURL, this.applicationHelp), {
@@ -196,6 +189,35 @@ define([
         });
       });
 
+    },
+
+    // Release the dialog and click/hover handlers attached to one .infobutton node.
+    _teardownHelpButton: function (item) {
+      if (item.info_handles) {
+        item.info_handles.forEach(function (h) { h.remove(); });
+        item.info_handles = null;
+      }
+      if (item.info_dialog) {
+        popup.close(item.info_dialog);
+        item.info_dialog.destroyRecursive();
+        item.info_dialog = null;
+      }
+    },
+
+    destroy: function () {
+      // Help dialogs are NOT part of this widget's subtree -- dijit/Dialog appends
+      // itself to document.body and TooltipDialog is shown through dijit/popup -- so
+      // the normal destroy chain never reaches them. Without this they outlive the
+      // panel as orphaned registry entries holding detached DOM.
+      //
+      // Panels are swapped by App._doNavigation via appContainer.removeChild(cur),
+      // which detaches without destroying, so in practice this runs on explicit
+      // teardown rather than on every navigation. It is still the correct owner-side
+      // cleanup, and it makes the leak bounded wherever destroy() is reached.
+      if (this.domNode) {
+        query('.infobutton', this.domNode).forEach(lang.hitch(this, '_teardownHelpButton'));
+      }
+      this.inherited(arguments);
     },
 
     onOutputPathChange: function (val) {
