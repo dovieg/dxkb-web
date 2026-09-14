@@ -61,18 +61,19 @@ an HTML page from the separate **[dxkb-docs](https://github.com/CEPI-dxkb/dxkb-d
 
 - The fetch logic is in `public/js/p3/widget/app/AppBase.js` → `gethelp()`.
 - It requests `docsServiceURL` + the widget's `applicationHelp` path, e.g.
-  `https://www.dxkb.org/docs/quick_references/services/genome_annotation_service.html`,
+  `https://www.bv-brc.org/docs/quick_references/services/genome_annotation_service.html`,
   then injects the element whose `id` matches the info button's `name` (e.g. `overview`).
-- `docsServiceURL` defaults to `https://www.dxkb.org/docs/` (see `config.js`; override in `p3-web.conf`).
+- `docsServiceURL` defaults to `https://www.bv-brc.org/docs/` (see `config.js`; override in `p3-web.conf`).
 - If the docs site is unreachable, the dialog shows a graceful
   "Help information is currently unavailable" message instead of a dead icon.
 
 ### Seeing the info dialogs work on your machine (local docs setup)
 
-`https://www.dxkb.org/docs/` may not be published yet. Until it is, the ⓘ icons show the
-"Help information is currently unavailable" fallback unless you build the docs locally. **Anyone
-reviewing or QA-ing a change to these dialogs needs to do this once** — `public/docs/` is
-git-ignored, so it does not arrive with a `git clone` or a branch checkout.
+The default `https://www.bv-brc.org/docs/` is live, so the ⓘ dialogs work out of the box for
+most services. Build the docs locally when you are working on content that is not published
+there yet — anything in the dxkb-docs repo that has not shipped to the BV-BRC site, e.g.
+`frustraMPNN_service.html`, which currently 404s. `public/docs/` is git-ignored, so it does not
+arrive with a `git clone` or a branch checkout.
 
 Requires Python 3.9+ and the `enchant` native library (`sphinxcontrib-spelling` depends on it;
 `apt install libenchant-2-2` / `brew install enchant` if the install complains).
@@ -153,7 +154,7 @@ that split (broken tutorial links, working dialogs) is the signature.
 
 > `public/docs/` and the `docsServiceURL` override are **local test scaffolding only** — both are
 > git-ignored and must never be committed. Production keeps `docsServiceURL` pointing at
-> `https://www.dxkb.org/docs/`, where the dxkb-docs site is published.
+> `https://www.bv-brc.org/docs/`, where the docs site is published.
 
 ## Contributing
 If you'd like to contribute please follow our [CONTRIBUTING.md]() guide for more information (coming soon).
