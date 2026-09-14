@@ -178,7 +178,14 @@ define([
               help_text = this.help_doc.childNodes[i];
             }
           }
-          return help_text || dom.byId(item.attributes.name.value, this.help_doc) || domConstruct.toDom('<div>Help text missing</div>');
+          help_text = help_text || dom.byId(item.attributes.name.value, this.help_doc);
+          // Clone: handing the live node to a Dialog/TooltipDialog MOVES it out of
+          // help_doc. Several templates point more than one button at the same id
+          // (e.g. the read-input-file boxes for the Read File vs Assembled Contigs
+          // paths), and the second lookup would then miss and render "Help text
+          // missing". Destroying a dialog also destroys the node it holds, so without
+          // a copy a rewire would lose the section for good.
+          return help_text ? help_text.cloneNode(true) : domConstruct.toDom('<div>Help text missing</div>');
         }));
       }), function (err) {
         // Help doc could not be fetched (e.g. docs site unreachable). Wire the icons
