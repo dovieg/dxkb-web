@@ -82,7 +82,8 @@ MobileElementDetection and ComparativePathway all 404 on `bv-brc.org/docs/`, whi
 dxkb-docs build covers every path the service widgets request. That is why `docsServiceURL`
 points at dxkb.org rather than borrowing BV-BRC's site.
 
-Requires Python 3.9+ and the `enchant` native library (`sphinxcontrib-spelling` depends on it;
+Requires Python 3.12+ (pip resolves Sphinx to 9.x, which floors there — older interpreters fail
+at `pip install`) and the `enchant` native library (`sphinxcontrib-spelling` depends on it;
 `apt install libenchant-2-2` / `brew install enchant` if the install complains).
 
 ```bash
