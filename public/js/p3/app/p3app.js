@@ -1064,9 +1064,6 @@ define([
         domConstruct.create('div', {
           innerHTML: '<a class="navigationLink" href="/workspace/public">Public Workspaces</a>'
         }, workspacesMenuNode);
-        domConstruct.create('div', {
-          innerHTML: '<a class="navigationLink" href="/workspace/public/ARWattam@patricbrc.org/BV-BRC%20Workshop">BV-BRC Workshop</a>'
-        }, workspacesMenuNode);
       }
 
       // Populate Data menu
